@@ -48,6 +48,8 @@ export interface Segment {
 	flightNumber: string; // e.g., "AA123"
 	aircraft?: string; // e.g., "32N"
 	durationMinutes: number;
+	cabin?: CabinClass;
+	fareClass?: string;
 }
 
 export interface Itinerary {
@@ -66,6 +68,12 @@ export interface Offer {
 	fareBrand?: string; // e.g., Basic, Standard, Flex
 	baggage?: BaggageAllowance;
 	bookingUrl?: string;
+	extras?: {
+		numberOfBookableSeats?: number;
+		validatingAirlineCodes?: string[];
+		includedCheckedBagsOnly?: boolean;
+		priceBase?: number;
+	};
 }
 
 export interface ScoreBreakdown {

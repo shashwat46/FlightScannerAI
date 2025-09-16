@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { createDefaultSearchService } from '../../../src/services/SearchService';
 import { ValidationError, toHttpResponse } from '../../../src/domain/errors';
 import { CabinClass, PassengerCounts, SearchParams } from '../../../src/domain/types';
+import { searchQuerySchema } from '../../../src/domain/validation';
 
 function parseBoolean(value: string | null): boolean | undefined {
 	if (value === null) return undefined;
@@ -58,7 +59,11 @@ function parseParams(req: NextRequest): SearchParams {
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
 	try {
-		const params = parseParams(req);
+		const parsed = searchQuerySchema.safeParse(parseParams(req));
+		if (!parsed.success) {
+			throw new ValidationError('Invalid query', parsed.error.flatten());
+		}
+		const params = parsed.data as SearchParams;
 		const service = createDefaultSearchService();
 		const result = await service.search(params);
 		return NextResponse.json(result, { status: 200 });
