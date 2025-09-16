@@ -1,0 +1,63 @@
+#Instructions and docs
+Instructions/
+\.env
+\.env.local
+\.env.*.local
+envforcursor.txt
+
+# Node / package managers
+node_modules/
+.pnpm-store/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Build outputs
+dist/
+build/
+.cache/
+.turbo/
+.swc/
+
+# Next.js
+.next/
+out/
+.vercel/
+
+# Coverage / test artifacts
+coverage/
+.nyc_output/
+.jest/
+.vitest/
+test-results/
+playwright-report/
+cypress/screenshots/
+cypress/videos/
+
+# OS files
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Editors / IDE
+.vscode/
+.idea/
+.fleet/
+*.iml
+*.code-workspace
+.history/
+
+# Temporary files
+*.tmp
+*.temp
+*.swp
+*.swo
+*.pid
+*.seed
+
+# Databases (local dev only)
+*.sqlite
+*.sqlite-journal
+*.db
