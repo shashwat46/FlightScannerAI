@@ -1,0 +1,8 @@
+.modal { position: fixed; inset: 0; background: rgba(0,0,0,0.35); display: flex; align-items: center; justify-content: center; padding: 24px; }
+.modal__content { background: white; border-radius: 12px; padding: 16px; width: 100%; max-width: 640px; }
+.modal__header { margin-bottom: 8px; display: flex; justify-content: space-between; align-items: center; }
+.modal__close { background: transparent; border: none; font-size: 20px; cursor: pointer; }
+.modal__body { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.modal__title { font-weight: 700; margin-bottom: 6px; }
+
+

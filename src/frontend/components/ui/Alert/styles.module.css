@@ -1,0 +1,14 @@
+.alert {
+  padding: 12px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(15,23,42,0.12);
+}
+.alert__title { font-weight: 700; margin-bottom: 4px; }
+.alert__body { color: var(--color-muted); }
+
+.alert--info { background: #eef6ff; border-color: #cfe3ff; }
+.alert--warning { background: #fff7ed; border-color: #fde68a; }
+.alert--danger { background: #fff1f2; border-color: #fecdd3; }
+.alert--success { background: #ecfdf5; border-color: #a7f3d0; }
+
+

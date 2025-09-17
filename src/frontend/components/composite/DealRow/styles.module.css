@@ -1,0 +1,8 @@
+.deal-row { padding: 16px; }
+.deal-row__header { display: flex; justify-content: space-between; align-items: center; }
+.deal-row__title { font-weight: 700; }
+.deal-row__score { color: var(--color-accent); font-weight: 700; }
+.deal-row__meta { color: var(--color-muted); margin-top: 4px; }
+.deal-row__price { margin-top: 8px; font-size: 18px; font-weight: 800; }
+
+

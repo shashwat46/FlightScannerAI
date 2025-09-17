@@ -1,0 +1,41 @@
+:root {
+  --color-bg: #f7f9fb;
+  --color-card: #ffffff;
+  --color-accent: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+  --color-muted: #64748b;
+  --color-text: #0f172a;
+
+  --radius-card: 12px;
+  --radius-chip: 16px;
+
+  --shadow-card: 0 8px 24px rgba(2, 6, 23, 0.08);
+
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 12px;
+  --space-lg: 16px;
+  --space-xl: 24px;
+}
+
+html, body { background: var(--color-bg); color: var(--color-text); }
+
+.page-bg {
+  background: linear-gradient(180deg, rgba(2,132,199,0.06) 0%, rgba(2,132,199,0.00) 200px), var(--color-bg);
+  min-height: 100vh;
+}
+
+.u-card {
+  background: var(--color-card);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.u-grid {
+  display: grid;
+  gap: var(--space-md);
+}
+
+

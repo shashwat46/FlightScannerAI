@@ -1,0 +1,19 @@
+.panel { background: #dff6ff; border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 12px; box-shadow: 0 8px 20px rgba(2,6,23,0.06); }
+.rowTop { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
+.rowBottom { display: grid; grid-template-columns: 1.2fr 1.2fr 0.9fr 1.2fr auto; gap: 16px; align-items: end; }
+.combo { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.action { display: flex; align-items: flex-end; }
+.filter-bar__input { padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(15,23,42,0.15); background: white; }
+
+.filter-bar__select { padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(15,23,42,0.15); background: white; }
+
+.pill { display: inline-flex; gap: 6px; align-items: center; background: transparent; border: none; padding: 4px 6px; }
+.pill select { border: none; background: transparent; outline: none; font-weight: 700; }
+.filter-bar__select--bare { border: none; background: transparent; outline: none; }
+
+.field { display: grid; gap: 6px; }
+.label { font-size: 12px; color: #64748b; font-weight: 700; }
+.inputPill { display: flex; align-items: center; gap: 8px; background: white; border: 1px solid rgba(15,23,42,0.12); border-radius: 12px; padding: 10px 12px; }
+.filter-bar__input--bare { border: none; outline: none; background: transparent; }
+
+

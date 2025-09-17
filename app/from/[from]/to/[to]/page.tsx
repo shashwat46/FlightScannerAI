@@ -1,0 +1,81 @@
+import { getJson } from 'src/frontend/lib/api';
+import { headers } from 'next/headers';
+import FilterBar from 'src/frontend/components/composite/FilterBar';
+import DealCard from 'src/frontend/components/composite/DealCard';
+import SectionHeader from 'src/frontend/components/composite/SectionHeader';
+import Pagination from 'src/frontend/components/ui/Pagination';
+
+interface SearchResponse { offers: Array<any>; }
+
+export default async function DestinationPage({ params, searchParams }: { params: { from: string; to: string }; searchParams: Record<string, string> }) {
+  const origin = params.from.toUpperCase();
+  const destination = params.to.toUpperCase();
+  const departDate = searchParams.departDate || new Date().toISOString().slice(0, 10);
+  const query = new URLSearchParams({ origin, destination, departDate, includeScore: 'true', passengers: JSON.stringify({ adults: 1 }), cabin: 'economy', currency: 'USD' });
+  const host = headers().get('host');
+  const protocol = process.env.VERCEL ? 'https' : 'http';
+  const base = process.env.NEXT_PUBLIC_BASE_URL || (host ? `${protocol}://${host}` : '');
+  const data = await getJson<SearchResponse>(`${base}/api/search?${query.toString()}`).catch(() => ({ offers: [] }) as SearchResponse);
+  const page = Number(searchParams.page || '1');
+  const pageSize = 10;
+  const offers = data.offers || [];
+  const start = (page - 1) * pageSize;
+  const end = start + pageSize;
+  const slice = offers.slice(start, end);
+  const uiTop = slice[0] ? mapOfferToUiDeal(slice[0]) : null;
+  const rest = slice.slice(1).map((o) => mapOfferToUiDeal(o));
+  const totalPages = Math.max(1, Math.ceil(offers.length / pageSize));
+  return (
+    <main className="container page-bg">
+      <FilterBar />
+      <SectionHeader title="Deals to Destination" subtitle={`Page ${page} of ${totalPages}`} />
+      {uiTop && <DealCard {...uiTop} expanded />}
+      <div style={{ display: 'grid', gap: 12, marginTop: 12 }}>
+        {rest.map((d) => (
+          <DealCard key={d.dealId} {...d} />
+        ))}
+      </div>
+      <Pagination page={page} totalPages={totalPages} makeHref={(p) => buildHref(params.from, params.to, departDate, p)} />
+    </main>
+  );
+}
+
+function mapOfferToUiDeal(o: any) {
+  const code = o.outbound?.segments?.[0]?.marketingCarrier || '';
+  return {
+    dealId: o.id,
+    aiDealScore: o.score,
+    route: { tripType: 'one_way', from: { iata: o.outbound?.segments?.[0]?.origin || '???' }, to: { iata: o.outbound?.segments?.slice(-1)?.[0]?.destination || '???' } },
+    dates: { depart: o.outbound?.segments?.[0]?.departureTimeUtc },
+    flight: { airline: { name: lookupCarrierName(code), reputationScore: undefined as any, carrierCode: code }, stops: o.outbound?.stops || 0, isDirect: (o.outbound?.stops || 0) === 0, durationMinutes: o.outbound?.durationMinutes },
+    pricing: { dealPrice: o.price?.amount, currency: o.price?.currency },
+    priceHistory: undefined,
+    checkoutSuggestion: { buyProbability: typeof o.score === 'number' ? o.score / 100 : undefined },
+    cta: { primary: { label: `Book trip for ${o.price?.currency} ${o.price?.amount}`, action: 'deeplink', deeplinkUrl: o.bookingUrl } },
+    extras: o.extras,
+    breakdown: o.breakdown
+  };
+}
+
+function buildHref(from: string, to: string, departDate: string, page: number) {
+  const sp = new URLSearchParams({ departDate, page: String(page) });
+  return `/from/${from}/to/${to}?${sp.toString()}`;
+}
+
+function lookupCarrierName(code: string): string {
+  const map: Record<string, string> = {
+    AI: 'Air India',
+    IX: 'Air India Express',
+    UL: 'SriLankan Airlines',
+    MH: 'Malaysia Airlines',
+    SQ: 'Singapore Airlines',
+    QF: 'Qantas',
+    EK: 'Emirates',
+    OD: 'Malindo Air',
+    VJ: 'VietJet Air',
+    H1: 'Hahn Air'
+  };
+  return map[(code || '').toUpperCase()] || code || '';
+}
+
+

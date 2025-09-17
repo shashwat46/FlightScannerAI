@@ -59,17 +59,19 @@ export function mapOffer(defaultCurrency: string) {
 			price: { amount: priceAmount, currency },
 			cabin: 'economy',
 			inbound: segs2 && inboundDuration != null ? { segments: segs2, durationMinutes: inboundDuration, stops: Math.max(0, segs2.length - 1) } : undefined,
-			extras: {
+            extras: {
 				numberOfBookableSeats,
 				validatingAirlineCodes,
 				includedCheckedBagsOnly: includedBagsOnly,
 				priceBase,
 				taxes,
-				fareBrand: fareMeta.fareBrand,
-				fareBrandLabel: fareMeta.fareBrandLabel,
-				mealIncluded: fareMeta.mealIncluded,
-				refundable: fareMeta.refundable,
-				changeable: fareMeta.changeable
+                fareBrand: fareMeta.fareBrand,
+                fareBrandLabel: fareMeta.fareBrandLabel,
+                mealIncluded: fareMeta.mealIncluded,
+                mealChargeable: fareMeta.mealChargeable,
+                refundable: fareMeta.refundable,
+                changeable: fareMeta.changeable,
+                fareClass: fareMeta.fareClass
 			},
 			baggage
 		};
@@ -98,16 +100,20 @@ function aggregateBaggage(o: any): BaggageAllowance | undefined {
 	return (baggage as any).carryOn || (baggage as any).checked ? baggage : undefined;
 }
 
-function aggregateFareMeta(o: any): { fareBrand?: string; fareBrandLabel?: string; mealIncluded?: boolean; refundable?: boolean; changeable?: boolean } {
-	const meta: { fareBrand?: string; fareBrandLabel?: string; mealIncluded?: boolean; refundable?: boolean; changeable?: boolean } = {};
+function aggregateFareMeta(o: any): { fareBrand?: string; fareBrandLabel?: string; mealIncluded?: boolean; mealChargeable?: boolean; refundable?: boolean; changeable?: boolean; fareClass?: string } {
+    const meta: { fareBrand?: string; fareBrandLabel?: string; mealIncluded?: boolean; mealChargeable?: boolean; refundable?: boolean; changeable?: boolean; fareClass?: string } = {} as any;
 	const tps = Array.isArray(o?.travelerPricings) ? o.travelerPricings : [];
 	for (const tp of tps) {
 		for (const fd of tp?.fareDetailsBySegment || []) {
 			if (!meta.fareBrand && fd?.brandedFare) meta.fareBrand = fd.brandedFare;
 			if (!meta.fareBrandLabel && fd?.brandedFareLabel) meta.fareBrandLabel = fd.brandedFareLabel;
+            if (!meta.fareClass && fd?.class) meta.fareClass = fd.class;
 			for (const am of fd?.amenities || []) {
 				const desc = String(am?.description || '').toUpperCase();
-				if (desc.includes('MEAL')) meta.mealIncluded = meta.mealIncluded ?? !am.isChargeable;
+                if (desc.includes('MEAL')) {
+                    if (am.isChargeable === false) meta.mealIncluded = true;
+                    if (am.isChargeable === true) meta.mealChargeable = true;
+                }
 				if (desc.includes('REFUNDABLE')) meta.refundable = meta.refundable ?? !am.isChargeable;
 				if (desc.includes('CHANGEABLE')) meta.changeable = meta.changeable ?? !am.isChargeable;
 			}
