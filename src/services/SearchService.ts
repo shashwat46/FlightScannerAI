@@ -4,7 +4,7 @@ import { AmadeusProvider } from '../providers/amadeus/AmadeusProvider';
 import { SearchProvider } from '../providers/SearchProvider';
 import { scoreOffer } from './ScoringService';
 import { Offer, ScoredOffer, SearchParams, SearchResult } from '../domain/types';
-import { AdvancedSearchRequest } from '../providers/contracts';
+import { AdvancedSearchRequest, CheapestDatesQuery, CheapestDatesResult } from '../providers/contracts';
 import crypto from 'crypto';
 
 export interface SearchServiceOptions {
@@ -65,6 +65,20 @@ export class SearchService {
 
 		const offers = await this.provider.search(params);
 		await redis.set(cacheKey, JSON.stringify(offers), { EX: this.cacheTtlSeconds });
+
+		if (this.provider instanceof AmadeusProvider) {
+			try {
+				const adv = typeof (this.provider as any).searchAdvanced === 'function';
+				if (!adv) {
+					for (const offer of offers) {
+						const ref = `amadeus:offer:${offer.id}`;
+						await redis.set(ref, JSON.stringify(offer), { EX: this.cacheTtlSeconds });
+						(offer as any).extras = { ...(offer as any).extras, offerRef: ref };
+					}
+				}
+			} catch {}
+		}
+
 		return offers;
 	}
 
@@ -111,6 +125,16 @@ export class SearchService {
 		}
 
 		await redis.set(cacheKey, JSON.stringify(offers), { EX: this.cacheTtlSeconds });
+
+		if (this.provider instanceof AmadeusProvider) {
+			try {
+				for (const offer of offers) {
+					const ref = `amadeus:offer:${offer.id}`;
+					await redis.set(ref, JSON.stringify(offer), { EX: this.cacheTtlSeconds });
+					(offer as any).extras = { ...(offer as any).extras, offerRef: ref };
+				}
+			} catch {}
+		}
 		return offers;
 	}
 

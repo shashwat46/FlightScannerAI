@@ -1,4 +1,4 @@
-import { Offer, Segment } from '../../domain/types';
+import { BaggageAllowance, Offer, Segment } from '../../domain/types';
 
 export function minutesFromIsoDuration(iso: string | undefined): number | null {
 	if (!iso) return null;
@@ -16,6 +16,8 @@ export function mapSegments(segments: any[], dictionaries?: any): Segment[] {
 		destination: s?.arrival?.iataCode,
 		departureTimeUtc: s?.departure?.at,
 		arrivalTimeUtc: s?.arrival?.at,
+		departureTerminal: s?.departure?.terminal,
+		arrivalTerminal: s?.arrival?.terminal,
 		marketingCarrier: s?.carrierCode,
 		operatingCarrier: s?.operating?.carrierCode,
 		flightNumber: `${s?.carrierCode}${s?.number}`,
@@ -30,7 +32,10 @@ export function mapOffer(defaultCurrency: string) {
 	return (o: any): Offer => {
 		const firstItin = o?.itineraries?.[0];
 		const segs = mapSegments(firstItin?.segments || [], o?.dictionaries);
+		const secondItin = o?.itineraries?.[1];
+		const segs2 = secondItin ? mapSegments(secondItin?.segments || [], o?.dictionaries) : undefined;
 		const outboundDuration = minutesFromIsoDuration(firstItin?.duration) || segs.reduce((a, b) => a + b.durationMinutes, 0);
+		const inboundDuration = secondItin ? minutesFromIsoDuration(secondItin?.duration) || (segs2 || []).reduce((a, b) => a + b.durationMinutes, 0) : undefined;
 		const priceAmount = Number(o?.price?.grandTotal || o?.price?.total || 0);
 		const currency = o?.price?.currency || defaultCurrency;
 
@@ -38,6 +43,10 @@ export function mapOffer(defaultCurrency: string) {
 		const numberOfBookableSeats = Number(o?.numberOfBookableSeats || 0) || undefined;
 		const validatingAirlineCodes = Array.isArray(o?.validatingAirlineCodes) ? o.validatingAirlineCodes : undefined;
 		const priceBase = o?.price?.base ? Number(o.price.base) : undefined;
+		const taxes = priceBase != null ? Math.max(0, Number(o?.price?.grandTotal || o?.price?.total || 0) - priceBase) : undefined;
+
+		const baggage = aggregateBaggage(o);
+		const fareMeta = aggregateFareMeta(o);
 
 		return {
 			id: o?.id,
@@ -49,14 +58,62 @@ export function mapOffer(defaultCurrency: string) {
 			},
 			price: { amount: priceAmount, currency },
 			cabin: 'economy',
+			inbound: segs2 && inboundDuration != null ? { segments: segs2, durationMinutes: inboundDuration, stops: Math.max(0, segs2.length - 1) } : undefined,
 			extras: {
 				numberOfBookableSeats,
 				validatingAirlineCodes,
 				includedCheckedBagsOnly: includedBagsOnly,
-				priceBase
-			}
+				priceBase,
+				taxes,
+				fareBrand: fareMeta.fareBrand,
+				fareBrandLabel: fareMeta.fareBrandLabel,
+				mealIncluded: fareMeta.mealIncluded,
+				refundable: fareMeta.refundable,
+				changeable: fareMeta.changeable
+			},
+			baggage
 		};
 	};
+}
+
+function aggregateBaggage(o: any): BaggageAllowance | undefined {
+	const tps = Array.isArray(o?.travelerPricings) ? o.travelerPricings : [];
+	let checkedWeight: number | undefined;
+	let cabinWeight: number | undefined;
+	for (const tp of tps) {
+		for (const fd of tp?.fareDetailsBySegment || []) {
+			const cb = fd?.includedCheckedBags;
+			if (cb?.weight) {
+				checkedWeight = Math.max(checkedWeight || 0, Number(cb.weight));
+			}
+			const kb = fd?.includedCabinBags;
+			if (kb?.weight) {
+				cabinWeight = Math.max(cabinWeight || 0, Number(kb.weight));
+			}
+		}
+	}
+	const baggage: BaggageAllowance = {} as BaggageAllowance;
+	if (typeof cabinWeight === 'number') (baggage as any).carryOn = `1 x ${cabinWeight}kg`;
+	if (typeof checkedWeight === 'number') (baggage as any).checked = `1 x ${checkedWeight}kg`;
+	return (baggage as any).carryOn || (baggage as any).checked ? baggage : undefined;
+}
+
+function aggregateFareMeta(o: any): { fareBrand?: string; fareBrandLabel?: string; mealIncluded?: boolean; refundable?: boolean; changeable?: boolean } {
+	const meta: { fareBrand?: string; fareBrandLabel?: string; mealIncluded?: boolean; refundable?: boolean; changeable?: boolean } = {};
+	const tps = Array.isArray(o?.travelerPricings) ? o.travelerPricings : [];
+	for (const tp of tps) {
+		for (const fd of tp?.fareDetailsBySegment || []) {
+			if (!meta.fareBrand && fd?.brandedFare) meta.fareBrand = fd.brandedFare;
+			if (!meta.fareBrandLabel && fd?.brandedFareLabel) meta.fareBrandLabel = fd.brandedFareLabel;
+			for (const am of fd?.amenities || []) {
+				const desc = String(am?.description || '').toUpperCase();
+				if (desc.includes('MEAL')) meta.mealIncluded = meta.mealIncluded ?? !am.isChargeable;
+				if (desc.includes('REFUNDABLE')) meta.refundable = meta.refundable ?? !am.isChargeable;
+				if (desc.includes('CHANGEABLE')) meta.changeable = meta.changeable ?? !am.isChargeable;
+			}
+		}
+	}
+	return meta;
 }
 
 

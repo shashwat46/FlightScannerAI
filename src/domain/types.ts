@@ -43,6 +43,8 @@ export interface Segment {
 	destination: IataCode;
 	departureTimeUtc: string; // ISO timestamp
 	arrivalTimeUtc: string; // ISO timestamp
+	departureTerminal?: string;
+	arrivalTerminal?: string;
 	marketingCarrier: string; // e.g., "AA"
 	operatingCarrier?: string;
 	flightNumber: string; // e.g., "AA123"
@@ -73,6 +75,12 @@ export interface Offer {
 		validatingAirlineCodes?: string[];
 		includedCheckedBagsOnly?: boolean;
 		priceBase?: number;
+		taxes?: number;
+		fareBrand?: string;
+		fareBrandLabel?: string;
+		mealIncluded?: boolean;
+		refundable?: boolean;
+		changeable?: boolean;
 	};
 }
 

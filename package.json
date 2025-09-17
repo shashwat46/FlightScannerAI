@@ -14,7 +14,8 @@
     "postgres": "^3.4.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "redis": "^4.6.15"
+    "redis": "^4.6.15",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@types/node": "^20.11.30",

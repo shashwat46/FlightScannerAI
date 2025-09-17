@@ -62,4 +62,50 @@ export const advancedSearchBodySchema = z
 	})
 	.strict();
 
+export const priceRefsSchema = z
+	.object({
+		offerRefs: z.array(z.string()).min(1).max(5),
+		include: z.array(z.enum(['credit-card-fees', 'bags', 'other-services', 'detailed-fare-rules'])).optional(),
+		forceClass: z.boolean().optional()
+	})
+	.strict();
+
+export const priceFlightOffersBodySchema = z
+	.object({
+		data: z.object({
+			type: z.literal('flight-offers-pricing'),
+			flightOffers: z.array(z.any()).min(1)
+		}),
+		include: z.array(z.enum(['credit-card-fees', 'bags', 'other-services', 'detailed-fare-rules'])).optional(),
+		forceClass: z.boolean().optional()
+	})
+	.strict();
+
+export const cheapestDatesQuerySchema = z
+    .object({
+        origin: iataCodeSchema,
+        destination: iataCodeSchema,
+        departureDate: z.string().min(4),
+        returnDate: z.string().min(4).optional(),
+        oneWay: z.boolean().optional(),
+        duration: z.string().optional(),
+        nonStop: z.boolean().optional(),
+        viewBy: z.string().optional(),
+        currencyCode: z.string().length(3).optional()
+    })
+    .strict();
+
+export const inspirationQuerySchema = z
+    .object({
+        origin: iataCodeSchema,
+        departureDate: z.string().min(4).optional(),
+        oneWay: z.boolean().optional(),
+        duration: z.string().optional(),
+        nonStop: z.boolean().optional(),
+        maxPrice: z.number().int().positive().optional(),
+        viewBy: z.enum(['COUNTRY', 'DATE', 'DESTINATION', 'DURATION', 'WEEK']).optional(),
+        currencyCode: z.string().length(3).optional()
+    })
+    .strict();
+
 

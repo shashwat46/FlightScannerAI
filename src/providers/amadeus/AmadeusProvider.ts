@@ -2,7 +2,7 @@ import Amadeus from 'amadeus';
 import { Offer, SearchParams } from '../../domain/types';
 import { SearchProvider } from '../SearchProvider';
 import { ProviderError, ValidationError } from '../../domain/errors';
-import { AdvancedSearchRequest } from '../contracts';
+import { AdvancedSearchRequest, PriceFlightOffersRequest, CheapestDatesQuery, CheapestDatesResult, InspirationSearchQuery, InspirationSearchResult } from '../contracts';
 import { mapOffer } from './map';
 
 function getEitherEnv(primary: string, fallback: string): string | null {
@@ -62,6 +62,75 @@ export class AmadeusProvider implements SearchProvider {
 			throw new ProviderError('Amadeus advanced search failed', { cause: e });
 		}
 	}
+
+	async priceFlightOffers(req: PriceFlightOffersRequest): Promise<Offer[]> {
+		try {
+			const res = await this.sdk.shopping.flightOffers.pricing.post(req as any);
+			const data = (res?.data?.flightOffers || res?.data || res?.result?.data?.flightOffers || []) as any[];
+			const defaultCurrency = data[0]?.price?.currency || 'USD';
+			return (data || []).map(mapOffer(defaultCurrency));
+		} catch (e: any) {
+			throw new ProviderError('Amadeus pricing failed', { cause: e });
+		}
+	}
+
+    async searchCheapestDates(params: CheapestDatesQuery): Promise<CheapestDatesResult> {
+        try {
+            const query: Record<string, string> = {
+                origin: params.origin,
+                destination: params.destination,
+                departureDate: params.departureDate,
+            };
+            if (params.returnDate) query.returnDate = params.returnDate;
+            if (typeof params.oneWay === 'boolean') query.oneWay = String(params.oneWay);
+            if (params.duration) query.duration = params.duration;
+            if (typeof params.nonStop === 'boolean') query.nonStop = String(params.nonStop);
+            if (params.viewBy) query.viewBy = params.viewBy;
+            const res = await this.sdk.shopping.flightDates.get(query);
+            const data = res?.data || [];
+            const items = (data as any[]).map((d: any) => ({
+                departureDate: d?.departureDate,
+                returnDate: d?.returnDate,
+                priceTotal: Number(d?.price?.total || 0),
+                flightOffersLink: d?.links?.flightOffers,
+            }));
+            const currency = (res?.meta?.currency || params.currencyCode || undefined) as string | undefined;
+            return { provider: this.name, currency, items, count: items.length };
+        } catch (e: any) {
+            throw new ProviderError('Amadeus cheapest dates failed', { cause: e });
+        }
+    }
+
+    async searchInspiration(params: InspirationSearchQuery): Promise<InspirationSearchResult> {
+        try {
+            const query: Record<string, string> = {
+                origin: params.origin
+            };
+            if (params.departureDate) query.departureDate = params.departureDate;
+            if (typeof params.oneWay === 'boolean') query.oneWay = String(params.oneWay);
+            if (params.duration) query.duration = params.duration;
+            if (typeof params.nonStop === 'boolean') query.nonStop = String(params.nonStop);
+            if (typeof params.maxPrice === 'number') query.maxPrice = String(Math.max(0, Math.floor(params.maxPrice)));
+            if (params.viewBy) query.viewBy = params.viewBy;
+            const res = await this.sdk.shopping.flightDestinations.get(query);
+            const data = res?.data || [];
+            const items = (data as any[]).map((d: any) => ({
+                origin: d?.origin,
+                destination: d?.destination,
+                departureDate: d?.departureDate,
+                returnDate: d?.returnDate,
+                priceTotal: Number(d?.price?.total || 0),
+                links: {
+                    flightDates: d?.links?.flightDates,
+                    flightOffers: d?.links?.flightOffers
+                }
+            }));
+            const currency = (res?.meta?.currency || params.currencyCode || undefined) as string | undefined;
+            return { provider: this.name, currency, items, count: items.length };
+        } catch (e: any) {
+            throw new ProviderError('Amadeus inspiration search failed', { cause: e });
+        }
+    }
 }
 
 function mapCabin(cabin: string): string {
