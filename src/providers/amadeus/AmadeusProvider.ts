@@ -43,6 +43,7 @@ export class AmadeusProvider implements SearchProvider {
 		};
 		if (params.returnDate) query.returnDate = params.returnDate;
 		if (params.cabin) query.travelClass = mapCabin(params.cabin);
+		if (params.currency) query.currencyCode = params.currency;
 
 		try {
 			const res = await this.sdk.shopping.flightOffersSearch.get(query);
@@ -141,7 +142,15 @@ export class AmadeusProvider implements SearchProvider {
             };
             if (params.currencyCode) query.currencyCode = params.currencyCode;
             if (typeof params.oneWay === 'boolean') query.oneWay = String(params.oneWay);
-            const res = await this.sdk.analytics.itineraryPriceMetrics.get(query);
+            // Amadeus SDK exposes snake_case for analytics resources
+            let res: any = null;
+            const metricsApi = (this.sdk.analytics as any)?.itinerary_price_metrics || (this.sdk.analytics as any)?.itineraryPriceMetrics;
+            if (metricsApi?.get) {
+                res = await metricsApi.get(query);
+            } else {
+                // Fallback: make raw client request (SDK v3.3 lacks this helper)
+                res = await this.sdk.client.get('/v1/analytics/itinerary-price-metrics', query);
+            }
             const first = Array.isArray(res?.data) ? (res.data as any[])[0] : undefined;
             const entries = Array.isArray(first?.priceMetrics)
                 ? (first.priceMetrics as any[])

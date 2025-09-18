@@ -1,8 +1,12 @@
-.bar { position: relative; height: 8px; display: flex; overflow: hidden; border-radius: 999px; background: #e5e7eb; max-width: 33%; }
-.zoneLow { background: #22c55e; }
-.zoneMid { background: #f59e0b; }
-.zoneHigh { background: #ef4444; flex: 1 1 auto; }
-.thumb { position: absolute; top: -3px; width: 12px; height: 12px; background: #fff; border: 2px solid #111827; border-radius: 999px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
-.labels { display: flex; justify-content: space-between; color: var(--color-muted); margin-top: 6px; font-size: 12px; max-width: 33%; }
+.wrapper { position: relative; }
+.barContainer { padding: 4px 0; }
+.bar { position: relative; height: 10px; border-radius: 999px; width: 100%; overflow: visible; }
+.thumb { position: absolute; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; background: #fff; border: 2px solid #111827; border-radius: 999px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); z-index: 10; }
+.quartileMarker { position: absolute; top: 0; width: 2px; height: 10px; background: rgba(255,255,255,0.8); z-index: 5; }
+.marker { position: absolute; top: -30px; }
+.markerLabel { background: #374151; color: white; padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: 600; white-space: nowrap; }
+.markerArrow { width: 0; height: 0; border-left: 4px solid transparent; border-right: 4px solid transparent; border-top: 4px solid #374151; margin: 0 auto; }
+.quartileLabels { position: relative; margin-top: 8px; }
+.quartileLabel { position: absolute; font-size: 11px; color: var(--color-muted); white-space: nowrap; }
 
 

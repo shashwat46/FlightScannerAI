@@ -1,0 +1,90 @@
+.insights {
+  max-width: 33%;
+  font-size: 14px;
+  line-height: 1.4;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.statusLine {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.statusText {
+  color: var(--color-text);
+}
+
+.statusBadge {
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+.statusBadge.low {
+  color: #065f46;
+  background-color: #d1fae5;
+}
+
+.statusBadge.typical {
+  color: #92400e;
+  background-color: #fef3c7;
+}
+
+.statusBadge.high {
+  color: #991b1b;
+  background-color: #fee2e2;
+}
+
+.priceBadge {
+  align-self: flex-start;
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.priceBadge.low {
+  color: #065f46;
+  background-color: #a7f3d0;
+}
+
+.priceBadge.high {
+  color: #991b1b;
+  background-color: #fca5a5;
+}
+
+.rangeText {
+  color: var(--color-muted);
+  font-size: 13px;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+.rangeText strong {
+  color: var(--color-text);
+  font-weight: 600;
+}
+
+.quartileSection {
+  margin-top: 8px;
+}
+
+.errorState {
+  padding: 8px 12px;
+  background: #f3f4f6;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  color: var(--color-muted);
+  font-size: 13px;
+  text-align: center;
+}

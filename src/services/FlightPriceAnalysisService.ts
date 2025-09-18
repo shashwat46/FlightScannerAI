@@ -15,20 +15,36 @@ export class FlightPriceAnalysisService {
   }
 
   async getMetrics(params: ItineraryPriceMetricsQuery): Promise<ItineraryPriceMetricsResult> {
-    const redis = await getRedis();
-    const cacheKey = this.buildCacheKey(params);
-    const cached = await redis.get(cacheKey);
-    if (cached) {
-      try {
-        return JSON.parse(cached) as ItineraryPriceMetricsResult;
-      } catch {}
+    let redis: import('redis').RedisClientType | null = null;
+    let cacheKey: string | null = null;
+    try {
+      redis = await getRedis();
+      cacheKey = this.buildCacheKey(params);
+      const cached = await redis.get(cacheKey);
+      if (cached) {
+        try {
+          return JSON.parse(cached) as ItineraryPriceMetricsResult;
+        } catch {
+          // ignore JSON parse errors
+        }
+      }
+    } catch (err) {
+      // Redis is optional – log and continue without cache
+      // eslint-disable-next-line no-console
+      console.warn('Redis unavailable – continuing without cache', (err as any)?.message || err);
     }
 
     if (typeof this.provider.getItineraryPriceMetrics !== 'function') {
       throw new ConfigError('Itinerary price metrics not supported by provider');
     }
     const result = await this.provider.getItineraryPriceMetrics(params);
-    await redis.set(cacheKey, JSON.stringify(result), { EX: this.cacheTtlSeconds });
+    if (redis && cacheKey) {
+      try {
+        await redis.set(cacheKey, JSON.stringify(result), { EX: this.cacheTtlSeconds });
+      } catch {
+        // ignore cache set errors
+      }
+    }
     return result;
   }
 

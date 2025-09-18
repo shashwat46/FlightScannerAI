@@ -51,9 +51,9 @@ export default function FilterBar(_props: Props) {
   }
 
   return (
-    <div className={styles.panel}>
+    <div className={`${styles.panel} u-card-tw`}>
       <form onSubmit={onSubmit}>
-        <div className={styles.rowTop}>
+        <div className={`${styles.rowTop} flex items-center gap-2` }>
           <div className={styles.pill}><Repeat size={16} /><select className={styles['filter-bar__select--bare']} value={tripType} onChange={(e) => setTripType(e.target.value as any)}>
             <option value="one_way">One-way</option>
             <option value="round_trip">Round-trip</option>
@@ -66,9 +66,9 @@ export default function FilterBar(_props: Props) {
           </select></div>
         </div>
 
-        <div className={styles.rowBottom}>
-          <div className={styles.field}><span className={styles.label}>Departing from</span><div className={styles.inputPill}><MapPin size={16} /><input className={styles['filter-bar__input--bare']} value={origin} placeholder="Origin (IATA)" name="origin" onChange={(e) => setOrigin(e.target.value.toUpperCase())} /></div></div>
-          <div className={styles.field}><span className={styles.label}>Going to</span><div className={styles.inputPill}><MapPin size={16} /><input className={styles['filter-bar__input--bare']} value={destination} placeholder="Destination (IATA or empty)" name="destination" onChange={(e) => setDestination(e.target.value.toUpperCase())} /></div></div>
+        <div className={`${styles.rowBottom} grid grid-cols-1 md:grid-cols-12 gap-2` }>
+          <div className={styles.field}><span className={styles.label}>Departing from</span><div className={`${styles.inputPill} flex items-center gap-2`}><MapPin size={16} /><input className={styles['filter-bar__input--bare']} value={origin} placeholder="Origin (IATA)" name="origin" onChange={(e) => setOrigin(e.target.value.toUpperCase())} /></div></div>
+          <div className={styles.field}><span className={styles.label}>Going to</span><div className={`${styles.inputPill} flex items-center gap-2`}><MapPin size={16} /><input className={styles['filter-bar__input--bare']} value={destination} placeholder="Destination (IATA or empty)" name="destination" onChange={(e) => setDestination(e.target.value.toUpperCase())} /></div></div>
           <div className={styles.field}><span className={styles.label}>Dates & Duration</span>
             <button
               type="button"
@@ -78,14 +78,14 @@ export default function FilterBar(_props: Props) {
                 if (typeof (el as any).showPicker === 'function') (el as any).showPicker();
                 else el.click();
               }}
-              className={styles.inputPill}
+              className={`${styles.inputPill} flex items-center gap-2`}
               style={{ width: '100%' }}
             >
               <Calendar size={16} />
               <input id="departDatePicker" className={styles['filter-bar__input--bare']} type="date" value={departDate} name="departDate" onChange={(e) => setDepartDate(e.target.value)} />
             </button>
           </div>
-          <div className={styles.field}><span className={styles.label}>Travelers & class</span><div className={styles.combo}> <div className={styles.inputPill}><User size={16} /><input className={styles['filter-bar__input--bare']} style={{ flex: 1 }} type="number" min={1} max={9} value={travelers} onChange={(e) => setTravelers(Math.max(1, Math.min(9, Number(e.target.value))))} placeholder="1" /></div>
+          <div className={styles.field}><span className={styles.label}>Travelers & class</span><div className={`${styles.combo} flex gap-2`}> <div className={`${styles.inputPill} flex items-center gap-2`}><User size={16} /><input className={styles['filter-bar__input--bare']} style={{ flex: 1 }} type="number" min={1} max={9} value={travelers} onChange={(e) => setTravelers(Math.max(1, Math.min(9, Number(e.target.value))))} placeholder="1" /></div>
             <select className={styles['filter-bar__select']} style={{ flex: 1 }} value={cabin} onChange={(e) => setCabin(e.target.value as any)}>
               <option value="economy">Economy</option>
               <option value="premium_economy">Premium Economy</option>

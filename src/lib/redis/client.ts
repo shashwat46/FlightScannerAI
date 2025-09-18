@@ -1,6 +1,12 @@
 import { createClient, RedisClientType } from 'redis';
 
-let client: RedisClientType | null = null;
+// Use a global variable to hold the singleton or in-flight promise across hot-reloads / serverless invocations
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-ignore
+const globalForRedis = global as unknown as { __redisClient__?: RedisClientType; __redisPromise__?: Promise<RedisClientType> };
+
+let client: RedisClientType | null = globalForRedis.__redisClient__ || null;
+let clientPromise: Promise<RedisClientType> | null = globalForRedis.__redisPromise__ || null;
 
 function getEnv(name: string): string {
     const value = process.env[name];
@@ -12,6 +18,7 @@ function getEnv(name: string): string {
 
 export async function getRedis(): Promise<RedisClientType> {
     if (client) return client;
+    if (clientPromise) return clientPromise;
 
     const host = getEnv('REDIS_HOST');
     const portRaw = getEnv('REDIS_PORT');
@@ -40,8 +47,16 @@ export async function getRedis(): Promise<RedisClientType> {
         console.error('Redis Client Error', err);
     });
 
-    await client.connect();
-    return client;
+    clientPromise = (async () => {
+        if (!client.isOpen) {
+            await client.connect();
+        }
+        globalForRedis.__redisClient__ = client;
+        return client;
+    })();
+
+    globalForRedis.__redisPromise__ = clientPromise;
+    return clientPromise;
 }
 
 export async function disconnectRedis(): Promise<void> {

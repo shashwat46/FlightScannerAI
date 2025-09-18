@@ -1,16 +1,16 @@
 "use client";
 import React from 'react';
 import { UiDeal } from '../../../schemas/viewModels';
-import Gauge from '../../ui/Gauge';
 import Button from '../../ui/Button';
+import { formatCurrency } from '../../ui/currency';
 import styles from './styles.module.css';
 import RingScore from '../../ui/RingScore';
-import PriceQuartileBar from '../../ui/PriceQuartileBar';
+import PriceInsights from '../../ui/PriceInsights';
 
 export default function DealCard({ aiDealScore, route, dates, flight, pricing, priceHistory, checkoutSuggestion, cta, expanded, extras, breakdown }: UiDeal & { expanded?: boolean; extras?: any; breakdown?: any }) {
   const [isExpanded, setIsExpanded] = React.useState(Boolean(expanded));
   return (
-    <article className={`u-card ${styles['deal-card']}`}>
+    <article className={`u-card ${styles['deal-card']} u-card-tw`}>
       <header className={`${styles['deal-card__header']} ${styles['deal-card__topRow']}`}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <CarrierBadge code={(flight as any)?.airline?.carrierCode || '??'} name={(flight as any)?.airline?.name} />
@@ -23,12 +23,12 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
         </div>
       </header>
 
-      <div className={styles['deal-card__grid']}>
+      <div className={`${styles['deal-card__grid']} grid gap-md` }>
         <div className={styles['deal-card__prices']}>
-          <div className={styles['deal-card__priceRow']}>
+          <div className={`${styles['deal-card__priceRow']} flex items-center justify-between`}>
             <div>
               <div className={styles['deal-card__price-label']}>Deal price</div>
-              <div className={styles['deal-card__price']}>{pricing.currency || 'USD'} {pricing.dealPrice}</div>
+              <div className={styles['deal-card__price']}>{formatCurrency(pricing.dealPrice, pricing.currency)}</div>
             </div>
             {typeof aiDealScore === 'number' && (
               <div className={styles['deal-card__priceScore']}>
@@ -39,7 +39,7 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
           {typeof pricing.regularPrice === 'number' && (
             <div>
               <div className={styles['deal-card__price-label']}>Regular price</div>
-              <div className={styles['deal-card__muted']}>{pricing.currency || 'USD'} {pricing.regularPrice}</div>
+              <div className={styles['deal-card__muted']}>{formatCurrency(pricing.regularPrice, pricing.currency)}</div>
             </div>
           )}
           {typeof pricing.priceDiff === 'number' && (
@@ -75,27 +75,15 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
         )}
       </div>
 
-      <div className={styles['deal-card__sliders']}>
+      <div className={`${styles['deal-card__sliders']} flex flex-col items-end gap-2` }>
         {isExpanded && (
-          <>
-            {checkoutSuggestion && typeof checkoutSuggestion.buyProbability === 'number' && (
-              <div>
-                <div className={styles['deal-card__section-title']}>AI checkout suggestion</div>
-                <Gauge value={checkoutSuggestion.buyProbability} min={0} max={1} compact />
-                {checkoutSuggestion.message && <div className={styles['deal-card__hint']}>{checkoutSuggestion.message}</div>}
-              </div>
-            )}
-            <div>
-              <div className={styles['deal-card__section-title']}>Historical price quartile</div>
-              <PriceQuartileBar from={route.from.iata} to={route.to.iata} depart={dates?.depart} currency={pricing.currency} currentPrice={pricing.dealPrice} oneWay={route.tripType === 'one_way'} />
-            </div>
-          </>
+          <PriceInsights from={route.from.iata} to={route.to.iata} depart={dates?.depart} currency={pricing.currency} currentPrice={pricing.dealPrice} oneWay={route.tripType === 'one_way'} priceHistory={priceHistory} />
         )}
       </div>
 
-      <footer className={styles['deal-card__footer']}>
+      <footer className={`${styles['deal-card__footer']} flex items-center justify-end gap-2`}>
         <Button label={isExpanded ? 'Hide details' : 'View insights'} variant="secondary" onClick={() => setIsExpanded((v) => !v)} />
-        {cta?.primary && <Button label={cta.primary.label} />}
+        {cta?.primary && <Button label={cta.primary.label.replace(/^[A-Z]{3}\s/, formatCurrency(pricing.dealPrice, pricing.currency))} />}
       </footer>
     </article>
   );

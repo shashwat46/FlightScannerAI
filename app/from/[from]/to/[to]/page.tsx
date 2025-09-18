@@ -4,6 +4,7 @@ import FilterBar from 'src/frontend/components/composite/FilterBar';
 import DealCard from 'src/frontend/components/composite/DealCard';
 import SectionHeader from 'src/frontend/components/composite/SectionHeader';
 import Pagination from 'src/frontend/components/ui/Pagination';
+import { createDefaultFlightPriceAnalysisService } from '../../../../../src/services/FlightPriceAnalysisService';
 
 interface SearchResponse { offers: Array<any>; }
 
@@ -16,14 +17,47 @@ export default async function DestinationPage({ params, searchParams }: { params
   const protocol = process.env.VERCEL ? 'https' : 'http';
   const base = process.env.NEXT_PUBLIC_BASE_URL || (host ? `${protocol}://${host}` : '');
   const data = await getJson<SearchResponse>(`${base}/api/search?${query.toString()}`).catch(() => ({ offers: [] }) as SearchResponse);
+  
+  // Fetch price metrics ONCE for the route/date - shared by all cards
+  let sharedPriceHistory = undefined;
+  try {
+    const priceService = createDefaultFlightPriceAnalysisService();
+    const metrics = await priceService.getMetrics({
+      originIataCode: origin,
+      destinationIataCode: destination,
+      departureDate: departDate,
+      currencyCode: 'USD',
+      oneWay: true
+    });
+    
+    if (metrics?.priceMetrics && Array.isArray(metrics.priceMetrics) && metrics.priceMetrics.length >= 5) {
+      // Sort by quartile ranking order: MINIMUM, FIRST, MEDIUM, THIRD, MAXIMUM
+      const rankingOrder = { 'MINIMUM': 0, 'FIRST': 1, 'MEDIUM': 2, 'THIRD': 3, 'MAXIMUM': 4 };
+      const sorted = metrics.priceMetrics
+        .sort((a, b) => (rankingOrder[a.quartileRanking] || 2) - (rankingOrder[b.quartileRanking] || 2))
+        .map(m => m.amount);
+      
+      if (sorted.length >= 5) {
+        sharedPriceHistory = {
+          quartiles: sorted,
+          low: sorted[0],
+          high: sorted[4],
+          current: undefined
+        };
+      }
+    }
+  } catch (error) {
+    console.error('Failed to fetch price metrics for route:', error);
+  }
+
   const page = Number(searchParams.page || '1');
   const pageSize = 10;
   const offers = data.offers || [];
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
   const slice = offers.slice(start, end);
-  const uiTop = slice[0] ? mapOfferToUiDeal(slice[0]) : null;
-  const rest = slice.slice(1).map((o) => mapOfferToUiDeal(o));
+  const uiTop = slice[0] ? mapOfferToUiDeal(slice[0], sharedPriceHistory) : null;
+  const rest = slice.slice(1).map((o) => mapOfferToUiDeal(o, sharedPriceHistory));
   const totalPages = Math.max(1, Math.ceil(offers.length / pageSize));
   return (
     <main className="container page-bg">
@@ -40,7 +74,7 @@ export default async function DestinationPage({ params, searchParams }: { params
   );
 }
 
-function mapOfferToUiDeal(o: any) {
+function mapOfferToUiDeal(o: any, priceHistory?: any) {
   const code = o.outbound?.segments?.[0]?.marketingCarrier || '';
   return {
     dealId: o.id,
@@ -49,7 +83,7 @@ function mapOfferToUiDeal(o: any) {
     dates: { depart: o.outbound?.segments?.[0]?.departureTimeUtc },
     flight: { airline: { name: lookupCarrierName(code), reputationScore: undefined as any, carrierCode: code }, stops: o.outbound?.stops || 0, isDirect: (o.outbound?.stops || 0) === 0, durationMinutes: o.outbound?.durationMinutes },
     pricing: { dealPrice: o.price?.amount, currency: o.price?.currency },
-    priceHistory: undefined,
+    priceHistory,
     checkoutSuggestion: { buyProbability: typeof o.score === 'number' ? o.score / 100 : undefined },
     cta: { primary: { label: `Book trip for ${o.price?.currency} ${o.price?.amount}`, action: 'deeplink', deeplinkUrl: o.bookingUrl } },
     extras: o.extras,
