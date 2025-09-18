@@ -19,7 +19,7 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
           <strong>{route.from.iata}</strong> → <strong>{route.to.iata || 'ANY'}</strong>
         </div>
         <div className={styles['deal-card__topRight']}>
-          {dates?.depart && <span className={styles['deal-card__date']}>{new Date(dates.depart).toLocaleDateString()}</span>}
+          {dates?.depart && <span className={styles['deal-card__date']}>{new Date(dates.depart).toLocaleDateString()} | {extras?.departureTimeUtc ? new Date(extras.departureTimeUtc).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : null}</span>}
         </div>
       </header>
 
@@ -61,25 +61,31 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
         {isExpanded && (
           <div style={{ gridColumn: '1 / -1' }}>
             <div className={styles['divider']} />
-            <div className={styles['deal-card__section-title']}>What’s included</div>
-            <div className={styles['deal-card__included']}>
-              <span className={styles['badge']}>Cabin: {(extras && extras.fareBrandLabel) || 'Economy'}</span>
-              {extras?.fareClass && <span className={styles['badge']}>Class: {extras.fareClass}</span>}
-              {extras?.mealIncluded && <span className={styles['chip']}><span className={styles['icon']}>🍽️</span> Meal included</span>}
-              {extras?.mealChargeable && !extras?.mealIncluded && <span className={styles['chip']}><span className={styles['icon']}>💲</span> Meal available</span>}
-              {extras?.refundable !== undefined && <span className={styles['chip']}><span className={styles['icon']}>↺</span> {extras.refundable ? 'Refundable' : 'Non‑refundable'}</span>}
-              {extras?.changeable !== undefined && <span className={styles['chip']}><span className={styles['icon']}>✎</span> {extras.changeable ? 'Changeable' : 'No changes'}</span>}
-              {extras?.includedCheckedBagsOnly && <span className={styles['chip']}><span className={styles['icon']}>🧳</span> Checked bag</span>}
+            
+            {/* Two-column layout for expanded content */}
+            <div className={styles['deal-card__expandedGrid']}>
+              <div>
+                <div className={styles['deal-card__section-title']}>What's included</div>
+                <div className={styles['deal-card__included']}>
+                  <span className={styles['badge']}>Cabin: {(extras && extras.fareBrandLabel) || 'Economy'}</span>
+                  {extras?.fareClass && <span className={styles['badge']}>Class: {extras.fareClass}</span>}
+                  {extras?.numberOfBookableSeats && <span className={styles['badge']}>{extras.numberOfBookableSeats} seats left</span>}
+                  {extras?.mealIncluded && <span className={styles['chip']}><span className={styles['icon']}>🍽️</span> Meal included</span>}
+                  {extras?.mealChargeable && !extras?.mealIncluded && <span className={styles['chip']}><span className={styles['icon']}>💲</span> Meal available</span>}
+                  {extras?.refundable !== undefined && <span className={styles['chip']}><span className={styles['icon']}>↺</span> {extras.refundable ? 'Refundable' : 'Non‑refundable'}</span>}
+                  {extras?.changeable !== undefined && <span className={styles['chip']}><span className={styles['icon']}>✎</span> {extras.changeable ? 'Changeable' : 'No changes'}</span>}
+                  {extras?.includedCheckedBagsOnly && <span className={styles['chip']}><span className={styles['icon']}>🧳</span> Checked bag</span>}
+                </div>
+              </div>
+              
+              <div>
+                <PriceInsights from={route.from.iata} to={route.to.iata} depart={dates?.depart} currency={pricing.currency} currentPrice={pricing.dealPrice} oneWay={route.tripType === 'one_way'} priceHistory={priceHistory} />
+              </div>
             </div>
           </div>
         )}
       </div>
 
-      <div className={`${styles['deal-card__sliders']} flex flex-col items-end gap-2` }>
-        {isExpanded && (
-          <PriceInsights from={route.from.iata} to={route.to.iata} depart={dates?.depart} currency={pricing.currency} currentPrice={pricing.dealPrice} oneWay={route.tripType === 'one_way'} priceHistory={priceHistory} />
-        )}
-      </div>
 
       <footer className={`${styles['deal-card__footer']} flex items-center justify-end gap-2`}>
         <Button label={isExpanded ? 'Hide details' : 'View insights'} variant="secondary" onClick={() => setIsExpanded((v) => !v)} />

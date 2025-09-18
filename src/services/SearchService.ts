@@ -56,14 +56,19 @@ export class SearchService {
 		const cached = await redis.get(cacheKey);
 		if (cached) {
 			try {
-				const parsed = JSON.parse(cached) as Offer[];
-				return parsed;
+				let parsed = JSON.parse(cached) as Offer[];
+				const deduped = dedupOffers(parsed);
+				if (deduped.length !== parsed.length) {
+					await redis.set(cacheKey, JSON.stringify(deduped), { EX: this.cacheTtlSeconds });
+				}
+				return deduped;
 			} catch {
 				// fall through to refetch
 			}
 		}
 
-		const offers = await this.provider.search(params);
+		let offers = await this.provider.search(params);
+		offers = dedupOffers(offers);
 		await redis.set(cacheKey, JSON.stringify(offers), { EX: this.cacheTtlSeconds });
 
 		if (this.provider instanceof AmadeusProvider) {
@@ -107,7 +112,12 @@ export class SearchService {
 		const cached = await redis.get(cacheKey);
 		if (cached) {
 			try {
-				return JSON.parse(cached) as Offer[];
+				let parsed = JSON.parse(cached) as Offer[];
+				const deduped = dedupOffers(parsed);
+				if (deduped.length !== parsed.length) {
+					await redis.set(cacheKey, JSON.stringify(deduped), { EX: this.cacheTtlSeconds });
+				}
+				return deduped;
 			} catch {
 				// continue
 			}
@@ -121,7 +131,7 @@ export class SearchService {
 			if (!simple) {
 				throw new Error('Advanced search not supported by provider');
 			}
-			offers = await this.provider.search(simple);
+			offers = dedupOffers(await this.provider.search(simple));
 		}
 
 		await redis.set(cacheKey, JSON.stringify(offers), { EX: this.cacheTtlSeconds });
@@ -173,6 +183,30 @@ export function createDefaultSearchService(): SearchService {
 	const hasAmadeus = Boolean((process.env.AMADEUS_CLIENT_ID || process.env.AMADEUS_APIKEY) && (process.env.AMADEUS_CLIENT_SECRET || process.env.AMADEUS_APISECRET));
 	const provider = hasAmadeus ? new AmadeusProvider() : new MockProvider();
 	return new SearchService(provider);
+}
+
+function dedupOffers<T extends Offer>(offers: T[]): T[] {
+    const seen = new Map<string, T>();
+    for (const o of offers) {
+        const sig = buildSig(o);
+        if (!seen.has(sig)) seen.set(sig, o);
+    }
+    return Array.from(seen.values());
+}
+
+function buildSig(o: Offer): string {
+    const outSeg = o.outbound.segments[0];
+    const keyParts = [
+        outSeg.flightNumber,
+        outSeg.departureTimeUtc,
+        o.inbound?.segments?.[0]?.departureTimeUtc || '',
+        o.price.amount,
+        o.extras?.fareBrand || '',
+        o.extras?.fareClass || '',
+        o.extras?.refundable ? 'R' : '',
+        o.cabin
+    ];
+    return keyParts.join('|');
 }
 
 

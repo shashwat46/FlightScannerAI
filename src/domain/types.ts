@@ -79,8 +79,14 @@ export interface Offer {
 		fareBrand?: string;
 		fareBrandLabel?: string;
 		mealIncluded?: boolean;
+		mealChargeable?: boolean;
 		refundable?: boolean;
 		changeable?: boolean;
+		fareClass?: string;
+		outboundLayoverMinutes?: number;
+		inboundLayoverMinutes?: number;
+		departureTimeUtc?: string;
+		arrivalTimeUtc?: string;
 	};
 }
 

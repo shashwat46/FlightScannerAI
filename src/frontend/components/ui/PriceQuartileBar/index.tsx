@@ -72,7 +72,7 @@ export default function PriceQuartileBar({ from, to, depart, currency = 'USD', c
     );
   }
 
-  // Use exact min–max range from Amadeus quartiles
+  // Use min-max range from properly sorted quartiles
   const range = max && min && max > min ? max - min : undefined;
 
   const clamp = (v: number) => {
@@ -80,16 +80,10 @@ export default function PriceQuartileBar({ from, to, depart, currency = 'USD', c
     return Math.max(0, Math.min(1, (v - min) / range));
   };
 
-  // Calculate positions relative to min/max range  
+  // Calculate positions relative to min-max range  
   const currentPct = clamp(currentPrice);
-  let q1Pct = clamp(q1 ?? min ?? 0);
-  let q3Pct = clamp(q3 ?? max ?? 1);
-
-  // Ensure visible green zone if there is a difference between min and q1
-  if (q1 && min && q1 > min && q1Pct < 0.1) {
-    q1Pct = 0.2; // Minimum 20% for green
-    q3Pct = Math.min(1, q3Pct + (0.2 - q1Pct)); // Adjust Q3 accordingly
-  }
+  const q1Pct = clamp(q1 ?? min ?? 0);
+  const q3Pct = clamp(q3 ?? max ?? 1);
 
   // Google Flights style: Green (0 to Q1), Yellow (Q1 to Q3), Red (Q3 to 100%)
   const gradient = `linear-gradient(to right, #22c55e 0%, #22c55e ${q1Pct * 100}%, #f59e0b ${q1Pct * 100}%, #f59e0b ${q3Pct * 100}%, #ef4444 ${q3Pct * 100}%, #ef4444 100%)`;
@@ -115,12 +109,12 @@ export default function PriceQuartileBar({ from, to, depart, currency = 'USD', c
         <div className={styles.markerArrow} />
       </div>
       
-      {/* Q1 and Q3 labels */}
+      {/* Q1 and Q3 labels positioned at exact gradient boundaries */}
       <div className={styles.quartileLabels}>
-        <div className={styles.quartileLabel} style={{ left: `calc(${q1Pct * 100}% - 30px)` }}>
+        <div className={styles.quartileLabel} style={{ left: `calc(${q1Pct * 100}% - 20px)` }}>
           {formatCurrency(q1 ?? 0, currency)}
         </div>
-        <div className={styles.quartileLabel} style={{ left: `calc(${q3Pct * 100}% - 30px)` }}>
+        <div className={styles.quartileLabel} style={{ left: `calc(${q3Pct * 100}% - 20px)` }}>
           {formatCurrency(q3 ?? 0, currency)}
         </div>
       </div>

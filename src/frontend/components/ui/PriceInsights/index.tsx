@@ -37,18 +37,12 @@ export default function PriceInsights({ from, to, depart, currency = 'USD', curr
         <>
           <div className={styles.header}>
             <div className={styles.statusLine}>
-              <span className={styles.statusText}>Prices are currently </span>
+              <span className={styles.statusText}>This price is </span>
               <span className={`${styles.statusBadge} ${styles[status.level]}`}>
                 {status.level}
               </span>
               <span className={styles.statusText}> for your search</span>
             </div>
-            
-            {status.badge && (
-              <div className={`${styles.priceBadge} ${styles[status.level]}`}>
-                {formatCurrency(currentPrice, currency)} is {status.level}
-              </div>
-            )}
           </div>
 
           
@@ -82,6 +76,7 @@ function computePriceStatus(current: number, quartiles: [number, number, number,
   if (!quartiles) return { level: 'typical', badge: false };
   
   const [min, q1, median, q3, max] = quartiles;
+  
   
   if (current < q1) return { level: 'low', badge: true };
   if (current > q3) return { level: 'high', badge: true };

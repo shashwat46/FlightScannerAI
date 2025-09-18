@@ -44,6 +44,10 @@ export function mapOffer(defaultCurrency: string) {
 		const validatingAirlineCodes = Array.isArray(o?.validatingAirlineCodes) ? o.validatingAirlineCodes : undefined;
 		const priceBase = o?.price?.base ? Number(o.price.base) : undefined;
 		const taxes = priceBase != null ? Math.max(0, Number(o?.price?.grandTotal || o?.price?.total || 0) - priceBase) : undefined;
+		const outboundLayover = calcLayoverMinutes(segs);
+		const inboundLayover = segs2 ? calcLayoverMinutes(segs2) : undefined;
+		const firstSeg = segs[0];
+		const lastSegOut = segs[segs.length - 1];
 
 		const baggage = aggregateBaggage(o);
 		const fareMeta = aggregateFareMeta(o);
@@ -65,6 +69,10 @@ export function mapOffer(defaultCurrency: string) {
 				includedCheckedBagsOnly: includedBagsOnly,
 				priceBase,
 				taxes,
+                outboundLayoverMinutes: outboundLayover,
+                inboundLayoverMinutes: inboundLayover,
+                departureTimeUtc: firstSeg?.departureTimeUtc,
+                arrivalTimeUtc: lastSegOut?.arrivalTimeUtc,
                 fareBrand: fareMeta.fareBrand,
                 fareBrandLabel: fareMeta.fareBrandLabel,
                 mealIncluded: fareMeta.mealIncluded,
@@ -76,6 +84,17 @@ export function mapOffer(defaultCurrency: string) {
 			baggage
 		};
 	};
+}
+
+function calcLayoverMinutes(segments: Segment[]): number | undefined {
+    if (segments.length < 2) return undefined;
+    let total = 0;
+    for (let i = 0; i < segments.length - 1; i++) {
+        const a = new Date(segments[i].arrivalTimeUtc).getTime();
+        const b = new Date(segments[i + 1].departureTimeUtc).getTime();
+        if (!isNaN(a) && !isNaN(b) && b > a) total += (b - a) / 60000;
+    }
+    return total || undefined;
 }
 
 function aggregateBaggage(o: any): BaggageAllowance | undefined {

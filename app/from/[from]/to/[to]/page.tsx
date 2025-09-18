@@ -37,13 +37,17 @@ export default async function DestinationPage({ params, searchParams }: { params
         .sort((a, b) => (rankingOrder[a.quartileRanking] || 2) - (rankingOrder[b.quartileRanking] || 2))
         .map(m => m.amount);
       
+      // Double-check: sort by actual amounts as fallback
+      const numericSorted = [...sorted].sort((a, b) => a - b);
+      
       if (sorted.length >= 5) {
         sharedPriceHistory = {
-          quartiles: sorted,
-          low: sorted[0],
-          high: sorted[4],
+          quartiles: numericSorted, // Use numeric sort to ensure proper order
+          low: numericSorted[0],
+          high: numericSorted[4],
           current: undefined
         };
+        console.log('Price metrics sorted:', { original: sorted, numericSorted });
       }
     }
   } catch (error) {
