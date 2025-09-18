@@ -109,3 +109,14 @@ export const inspirationQuerySchema = z
     .strict();
 
 
+export const itineraryPriceMetricsQuerySchema = z
+    .object({
+        originIataCode: iataCodeSchema,
+        destinationIataCode: iataCodeSchema,
+        departureDate: isoDateSchema,
+        currencyCode: z.string().length(3).optional(),
+        oneWay: z.boolean().optional()
+    })
+    .strict();
+
+

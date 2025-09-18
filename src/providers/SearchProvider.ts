@@ -1,5 +1,5 @@
 import { Offer, SearchParams } from '../domain/types';
-import { AdvancedSearchRequest, PriceFlightOffersRequest, CheapestDatesQuery, CheapestDatesResult, InspirationSearchQuery, InspirationSearchResult } from './contracts';
+import { AdvancedSearchRequest, PriceFlightOffersRequest, CheapestDatesQuery, CheapestDatesResult, InspirationSearchQuery, InspirationSearchResult, ItineraryPriceMetricsQuery, ItineraryPriceMetricsResult } from './contracts';
 
 export interface SearchProvider {
 	name: string;
@@ -8,6 +8,7 @@ export interface SearchProvider {
 	priceFlightOffers?(req: PriceFlightOffersRequest): Promise<Offer[]>;
     searchCheapestDates?(params: CheapestDatesQuery): Promise<CheapestDatesResult>;
 	searchInspiration?(params: InspirationSearchQuery): Promise<InspirationSearchResult>;
+    getItineraryPriceMetrics?(params: ItineraryPriceMetricsQuery): Promise<ItineraryPriceMetricsResult>;
 }
 
 

@@ -2,7 +2,7 @@ import Amadeus from 'amadeus';
 import { Offer, SearchParams } from '../../domain/types';
 import { SearchProvider } from '../SearchProvider';
 import { ProviderError, ValidationError } from '../../domain/errors';
-import { AdvancedSearchRequest, PriceFlightOffersRequest, CheapestDatesQuery, CheapestDatesResult, InspirationSearchQuery, InspirationSearchResult } from '../contracts';
+import { AdvancedSearchRequest, PriceFlightOffersRequest, CheapestDatesQuery, CheapestDatesResult, InspirationSearchQuery, InspirationSearchResult, ItineraryPriceMetricsQuery, ItineraryPriceMetricsResult } from '../contracts';
 import { mapOffer } from './map';
 
 function getEitherEnv(primary: string, fallback: string): string | null {
@@ -129,6 +129,38 @@ export class AmadeusProvider implements SearchProvider {
             return { provider: this.name, currency, items, count: items.length };
         } catch (e: any) {
             throw new ProviderError('Amadeus inspiration search failed', { cause: e });
+        }
+    }
+
+    async getItineraryPriceMetrics(params: ItineraryPriceMetricsQuery): Promise<ItineraryPriceMetricsResult> {
+        try {
+            const query: Record<string, string> = {
+                originIataCode: params.originIataCode,
+                destinationIataCode: params.destinationIataCode,
+                departureDate: params.departureDate
+            };
+            if (params.currencyCode) query.currencyCode = params.currencyCode;
+            if (typeof params.oneWay === 'boolean') query.oneWay = String(params.oneWay);
+            const res = await this.sdk.analytics.itineraryPriceMetrics.get(query);
+            const first = Array.isArray(res?.data) ? (res.data as any[])[0] : undefined;
+            const entries = Array.isArray(first?.priceMetrics)
+                ? (first.priceMetrics as any[])
+                : [];
+            const currencyCode = (first?.currencyCode || params.currencyCode || 'USD') as string;
+            return {
+                provider: this.name,
+                originIataCode: params.originIataCode,
+                destinationIataCode: params.destinationIataCode,
+                departureDate: params.departureDate,
+                currencyCode,
+                oneWay: Boolean(first?.oneWay ?? params.oneWay ?? false),
+                priceMetrics: entries.map((e: any) => ({
+                    amount: Number(e?.amount || 0),
+                    quartileRanking: String(e?.quartileRanking || 'MEDIUM') as any
+                }))
+            };
+        } catch (e: any) {
+            throw new ProviderError('Amadeus itinerary price metrics failed', { cause: e });
         }
     }
 }

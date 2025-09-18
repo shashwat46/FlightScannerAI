@@ -10,7 +10,7 @@ interface InspirationResponse { items: Array<{ origin: string; destination: stri
 export default async function AnywherePage({ params, searchParams }: { params: { from: string }; searchParams: Record<string, string> }) {
   const origin = params.from.toUpperCase();
   const departDate = searchParams.departDate || new Date().toISOString().slice(0, 10);
-  const query = new URLSearchParams({ origin, departureDate: departDate });
+  const query = new URLSearchParams({ origin, departureDate: departDate, currencyCode: 'USD' });
   const host = headers().get('host');
   const protocol = process.env.VERCEL ? 'https' : 'http';
   const base = process.env.NEXT_PUBLIC_BASE_URL || (host ? `${protocol}://${host}` : '');

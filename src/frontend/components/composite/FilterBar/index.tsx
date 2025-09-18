@@ -2,7 +2,7 @@
 import React from 'react';
 import Button from '../../ui/Button';
 import styles from './styles.module.css';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter, useSearchParams, useParams } from 'next/navigation';
 import { Repeat, Route as RouteIcon, Calendar, User, MapPin } from 'lucide-react';
 
 interface Props {
@@ -14,13 +14,24 @@ interface Props {
 export default function FilterBar(_props: Props) {
   const router = useRouter();
   const sp = useSearchParams();
-  const [origin, setOrigin] = React.useState((sp.get('origin') || '').toUpperCase());
-  const [destination, setDestination] = React.useState((sp.get('destination') || '').toUpperCase());
+  const routeParams = useParams() as { from?: string; to?: string };
+  const [origin, setOrigin] = React.useState(((sp.get('origin') || routeParams?.from || '') as string).toUpperCase());
+  const [destination, setDestination] = React.useState(((sp.get('destination') || routeParams?.to || '') as string).toUpperCase());
   const [departDate, setDepartDate] = React.useState(sp.get('departDate') || '');
   const [tripType, setTripType] = React.useState<'one_way' | 'round_trip'>('one_way');
   const [stops, setStops] = React.useState<'any' | 'direct' | 'max_1' | 'max_2'>('any');
   const [travelers, setTravelers] = React.useState<number>(1);
   const [cabin, setCabin] = React.useState<'economy' | 'premium_economy' | 'business' | 'first'>('economy');
+
+  // Sync state with URL when the user navigates via links or pagination
+  React.useEffect(() => {
+    const o = (sp.get('origin') || routeParams?.from || '').toUpperCase();
+    const d = (sp.get('destination') || routeParams?.to || '').toUpperCase();
+    const dd = sp.get('departDate') || '';
+    setOrigin(o);
+    setDestination(d);
+    setDepartDate(dd);
+  }, [sp, routeParams?.from, routeParams?.to]);
 
   function onSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -29,6 +40,7 @@ export default function FilterBar(_props: Props) {
     if (from.length !== 3) return;
     const query = new URLSearchParams();
     if (departDate) query.set('departDate', departDate);
+    query.set('currency', 'USD');
     query.set('passengers', JSON.stringify({ adults: travelers }));
     query.set('cabin', cabin);
     if (stops !== 'any') query.set('maxStops', stops === 'direct' ? '0' : (stops === 'max_1' ? '1' : '2'));
@@ -58,7 +70,17 @@ export default function FilterBar(_props: Props) {
           <div className={styles.field}><span className={styles.label}>Departing from</span><div className={styles.inputPill}><MapPin size={16} /><input className={styles['filter-bar__input--bare']} value={origin} placeholder="Origin (IATA)" name="origin" onChange={(e) => setOrigin(e.target.value.toUpperCase())} /></div></div>
           <div className={styles.field}><span className={styles.label}>Going to</span><div className={styles.inputPill}><MapPin size={16} /><input className={styles['filter-bar__input--bare']} value={destination} placeholder="Destination (IATA or empty)" name="destination" onChange={(e) => setDestination(e.target.value.toUpperCase())} /></div></div>
           <div className={styles.field}><span className={styles.label}>Dates & Duration</span>
-            <button type="button" onClick={() => (document.getElementById('departDatePicker') as HTMLInputElement)?.showPicker?.() || (document.getElementById('departDatePicker') as HTMLInputElement)?.click()} className={styles.inputPill} style={{ width: '100%' }}>
+            <button
+              type="button"
+              onClick={() => {
+                const el = document.getElementById('departDatePicker') as HTMLInputElement | null;
+                if (!el) return;
+                if (typeof (el as any).showPicker === 'function') (el as any).showPicker();
+                else el.click();
+              }}
+              className={styles.inputPill}
+              style={{ width: '100%' }}
+            >
               <Calendar size={16} />
               <input id="departDatePicker" className={styles['filter-bar__input--bare']} type="date" value={departDate} name="departDate" onChange={(e) => setDepartDate(e.target.value)} />
             </button>

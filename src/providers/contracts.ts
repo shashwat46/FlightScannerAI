@@ -89,3 +89,28 @@ export interface InspirationSearchResult {
 }
 
 
+
+export interface ItineraryPriceMetricsQuery {
+	originIataCode: string;
+	destinationIataCode: string;
+	departureDate: string; // YYYY-MM-DD
+	currencyCode?: string; // ISO 4217
+	oneWay?: boolean;
+}
+
+export type PriceQuartileRanking = 'MINIMUM' | 'FIRST' | 'MEDIUM' | 'THIRD' | 'MAXIMUM';
+
+export interface ItineraryPriceMetricEntry {
+	amount: number;
+	quartileRanking: PriceQuartileRanking;
+}
+
+export interface ItineraryPriceMetricsResult {
+	provider: string;
+	originIataCode: string;
+	destinationIataCode: string;
+	departureDate: string;
+	currencyCode: string;
+	oneWay: boolean;
+	priceMetrics: ItineraryPriceMetricEntry[];
+}

@@ -1,9 +1,11 @@
 .gauge { position: relative; height: 12px; }
+.gauge--compact { height: 8px; }
 .gauge__track { position: absolute; inset: 0; background: #e5e7eb; border-radius: 999px; }
 .gauge__zones { position: absolute; inset: 0; display: flex; overflow: hidden; border-radius: 999px; }
 .gauge__zone--low { background: #22c55e; }
 .gauge__zone--mid { background: #f59e0b; }
 .gauge__zone--high { background: #ef4444; }
 .gauge__thumb { position: absolute; top: -2px; width: 16px; height: 16px; background: white; border: 2px solid #111827; border-radius: 999px; box-shadow: 0 2px 4px rgba(0,0,0,0.15); }
+.gauge__thumb--compact { top: -3px; width: 12px; height: 12px; }
 
 
