@@ -5,8 +5,8 @@
 .deal-card__score { color: var(--color-accent); font-weight: 800; }
 .deal-card__grid { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .deal-card__prices { display: grid; grid-template-columns: repeat(2, minmax(120px, 1fr)); gap: 12px; }
-.deal-card__priceRow { grid-column: 1 / -1; display: flex; align-items: center; justify-content: space-between; }
-.deal-card__priceScore { position: absolute; right: 16px; top: 60px; display: flex; align-items: center; }
+.deal-card__priceRow { grid-column: 1 / -1; display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 12px; }
+.deal-card__priceScore { display: flex; align-items: center; justify-content: flex-end; }
 .deal-card__price-label { color: var(--color-muted); }
 .deal-card__price { font-size: 20px; font-weight: 800; }
 .deal-card__muted { color: var(--color-muted); font-weight: 600; }
@@ -25,6 +25,16 @@
 
 .deal-card__sliders { display: flex; flex-direction: column; gap: 10px; align-items: flex-end; }
 .deal-card__sliders > * { max-width: 33%; }
+
+.deal-card__timeline { display: flex; align-items: center; justify-content: center; gap: 10px; color: var(--color-muted); }
+.deal-card__timelineColCenter { display: flex; flex-direction: column; align-items: center; gap: 4px; min-width: 160px; }
+.deal-card__timelineLine { height: 2px; background: rgba(15,23,42,0.12); width: 140px; position: relative; border-radius: 2px; }
+.deal-card__plane { position: absolute; left: 50%; top: -8px; transform: translateX(-50%); }
+.deal-card__timelineMetaTop { font-size: 12px; color: var(--color-muted); }
+.deal-card__timelineMetaBottom { font-size: 12px; color: #0ea5e9; font-weight: 700; }
+.deal-card__timelineCode { display: block; font-size: 12px; color: var(--color-muted); text-align: center; margin-top: 2px; }
+
+.deal-card__footerSection { border-top: 1px solid rgba(15,23,42,0.08); padding-top: 8px; display: flex; align-items: center; justify-content: space-between; gap: 12px; }
 
 .deal-card__included { display: flex; flex-wrap: wrap; gap: 8px; }
 

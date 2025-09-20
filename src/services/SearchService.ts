@@ -1,6 +1,7 @@
 import { getRedis } from '../lib/redis';
 import { MockProvider } from '../providers/__mocks__/MockProvider';
 import { AmadeusProvider } from '../providers/amadeus/AmadeusProvider';
+import { GoogleFlightsProvider } from '../providers/serpapi/GoogleFlightsProvider';
 import { SearchProvider } from '../providers/SearchProvider';
 import { scoreOffer } from './ScoringService';
 import { Offer, ScoredOffer, SearchParams, SearchResult } from '../domain/types';
@@ -71,18 +72,15 @@ export class SearchService {
 		offers = dedupOffers(offers);
 		await redis.set(cacheKey, JSON.stringify(offers), { EX: this.cacheTtlSeconds });
 
-		if (this.provider instanceof AmadeusProvider) {
-			try {
-				const adv = typeof (this.provider as any).searchAdvanced === 'function';
-				if (!adv) {
-					for (const offer of offers) {
-						const ref = `amadeus:offer:${offer.id}`;
-						await redis.set(ref, JSON.stringify(offer), { EX: this.cacheTtlSeconds });
-						(offer as any).extras = { ...(offer as any).extras, offerRef: ref };
-					}
-				}
-			} catch {}
-		}
+		try {
+			for (const offer of offers) {
+				const coreId = offer.id.startsWith(offer.provider + ':') ? offer.id.slice(offer.provider.length + 1) : offer.id;
+				const ref = `offer:${offer.provider}:${coreId}`;
+				// ensure extras enriched BEFORE caching so the details page has full data
+				(offer as any).extras = { ...(offer as any).extras, offerRef: ref, id: offer.id, provider: offer.provider };
+				await redis.set(ref, JSON.stringify(offer), { EX: this.cacheTtlSeconds });
+			}
+		} catch {}
 
 		return offers;
 	}
@@ -180,9 +178,16 @@ function reduceAdvancedToSimple(body: AdvancedSearchRequest): SearchParams | nul
 }
 
 export function createDefaultSearchService(): SearchService {
-	const hasAmadeus = Boolean((process.env.AMADEUS_CLIENT_ID || process.env.AMADEUS_APIKEY) && (process.env.AMADEUS_CLIENT_SECRET || process.env.AMADEUS_APISECRET));
-	const provider = hasAmadeus ? new AmadeusProvider() : new MockProvider();
-	return new SearchService(provider);
+    const hasSerpApi = Boolean((process.env.SERPAPI_API_KEY || '').trim());
+    const hasAmadeus = Boolean((process.env.AMADEUS_CLIENT_ID || process.env.AMADEUS_APIKEY) && (process.env.AMADEUS_CLIENT_SECRET || process.env.AMADEUS_APISECRET));
+    const prefer = (process.env.DEFAULT_PROVIDER || '').trim().toLowerCase();
+    let provider: SearchProvider;
+    if (prefer === 'amadeus' && hasAmadeus) provider = new AmadeusProvider();
+    else if (prefer === 'serpapi' && hasSerpApi) provider = new GoogleFlightsProvider();
+    else if (hasSerpApi) provider = new GoogleFlightsProvider();
+    else if (hasAmadeus) provider = new AmadeusProvider();
+    else provider = new MockProvider();
+    return new SearchService(provider);
 }
 
 function dedupOffers<T extends Offer>(offers: T[]): T[] {

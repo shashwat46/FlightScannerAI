@@ -12,7 +12,14 @@ export default async function DestinationPage({ params, searchParams }: { params
   const origin = params.from.toUpperCase();
   const destination = params.to.toUpperCase();
   const departDate = searchParams.departDate || new Date().toISOString().slice(0, 10);
-  const query = new URLSearchParams({ origin, destination, departDate, includeScore: 'true', passengers: JSON.stringify({ adults: 1 }), cabin: 'economy', currency: 'USD' });
+  const passengers = (() => {
+    try { return JSON.parse(searchParams.passengers || '') || { adults: 1 }; } catch { return { adults: 1 }; }
+  })();
+  const cabin = (searchParams.cabin || 'economy') as any;
+  const currency = (searchParams.currency || 'USD') as any;
+  const query = new URLSearchParams({ origin, destination, departDate, includeScore: 'true', passengers: JSON.stringify(passengers), cabin, currency });
+  if (searchParams.oneWay != null) query.set('oneWay', String(searchParams.oneWay));
+  if (searchParams.maxStops != null) query.set('maxStops', String(searchParams.maxStops));
   const host = headers().get('host');
   const protocol = process.env.VERCEL ? 'https' : 'http';
   const base = process.env.NEXT_PUBLIC_BASE_URL || (host ? `${protocol}://${host}` : '');

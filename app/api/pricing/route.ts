@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { createDefaultPricingService } from '../../../src/services/PricingService';
+// Note: SerpApi booking is handled in a dedicated booking-options endpoint.
 import { priceRefsSchema, priceFlightOffersBodySchema } from '../../../src/domain/validation';
 import { toHttpResponse, ValidationError } from '../../../src/domain/errors';
 
