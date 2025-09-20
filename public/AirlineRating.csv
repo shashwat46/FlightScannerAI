@@ -1,0 +1,234 @@
+iata_code,name,skytrax_rating
+AQ,9 Air,3
+A3,Aegean Airlines,4
+EI,Aer Lingus,4
+SU,Aeroflot Russian Airlines,3
+AR,Aerolineas Argentinas,3
+AM,Aeromexico,3
+AH,Air Algerie,3
+G9,Air Arabia,3
+KC,Air Astana,4
+BP,Air Botswana,3
+BX,Air Busan,4
+QD,Air Cambodia,3
+AC,Air Canada,4
+RV,Air Canada rouge,3
+TX,Air Caraibes,3
+CA,Air China,3
+EN,Air Dolomiti,4
+UX,Air Europa,3
+AF,Air France,4
+AI,Air India,3
+IX,Air India Express,3
+NX,Air Macau,3
+MD,Air Madagascar,3
+KM,Air Malta,3
+MK,Air Mauritius,4
+9U,Air Moldova,3
+SW,Air Namibia,3
+NZ,Air New Zealand,4
+PX,Air Niugini,3
+YW,Air Nostrum,4
+JU,Air Serbia,3
+HM,Air Seychelles,4
+TN,Air Tahiti Nui,3
+TS,Air Transat,4
+NF,Air Vanuatu,3
+AK,AirAsia,3
+D7,AirAsia X,3
+I5,AirAsia India,3
+BT,airBaltic,3
+PA,airblue,2
+SB,Aircalin,3
+AS,Alaska Airlines,3
+G4,Allegiant Air,3
+AA,American Airlines,3
+NH,ANA All Nippon Airways,5
+AJ,AnadoluJet,3
+W3,Arik Air,3
+OZ,Asiana Airlines,5
+OS,Austrian Airlines,4
+AV,Avianca,3
+J2,Azerbaijan Airlines,4
+AD,Azul Brazilian Airlines,3
+UP,Bahamasair,3
+QH,Bamboo Airways,3
+PG,Bangkok Airways,4
+ID,Batik Air,3
+B2,Belavia Belarusian Airlines,3
+BG,Biman Bangladesh Airlines,3
+0B,Blue Air,3
+OB,Boliviana de Aviación,2
+BA,British Airways,4
+SN,Brussels Airlines,3
+FB,Bulgaria Air,3
+VR,Cabo Verde Airlines,3
+JD,Capital Airlines,3
+BW,Caribbean Airlines,3
+CX,Cathay Pacific Airways,5
+KX,Cayman Airways,3
+5J,Cebu Pacific,3
+EU,Chengdu Airlines,3
+CI,China Airlines,4
+MU,China Eastern Airlines,3
+G5,China Express Airlines,3
+CZ,China Southern Airlines,4
+KN,China United Airlines,3
+OQ,Chongqing Airlines,3
+QG,Citilink,4
+GY,Colorful Guizhou Airlines,3
+DE,Condor Airlines,4
+CM,Copa Airlines,3
+XC,Corendon Airlines,3
+OU,Croatia Airlines,3
+OK,CSA Czech Airlines,3
+DL,Delta Air Lines,3
+DZ,Donghai Airlines,3
+ZE,Eastar Jet,3
+VE,Easyfly,3
+U2,easyJet,4
+WK,Edelweiss Air,4
+MS,Egyptair,3
+LY,El Al Israel Airlines,3
+EK,Emirates,4
+ET,Ethiopian Airlines,4
+EY,Etihad Airways,4
+EW,Eurowings,4
+BR,EVA Air,5
+FN,fastjet,3
+FJ,Fiji Airways,4
+AY,Finnair,4
+F8,Flair Airlines,3
+F3,Flyadeal,3
+FZ,flydubai,3
+XY,flynas,3
+5F,FlyOne,3
+FA,FlySafair,3
+BF,French Bee,3
+F9,Frontier Airlines,3
+FU,Fuzhou Airlines,3
+GA,Garuda Indonesia,5
+G8,GoAir,3
+G3,GOL Airlines,3
+GF,Gulf Air,3
+GX,GX Airlines (Beibu Gulf Air),3
+HU,Hainan Airlines,5
+HA,Hawaiian Airlines,3
+NS,Hebei Airlines,3
+HX,Hong Kong Airlines,4
+UO,HK Express,3
+IB,Iberia,4
+FI,Icelandair,3
+6E,IndiGo,4
+4O,Interjet,3
+AZ,ITA Airways,4
+JL,Japan Airlines,5
+J9,Jazeera Airways,3
+7C,Jeju Air,3
+LS,Jet2.com,3
+B6,JetBlue Airways,3
+JQ,Jetstar Airways,3
+3K,Jetstar Asia Airways,3
+RY,Jiangxi Airlines,3
+LJ,Jin Air,3
+HO,Juneyao Airlines,3
+KQ,Kenya Airways,3
+KL,KLM Royal Dutch Airlines,4
+KE,Korean Air,5
+MN,Kulula,3
+KY,Kunming Airlines,3
+KU,Kuwait Airways,3
+B0,La Compagnie,4
+TM,LAM Mozambique Airlines,2
+QV,Lao Airlines,3
+LA,LATAM Airlines,3
+JT,Lion Air,3
+LO,LOT Polish Airlines,3
+GJ,Loong Air,3
+8L,Lucky Air,3
+LH,Lufthansa,4
+LG,Luxair,4
+MH,Malaysia Airlines,4
+OD,Malindo Air,3
+AE,Mandarin Airlines,4
+JE,Mango,3
+OM,MIAT Mongolian Airlines,3
+ME,Middle East Airlines,3
+8M,Myanmar Airways International,3
+UB,Myanmar National Airlines,3
+NP,Nile Air,3
+DD,Nok Air,3
+DY,Norwegian,4
+BJ,Nouvelair,2
+BK,Okay Airways,3
+WY,Oman Air,4
+8Q,Onur Air,2
+MM,Peach Aviation,4
+PC,Pegasus Airlines,3
+PR,Philippine Airlines,4
+PK,PIA Pakistan International Airlines,2
+PD,Porter Airlines,4
+QF,Qantas Airways,4
+QR,Qatar Airways,5
+QW,Qingdao Airlines,3
+AT,Royal Air Maroc,4
+BI,Royal Brunei Airlines,4
+RJ,Royal Jordanian Airlines,3
+DR,Ruili Airlines,3
+WB,Rwandair,3
+FR,Ryanair,3
+S7,S7 Siberia Airlines,3
+SK,SAS Scandinavian Airlines,3
+S4,SATA Azores Airlines,3
+SV,Saudi Arabian Airlines,4
+TR,Scoot,4
+SC,Shandong Airlines,3
+ZH,Shenzhen Airlines,3
+3U,Sichuan Airlines,3
+MI,SilkAir,4
+3M,Silver Airways,3
+SQ,Singapore Airlines,5
+H2,SKY Airline,3
+BC,Skymark Airlines,4
+6J,Solaseed Air,4
+SA,South African Airways,4
+WN,Southwest Airlines,4
+SG,SpiceJet,3
+NK,Spirit Airlines,3
+9S,Spring Airlines,3
+UL,SriLankan Airlines,3
+SJ,Sriwijaya Air,3
+7G,Star Flyer,4
+JX,STARLUX Airlines,5
+SY,Sun Country Airlines,3
+XQ,SunExpress,3
+WG,Sunwing Airlines,3
+LX,Swiss International Air Lines,4
+WO,Swoop,3
+TP,TAP Portugal,3
+RO,TAROM,3
+TG,Thai Airways,4
+GS,Tianjin Airlines,3
+TO,Transavia France,4
+HV,Transavia,3
+BY,TUI Airways,3
+TU,Tunisair,2
+TK,Turkish Airlines,4
+TW,T'way Air,3
+UA,United Airlines,3
+U6,Ural Airlines,3
+UQ,Urumqi Air,3
+VJ,VietJet Air,3
+VN,Vietnam Airlines,4
+VS,Virgin Atlantic,4
+VA,Virgin Australia,4
+UK,Vistara,4
+VB,Viva Aerobus,2
+VH,Viva Air,2
+Y4,Volaris,3
+V7,Volotea,4
+VY,Vueling Airlines,4
+PN,West Air,4
+WS,WestJet Airlines,3
+W6,Wizz Air,3
+MF,Xiamen Airlines,3

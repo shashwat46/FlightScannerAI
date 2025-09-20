@@ -1,5 +1,6 @@
 import { BaselineStats, Offer, ScoredOffer, ScoreBreakdown } from '../domain/types';
 import { defaultScoreWeights, normalizeWeights, ScoreWeights } from '../config/score';
+import { airlineRating, airportRating } from '../lib/quality';
 
 export interface ScoringPreferences {
 	weights?: Partial<ScoreWeights>;
@@ -91,6 +92,57 @@ export function scoreOffer(input: ScoringInput): ScoredOffer {
 	);
 
 	return { ...offer, score, breakdown };
+}
+
+export async function scoreOfferAsync(input: ScoringInput): Promise<ScoredOffer> {
+    const { offer, baseline, prefs } = input;
+    const weights = normalizeWeights({ ...defaultScoreWeights, ...prefs?.weights });
+
+    const totalMinutes = offer.outbound.durationMinutes + (offer.inbound?.durationMinutes || 0);
+    const stops = offer.outbound.stops + (offer.inbound?.stops || 0);
+    const hasChecked = Boolean(offer.baggage?.checked);
+
+    const [airRating, originRating, destRating] = await Promise.all([
+        airlineRating(offer.outbound.segments[0].marketingCarrier),
+        airportRating(offer.outbound.segments[0].origin),
+        airportRating(offer.outbound.segments.at(-1)!.destination)
+    ]);
+
+    const priceVsMedian = computePriceVsMedian(offer, baseline);
+    const durationPenalty = computeDurationPenalty(totalMinutes);
+    const stopPenalty = computeStopPenalty(stops);
+    const layoverQuality = computeLayoverQuality(stops);
+    const baggageValue = computeBaggageValue(hasChecked);
+    const airlineQuality = airRating * 20; // 1-5 -> 20-100
+    const airportQuality = Math.min(originRating, destRating) * 20;
+    const confidence = computeConfidence(baseline);
+
+    const breakdown: ScoreBreakdown = {
+        priceVsMedian,
+        durationPenalty,
+        stopPenalty,
+        layoverQuality,
+        baggageValue,
+        confidence,
+        notes: []
+    } as any;
+
+    const score = clamp(
+        Math.round(
+            priceVsMedian * weights.priceVsMedian +
+            durationPenalty * weights.durationPenalty +
+            stopPenalty * weights.stopPenalty +
+            layoverQuality * weights.layoverQuality +
+            baggageValue * weights.baggageValue +
+            airlineQuality * weights.airlineQuality +
+            airportQuality * weights.airportQuality +
+            confidence * 100 * weights.confidence
+        ),
+        0,
+        100
+    );
+
+    return { ...offer, score, breakdown };
 }
 
 

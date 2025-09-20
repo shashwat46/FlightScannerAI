@@ -4,6 +4,7 @@ import FilterBar from 'src/frontend/components/composite/FilterBar';
 import DealCard from 'src/frontend/components/composite/DealCard';
 import SectionHeader from 'src/frontend/components/composite/SectionHeader';
 import Pagination from 'src/frontend/components/ui/Pagination';
+import LoadingHandler from './LoadingHandler';
 import { createDefaultFlightPriceAnalysisService } from '../../../../../src/services/FlightPriceAnalysisService';
 
 interface SearchResponse { offers: Array<any>; }
@@ -70,8 +71,11 @@ export default async function DestinationPage({ params, searchParams }: { params
   const uiTop = slice[0] ? mapOfferToUiDeal(slice[0], sharedPriceHistory) : null;
   const rest = slice.slice(1).map((o) => mapOfferToUiDeal(o, sharedPriceHistory));
   const totalPages = Math.max(1, Math.ceil(offers.length / pageSize));
+  const hasData = offers.length > 0;
+  
   return (
     <main className="container page-bg">
+      <LoadingHandler hasData={hasData} />
       <FilterBar />
       <SectionHeader title="Deals to Destination" subtitle={`Page ${page} of ${totalPages}`} />
       {uiTop && <DealCard {...uiTop} expanded />}

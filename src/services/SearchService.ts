@@ -3,7 +3,7 @@ import { MockProvider } from '../providers/__mocks__/MockProvider';
 import { AmadeusProvider } from '../providers/amadeus/AmadeusProvider';
 import { GoogleFlightsProvider } from '../providers/serpapi/GoogleFlightsProvider';
 import { SearchProvider } from '../providers/SearchProvider';
-import { scoreOffer } from './ScoringService';
+import { scoreOfferAsync } from './ScoringService';
 import { Offer, ScoredOffer, SearchParams, SearchResult } from '../domain/types';
 import { AdvancedSearchRequest, CheapestDatesQuery, CheapestDatesResult } from '../providers/contracts';
 import crypto from 'crypto';
@@ -26,7 +26,7 @@ export class SearchService {
 
 		const includeScore = Boolean(params.includeScore);
 		const offers: Offer[] | ScoredOffer[] = includeScore
-			? rawOffers.map((o) => scoreOffer({ offer: o }))
+			? await Promise.all(rawOffers.map((o) => scoreOfferAsync({ offer: o })))
 			: rawOffers;
 
 		const currency = offers[0]?.price.currency || params.currency || 'USD';
@@ -41,7 +41,7 @@ export class SearchService {
 	async searchAdvanced(body: AdvancedSearchRequest, includeScore?: boolean): Promise<SearchResult> {
 		const rawOffers = await this.getOrFetchOffersAdvanced(body);
 		const withScore = Boolean(includeScore);
-		const offers: Offer[] | ScoredOffer[] = withScore ? rawOffers.map((o) => scoreOffer({ offer: o })) : rawOffers;
+		const offers: Offer[] | ScoredOffer[] = withScore ? await Promise.all(rawOffers.map((o) => scoreOfferAsync({ offer: o }))) : rawOffers;
 		const currency = offers[0]?.price.currency || body.currencyCode || 'USD';
 		return {
 			offers,

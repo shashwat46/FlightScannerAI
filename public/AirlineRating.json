@@ -1,0 +1,1177 @@
+[
+    {
+      "IATA Code": "AQ",
+      "Airline Name": "9 Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "A3",
+      "Airline Name": "Aegean Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "EI",
+      "Airline Name": "Aer Lingus",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "SU",
+      "Airline Name": "Aeroflot Russian Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AR",
+      "Airline Name": "Aerolineas Argentinas",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AM",
+      "Airline Name": "Aeromexico",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AH",
+      "Airline Name": "Air Algerie",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "G9",
+      "Airline Name": "Air Arabia",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "KC",
+      "Airline Name": "Air Astana",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "BP",
+      "Airline Name": "Air Botswana",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "BX",
+      "Airline Name": "Air Busan",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "QD",
+      "Airline Name": "Air Cambodia",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AC",
+      "Airline Name": "Air Canada",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "RV",
+      "Airline Name": "Air Canada rouge",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "TX",
+      "Airline Name": "Air Caraibes",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "CA",
+      "Airline Name": "Air China",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "EN",
+      "Airline Name": "Air Dolomiti",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "UX",
+      "Airline Name": "Air Europa",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AF",
+      "Airline Name": "Air France",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "AI",
+      "Airline Name": "Air India",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "IX",
+      "Airline Name": "Air India Express",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "NX",
+      "Airline Name": "Air Macau",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "MD",
+      "Airline Name": "Air Madagascar",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "KM",
+      "Airline Name": "Air Malta",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "MK",
+      "Airline Name": "Air Mauritius",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "9U",
+      "Airline Name": "Air Moldova",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "SW",
+      "Airline Name": "Air Namibia",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "NZ",
+      "Airline Name": "Air New Zealand",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "PX",
+      "Airline Name": "Air Niugini",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "YW",
+      "Airline Name": "Air Nostrum",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "JU",
+      "Airline Name": "Air Serbia",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "HM",
+      "Airline Name": "Air Seychelles",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "TN",
+      "Airline Name": "Air Tahiti Nui",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "TS",
+      "Airline Name": "Air Transat",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "NF",
+      "Airline Name": "Air Vanuatu",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AK",
+      "Airline Name": "AirAsia",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "D7",
+      "Airline Name": "AirAsia X",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "I5",
+      "Airline Name": "AirAsia India",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "BT",
+      "Airline Name": "airBaltic",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "PA",
+      "Airline Name": "airblue",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "SB",
+      "Airline Name": "Aircalin",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AS",
+      "Airline Name": "Alaska Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "G4",
+      "Airline Name": "Allegiant Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AA",
+      "Airline Name": "American Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "NH",
+      "Airline Name": "ANA All Nippon Airways",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "AJ",
+      "Airline Name": "AnadoluJet",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "W3",
+      "Airline Name": "Arik Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "OZ",
+      "Airline Name": "Asiana Airlines",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "OS",
+      "Airline Name": "Austrian Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "AV",
+      "Airline Name": "Avianca",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "J2",
+      "Airline Name": "Azerbaijan Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "AD",
+      "Airline Name": "Azul Brazilian Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "UP",
+      "Airline Name": "Bahamasair",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "QH",
+      "Airline Name": "Bamboo Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "PG",
+      "Airline Name": "Bangkok Airways",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "ID",
+      "Airline Name": "Batik Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "B2",
+      "Airline Name": "Belavia Belarusian Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "BG",
+      "Airline Name": "Biman Bangladesh Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "0B",
+      "Airline Name": "Blue Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "OB",
+      "Airline Name": "Boliviana de Aviación",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "BA",
+      "Airline Name": "British Airways",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "SN",
+      "Airline Name": "Brussels Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "FB",
+      "Airline Name": "Bulgaria Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "VR",
+      "Airline Name": "Cabo Verde Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "JD",
+      "Airline Name": "Capital Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "BW",
+      "Airline Name": "Caribbean Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "CX",
+      "Airline Name": "Cathay Pacific Airways",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "KX",
+      "Airline Name": "Cayman Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "5J",
+      "Airline Name": "Cebu Pacific",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "EU",
+      "Airline Name": "Chengdu Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "CI",
+      "Airline Name": "China Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "MU",
+      "Airline Name": "China Eastern Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "G5",
+      "Airline Name": "China Express Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "CZ",
+      "Airline Name": "China Southern Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "KN",
+      "Airline Name": "China United Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "OQ",
+      "Airline Name": "Chongqing Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "QG",
+      "Airline Name": "Citilink",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "GY",
+      "Airline Name": "Colorful Guizhou Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "DE",
+      "Airline Name": "Condor Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "CM",
+      "Airline Name": "Copa Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "XC",
+      "Airline Name": "Corendon Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "OU",
+      "Airline Name": "Croatia Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "OK",
+      "Airline Name": "CSA Czech Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "CA",
+      "Airline Name": "Dalian Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "DL",
+      "Airline Name": "Delta Air Lines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "DZ",
+      "Airline Name": "Donghai Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "ZE",
+      "Airline Name": "Eastar Jet",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "VE",
+      "Airline Name": "Easyfly",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "U2",
+      "Airline Name": "easyJet",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "WK",
+      "Airline Name": "Edelweiss Air",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "MS",
+      "Airline Name": "Egyptair",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "LY",
+      "Airline Name": "El Al Israel Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "EK",
+      "Airline Name": "Emirates",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "ET",
+      "Airline Name": "Ethiopian Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "EY",
+      "Airline Name": "Etihad Airways",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "EW",
+      "Airline Name": "Eurowings",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "BR",
+      "Airline Name": "EVA Air",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "FN",
+      "Airline Name": "fastjet",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "FJ",
+      "Airline Name": "Fiji Airways",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "AY",
+      "Airline Name": "Finnair",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "F8",
+      "Airline Name": "Flair Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "F3",
+      "Airline Name": "Flyadeal",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "KC",
+      "Airline Name": "FlyArystan",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "FZ",
+      "Airline Name": "flydubai",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "XY",
+      "Airline Name": "flynas",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "5F",
+      "Airline Name": "FlyOne",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "FA",
+      "Airline Name": "FlySafair",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "BF",
+      "Airline Name": "French Bee",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "F9",
+      "Airline Name": "Frontier Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "FU",
+      "Airline Name": "Fuzhou Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "GA",
+      "Airline Name": "Garuda Indonesia",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "G8",
+      "Airline Name": "GoAir",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "G3",
+      "Airline Name": "GOL Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "GF",
+      "Airline Name": "Gulf Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "GX",
+      "Airline Name": "GX Airlines (Beibu Gulf Air)",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "HU",
+      "Airline Name": "Hainan Airlines",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "HA",
+      "Airline Name": "Hawaiian Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "NS",
+      "Airline Name": "Hebei Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "HX",
+      "Airline Name": "Hong Kong Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "UO",
+      "Airline Name": "HK Express",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "IB",
+      "Airline Name": "Iberia",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "FI",
+      "Airline Name": "Icelandair",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "6E",
+      "Airline Name": "IndiGo",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "4O",
+      "Airline Name": "Interjet",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AZ",
+      "Airline Name": "ITA Airways",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "JL",
+      "Airline Name": "Japan Airlines",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "J9",
+      "Airline Name": "Jazeera Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "7C",
+      "Airline Name": "Jeju Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "LS",
+      "Airline Name": "Jet2.com",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "B6",
+      "Airline Name": "JetBlue Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "JQ",
+      "Airline Name": "Jetstar Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "3K",
+      "Airline Name": "Jetstar Asia Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "RY",
+      "Airline Name": "Jiangxi Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "LJ",
+      "Airline Name": "Jin Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "HO",
+      "Airline Name": "Juneyao Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "KQ",
+      "Airline Name": "Kenya Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "KL",
+      "Airline Name": "KLM Royal Dutch Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "KE",
+      "Airline Name": "Korean Air",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "MN",
+      "Airline Name": "Kulula",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "KY",
+      "Airline Name": "Kunming Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "KU",
+      "Airline Name": "Kuwait Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "B0",
+      "Airline Name": "La Compagnie",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "TM",
+      "Airline Name": "LAM Mozambique Airlines",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "QV",
+      "Airline Name": "Lao Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "LA",
+      "Airline Name": "LATAM Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "JT",
+      "Airline Name": "Lion Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "LO",
+      "Airline Name": "LOT Polish Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "GJ",
+      "Airline Name": "Loong Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "8L",
+      "Airline Name": "Lucky Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "LH",
+      "Airline Name": "Lufthansa",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "LG",
+      "Airline Name": "Luxair",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "MH",
+      "Airline Name": "Malaysia Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "OD",
+      "Airline Name": "Malindo Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AE",
+      "Airline Name": "Mandarin Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "JE",
+      "Airline Name": "Mango",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "OM",
+      "Airline Name": "MIAT Mongolian Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "ME",
+      "Airline Name": "Middle East Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "8M",
+      "Airline Name": "Myanmar Airways International",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "UB",
+      "Airline Name": "Myanmar National Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "NP",
+      "Airline Name": "Nile Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "DD",
+      "Airline Name": "Nok Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "DY",
+      "Airline Name": "Norwegian",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "BJ",
+      "Airline Name": "Nouvelair",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "BK",
+      "Airline Name": "Okay Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "WY",
+      "Airline Name": "Oman Air",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "8Q",
+      "Airline Name": "Onur Air",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "MM",
+      "Airline Name": "Peach Aviation",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "PC",
+      "Airline Name": "Pegasus Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "PR",
+      "Airline Name": "Philippine Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "PK",
+      "Airline Name": "PIA Pakistan International Airlines",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "PD",
+      "Airline Name": "Porter Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "QF",
+      "Airline Name": "Qantas Airways",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "QR",
+      "Airline Name": "Qatar Airways",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "QW",
+      "Airline Name": "Qingdao Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "AT",
+      "Airline Name": "Royal Air Maroc",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "BI",
+      "Airline Name": "Royal Brunei Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "RJ",
+      "Airline Name": "Royal Jordanian Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "DR",
+      "Airline Name": "Ruili Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "WB",
+      "Airline Name": "Rwandair",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "FR",
+      "Airline Name": "Ryanair",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "S7",
+      "Airline Name": "S7 Siberia Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "SK",
+      "Airline Name": "SAS Scandinavian Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "S4",
+      "Airline Name": "SATA Azores Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "SV",
+      "Airline Name": "Saudi Arabian Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "TR",
+      "Airline Name": "Scoot",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "SC",
+      "Airline Name": "Shandong Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "ZH",
+      "Airline Name": "Shenzhen Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "3U",
+      "Airline Name": "Sichuan Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "MI",
+      "Airline Name": "SilkAir",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "3M",
+      "Airline Name": "Silver Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "SQ",
+      "Airline Name": "Singapore Airlines",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "H2",
+      "Airline Name": "SKY Airline",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "BC",
+      "Airline Name": "Skymark Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "6J",
+      "Airline Name": "Solaseed Air",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "SA",
+      "Airline Name": "South African Airways",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "WN",
+      "Airline Name": "Southwest Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "SG",
+      "Airline Name": "SpiceJet",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "NK",
+      "Airline Name": "Spirit Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "9S",
+      "Airline Name": "Spring Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "UL",
+      "Airline Name": "SriLankan Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "SJ",
+      "Airline Name": "Sriwijaya Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "7G",
+      "Airline Name": "Star Flyer",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "JX",
+      "Airline Name": "STARLUX Airlines",
+      "Skytrax Rating": 5
+    },
+    {
+      "IATA Code": "SY",
+      "Airline Name": "Sun Country Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "XQ",
+      "Airline Name": "SunExpress",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "WG",
+      "Airline Name": "Sunwing Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "LX",
+      "Airline Name": "Swiss International Air Lines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "WO",
+      "Airline Name": "Swoop",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "TP",
+      "Airline Name": "TAP Portugal",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "RO",
+      "Airline Name": "TAROM",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "TG",
+      "Airline Name": "Thai Airways",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "GS",
+      "Airline Name": "Tianjin Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "TO",
+      "Airline Name": "Transavia France",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "HV",
+      "Airline Name": "Transavia",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "BY",
+      "Airline Name": "TUI Airways",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "TU",
+      "Airline Name": "Tunisair",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "TK",
+      "Airline Name": "Turkish Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "TW",
+      "Airline Name": "T'way Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "UA",
+      "Airline Name": "United Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "U6",
+      "Airline Name": "Ural Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "UQ",
+      "Airline Name": "Urumqi Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "VJ",
+      "Airline Name": "VietJet Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "VN",
+      "Airline Name": "Vietnam Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "VS",
+      "Airline Name": "Virgin Atlantic",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "VA",
+      "Airline Name": "Virgin Australia",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "UK",
+      "Airline Name": "Vistara",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "VB",
+      "Airline Name": "Viva Aerobus",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "VH",
+      "Airline Name": "Viva Air",
+      "Skytrax Rating": 2
+    },
+    {
+      "IATA Code": "Y4",
+      "Airline Name": "Volaris",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "V7",
+      "Airline Name": "Volotea",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "VY",
+      "Airline Name": "Vueling Airlines",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "PN",
+      "Airline Name": "West Air",
+      "Skytrax Rating": 4
+    },
+    {
+      "IATA Code": "WS",
+      "Airline Name": "WestJet Airlines",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "W6",
+      "Airline Name": "Wizz Air",
+      "Skytrax Rating": 3
+    },
+    {
+      "IATA Code": "MF",
+      "Airline Name": "Xiamen Airlines",
+      "Skytrax Rating": 3
+    }
+  ]

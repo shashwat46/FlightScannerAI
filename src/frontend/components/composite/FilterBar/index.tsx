@@ -1,9 +1,10 @@
 "use client";
 import React from 'react';
+import { useParams, useRouter, useSearchParams } from 'next/navigation';
+import { MapPin, Calendar, User, Repeat, Route as RouteIcon } from 'lucide-react';
 import Button from '../../ui/Button';
+import { useLoading } from '../../../contexts/LoadingContext';
 import styles from './styles.module.css';
-import { useRouter, useSearchParams, useParams } from 'next/navigation';
-import { Repeat, Route as RouteIcon, Calendar, User, MapPin } from 'lucide-react';
 
 interface Props {
   tripType?: 'one_way' | 'round_trip';
@@ -15,6 +16,7 @@ export default function FilterBar(_props: Props) {
   const router = useRouter();
   const sp = useSearchParams();
   const routeParams = useParams() as { from?: string; to?: string };
+  const { isLoading, startLoading } = useLoading();
   const [origin, setOrigin] = React.useState(((sp.get('origin') || routeParams?.from || '') as string).toUpperCase());
   const [destination, setDestination] = React.useState(((sp.get('destination') || routeParams?.to || '') as string).toUpperCase());
   const [departDate, setDepartDate] = React.useState(sp.get('departDate') || '');
@@ -38,6 +40,10 @@ export default function FilterBar(_props: Props) {
     const from = (origin || '').trim().toUpperCase();
     const to = (destination || '').trim().toUpperCase();
     if (from.length !== 3) return;
+    
+    // Show loading screen
+    startLoading();
+    
     const query = new URLSearchParams();
     if (departDate) query.set('departDate', departDate);
     query.set('currency', 'USD');
@@ -47,11 +53,13 @@ export default function FilterBar(_props: Props) {
     if (tripType === 'round_trip') query.set('oneWay', 'false');
     const isAnywhere = to.length !== 3;
     const path = isAnywhere ? `/from/${from}/anywhere` : `/from/${from}/to/${to}`;
+    
+    // Navigate - loading will be stopped by the destination page
     router.push(`${path}?${query.toString()}`);
   }
 
   return (
-    <div className="filter-bar-responsive">
+      <div className="filter-bar-responsive">
       <form onSubmit={onSubmit}>
         <div className={styles.rowTop}>
           <div className={styles.pill}>

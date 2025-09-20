@@ -1,0 +1,431 @@
+iata_code,name,skytrax_rating
+AUH,Abu Dhabi International Airport,4
+ABV,Abuja Nnamdi Azikwe International Airport,2
+ACC,Accra Kotoka International Airport,3
+ADD,Addis Ababa Bole International Airport,2
+AMD,Ahmedabad International Airport,3
+AKU,Aksu Wensu Airport,2
+ALG,Algiers Houari Boumediene Airport,3
+ALA,Almaty International Airport,3
+AMM,Amman Queen Alia International Airport,4
+AMS,Amsterdam Schiphol Airport,4
+ESB,Ankara Esenboga Airport,4
+AYT,Antalya Airport,3
+TNR,Antananarivo Ivato International Airport,2
+ATH,Athens Airport,3
+ATL,Atlanta Hartsfield International Airport,3
+AKL,Auckland International Airport,4
+AUS,Austin-Bergstrom International Airport,3
+BAH,Bahrain International Airport,5
+AEB,Baise Bama Airport,2
+GYD,Baku International Airport,5
+BWI,Baltimore/Washington International Airport,3
+BLR,Bangalore Kempegowda International Airport,4
+DMK,Bangkok Don Mueang International Airport,3
+BKK,Bangkok Suvarnabhumi Airport,3
+BSD,Baoshan Yunrui Airport,2
+BAV,Baotou Donghe Airport,3
+BCN,Barcelona-El Prat Josep Tarradellas Airport,4
+BHY,Beihai Fucheng Airport,3
+PEK,Beijing Capital International Airport,3
+PKX,Beijing Daxing International Airport,4
+NAY,Beijing Nanyuan Airport,2
+BEY,Beirut Rafic Hariri International Airport,3
+BFS,Belfast International Airport,3
+CNF,Belo Horizonte International Airport,3
+BEG,Belgrade Nikola Tesla Airport,3
+BER,Berlin Brandenburg Airport,4
+BFJ,Bijie Feixiong Airport,3
+BIO,Bilbao Airport,4
+YTZ,Billy Bishop Toronto City Airport,4
+BLL,Billund Airport,4
+BHX,Birmingham Airport,3
+FRU,Bishkek Manas International Airport,2
+BAR,Boao Qionghai Airport,3
+BOG,Bogota El Dorado International Airport,4
+BLQ,Bologna Guglielmo Marconi Airport,3
+BOD,Bordeaux-Merignac Airport,3
+BOS,Boston Logan Airport,3
+BSB,Brasilia International Airport,3
+BRE,Bremen Airport,4
+BGI,Bridgetown Grantley Adams International Airport,3
+BNE,Brisbane Airport,4
+BRS,Bristol Airport,3
+BWN,Brunei International Airport,3
+BRU,Brussels Airport,3
+OTP,Bucharest Henri Coanda International Airport,3
+BUD,Budapest Airport,4
+EZE,Buenos Aires Ezeiza Airport,3
+AEP,Buenos Aires Jorge Newbery Airport,3
+PUS,Busan Gimhae International Airport,3
+CNS,Cairns Airport,3
+CAI,Cairo International Airport,3
+YYC,Calgary International Airport,3
+CLO,Cali Alfonso Bonilla Aragón International Airport,3
+CCJ,Calicut International Airport,3
+CXR,Cam Ranh International Airport,3
+CUN,Cancún International Airport,3
+CPT,Cape Town International Airport,4
+CCS,Caracas Maiquetia Simon Bolivar International Airport,2
+CMN,Casablanca Mohammed V International Airport,3
+CTA,Catania International Airport,3
+HPH,Cat Bi International Airport,3
+GCM,Cayman Owen Roberts International Airport,3
+CGQ,Changchun Longjia Airport,3
+CSX,Changsha Huanghua Airport,4
+CZX,Changzhou International Airport,3
+CLT,Charlotte Douglas International Airport,3
+CTU,Chengdu Shuangliu International Airport,4
+TFU,Chengdu Tianfu International Airport,5
+MAA,Chennai International Airport,2
+CNX,Chiang Mai International Airport,3
+MDW,Chicago Midway International Airport,3
+ORD,Chicago O’Hare Airport,3
+CIF,Chifeng Yulong Airport,3
+UBN,Chinggis Khaan International Airport,4
+KIV,Chisinau International Airport,3
+CGP,Chittagong Shah Amanat International Airport,2
+JUH,Chizhou Jiuhuashan Airport,2
+CHC,Christchurch International Airport,4
+CKG,Chongqing Jiangbei International Airport,3
+NGO,Chubu Centrair International Airport,5
+CVG,Cincinnati/Northern Kentucky International Airport,4
+CLE,Cleveland Hopkins International Airport,3
+COK,Cochin International Airport,3
+CGN,Cologne Bonn Airport,4
+CMB,Colombo Bandaranaike International Airport,3
+CPH,Copenhagen Airport,4
+CUZ,Cusco Alejandro Velasco Astete International Airport,2
+DLU,Dali Airport,3
+DLC,Dalian Zhoushuizi International Airport,3
+DFW,Dallas/Fort Worth International Airport,3
+DAL,Dallas Love Field Airport,3
+DMM,Dammam King Fahd International Airport,3
+DAM,Damascus International Airport,2
+DAD,Da Nang International Airport,3
+DAR,Dar-es-Salaam Julius Nyerere International Airport,3
+DAT,Datong Yungang Airport,3
+LUM,Dehong Manshi Airport,3
+DEL,Delhi Indira Gandhi International Airport,3
+DPS,Denpasar Ngurah Rai International Airport,3
+DEN,Denver International Airport,3
+DTW,Detroit Metro Airport,3
+DAC,Dhaka Hazrat Shahjalal International Airport,2
+DOH,Doha Hamad International Airport,5
+DXB,Dubai International Airport,3
+DUB,Dublin Airport,4
+DUR,Durban King Shaka International Airport,4
+DUS,Dusseldorf Airport,4
+EDI,Edinburgh Airport,3
+YEG,Edmonton International Airport,3
+EIN,Eindhoven Airport,3
+SAL,El Salvador International Airport,3
+ENH,Enshi Xujiaping Airport,2
+EBB,Entebbe International Airport,2
+EXT,Exeter Airport,3
+FAO,Faro Airport,3
+FLL,Fort Lauderdale-Hollywood International Airport,3
+FRA,Frankfurt Airport,4
+FUK,Fukuoka Airport,4
+FOC,Fuzhou Changle International Airport,3
+GBE,Gaborone Sir Seretse Khama International Airport,3
+KOW,Ganzhou Huangjin Airport,3
+GVA,Geneva Airport,3
+GLA,Glasgow Airport,3
+GOI,Goa Dabolim Airport,3
+OOL,Gold Coast Airport,3
+GOT,Gothenburg Landvetter Airport,3
+LPA,Gran Canaria Airport,3
+GDL,Guadalajara International Airport,3
+CAN,Guangzhou Baiyun International Airport,4
+GUA,Guatemala La Aurora International Airport,3
+GYE,Guayaquil José Joaquín de Olmedo International Airport,4
+KWL,Guilin Liangjiang International Airport,3
+KWE,Guiyang Longdongbao International Airport,3
+GAU,Guwahati Airport,3
+HAK,Haikou Meilan International Airport,5
+YHZ,Halifax Stanfield International Airport,4
+HAM,Hamburg Airport,4
+HGH,Hangzhou Xiaoshan International Airport,3
+HAN,Hanoi Noi Bai International Airport,3
+HRB,Harbin Taiping International Airport,3
+HAV,Havana José Martí International Airport,2
+HFE,Hefei Xinqiao International Airport,3
+HEL,Helsinki Airport,4
+HER,Heraklion International Airport,2
+SGN,Ho Chi Minh City Airport,3
+HET,Hohhot Baita International Airport,3
+HKG,Hong Kong International Airport,5
+HNL,Honolulu Daniel K. Inouye International Airport,3
+IAH,Houston George Bush Intercontinental Airport,4
+HOU,Houston William P. Hobby Airport,5
+HIA,Huai'an Lianshui Airport,2
+TXN,Huangshan Tunxi International Airport,3
+HUZ,Huizhou Pingtan Airport,2
+HLD,Hulunbuir Hailar Airport,3
+HRG,Hurghada International Airport,3
+HYD,Hyderabad Rajiv Gandhi International Airport,3
+IBZ,Ibiza Airport,3
+IND,Indianapolis International Airport,4
+INV,Inverness Airport,3
+ISB,Islamabad International Airport,3
+IST,Istanbul Airport,5
+SAW,Istanbul Sabiha Gokcen Airport,3
+ADB,Izmir Adnan Menderes Airport,4
+JAI,Jaipur International Airport,3
+CGK,Jakarta Soekarno-Hatta International Airport,4
+JED,Jeddah King Abdulaziz International Airport,4
+CJU,Jeju International Airport,3
+SWA,Jieyang Chaoshan International Airport,3
+TNA,Jinan Yaoqiang International Airport,3
+JNG,Jining Qufu Airport,2
+JHB,Johor Bahru Senai International Airport,3
+JNB,Johannesburg OR Tambo International Airport,3
+SNA,John Wayne Airport Orange County,3
+KIX,Kansai International Airport,4
+MCI,Kansas City International Airport,3
+KHI,Karachi Jinnah International Airport,2
+KHG,Kashi Airport,2
+KTW,Katowice Airport,3
+KZN,Kazan International Airport,4
+KEF,Keflavík Airport,3
+YLW,Kelowna International Airport,3
+KBP,Kiev Boryspil International Airport,3
+KGL,Kigali International Airport,3
+CCU,Kolkata Airport,3
+SVX,Koltsovo International Airport,4
+KRL,Korla Airport,3
+BKI,Kota Kinabalu International Airport,3
+KRK,Kraków Airport,3
+KUL,Kuala Lumpur International Airport,3
+KNO,Kualanamu Airport,4
+KCH,Kuching International Airport,3
+KMG,Kunming Changshui International Airport,3
+KUF,Kurumoch Airport,4
+KWI,Kuwait International Airport,3
+LOS,Lagos Murtala Muhammed International Airport,2
+LHE,Lahore Allama Iqbal International Airport,2
+LGK,Langkawi International Airport,3
+LHW,Lanzhou Zhongchuan International Airport,3
+LCA,Larnaca International Airport,3
+LAS,Las Vegas McCarran Airport,3
+LBA,Leeds Bradford Airport,3
+LXA,Lhasa Gonggar Airport,2
+LYG,Lianyungang Baitabu Airport,2
+LJG,Lijiang Sanyi Airport,2
+LIM,Lima Jorge Chávez International Airport,3
+LYI,Linyi QiYang Airport,2
+LIS,Lisbon Airport,3
+LZH,Liuzhou Bailian Airport,3
+LCY,London City Airport,3
+LGW,London Gatwick Airport,3
+LHR,London Heathrow Airport,4
+LTN,London Luton Airport,3
+STN,London Stansted Airport,3
+LAX,Los Angeles International Airport,3
+MSY,Louis Armstrong New Orleans International Airport,3
+LAD,Luanda International Airport,2
+LKO,Lucknow Airport,3
+LYA,Luoyang Beijiao Airport,2
+LUX,Luxembourg Airport,4
+LYS,Lyon-Saint Exupéry Airport,4
+MFM,Macau International Airport,3
+CEB,Mactan-Cebu International Airport,3
+FNC,Madeira Airport,3
+MED,Madinah Prince Mohammad bin Abdulaziz Int'l Airport,4
+MAD,Madrid-Barajas Adolfo Suárez Airport,4
+AGP,Málaga Costa del Sol Airport,3
+MLE,Malé Velana International Airport,3
+MLA,Malta Airport,4
+MAN,Manchester Airport,3
+MDL,Mandalay International Airport,3
+MNL,Manila Ninoy Aquino International Airport,3
+NZH,Manzhouli Xijiao International Airport,4
+RAK,Marrakech Menara Airport,3
+MRS,Marseille Provence Airport,3
+FDF,Martinique Aimé Césaire International Airport,3
+MRU,Mauritius SSR International Airport,4
+MDE,Medellin José María Córdova International Airport,3
+MEL,Melbourne Airport,3
+MEX,Mexico City International Airport,3
+MIA,Miami International Airport,3
+MIG,Mianyang Nanjiao Airport,3
+LIN,Milan Linate Airport,3
+MXP,Milan Malpensa Airport,4
+MSP,Minneapolis-Saint Paul International Airport,3
+MSQ,Minsk National Airport,3
+KMI,Miyazaki Airport,4
+MBJ,Montego Bay Sangster International Airport,3
+MTY,Monterrey International Airport,3
+YUL,Montréal-Trudeau International Airport,4
+DME,Moscow Domodedovo Airport,3
+SVO,Moscow Sheremetyevo International Airport,3
+VKO,Moscow Vnukovo International Airport,3
+MDG,Mudanjiang Hailang International Airport,2
+BOM,Mumbai Chatrapati Shivaji International Airport,4
+MUC,Munich Airport,5
+MCT,Muscat International Airport,4
+NAN,Nadi International Airport,3
+NBO,Nairobi Jomo Kenyatta International Airport,3
+KHN,Nanchang Changbei International Airport,3
+NAO,Nanchong Gaoping Airport,3
+NKG,Nanjing Lukou International Airport,3
+NNG,Nanning Wuxu International Airport,3
+NTG,Nantong Xingdong International Airport,3
+NNY,Nanyang Jiangying Airport,2
+NAP,Naples International Airport,3
+BNA,Nashville International Airport,3
+NAS,Nassau Lynden Pindling International Airport,3
+JFK,New York JFK International Airport,3
+LGA,New York LaGuardia Airport,4
+EWR,Newark Liberty International Airport,3
+NCE,Nice Côte d'Azur Airport,3
+NGB,Ningbo Lishe International Airport,3
+NOU,Nouméa La Tontouta International Airport,3
+ORF,Norfolk International Airport,4
+OVB,Novosibirsk Tolmachevo Airport,3
+NQZ,Nur-Sultan Nazarbayev International Airport,3
+OAK,Oakland International Airport,3
+OKA,Okinawa Naha Airport,4
+OLB,Olbia Costa Smeralda Airport,3
+DSN,Ordos Ejin Horo International Airport,4
+MCO,Orlando International Airport,3
+ITM,Osaka International Itami Airport,4
+OSL,Oslo Airport,4
+YOW,Ottawa International Airport,4
+PLM,"Palembang Sultan Mahmud Badaruddin II Airport ",4
+PMO,Palermo Airport,3
+PMI,Palma de Mallorca Airport,3
+PTY,Panama Tocumen International Airport,3
+PPT,"Papeete Faa'a International Airport ",3
+PFO,Paphos International Airport,3
+CDG,Paris CDG Airport,4
+ORY,Paris Orly Airport,4
+PAT,Patna Airport,2
+PKU,Pekanbaru Sultan Syarif Kasim II Airport,4
+PEN,Penang International Airport,3
+PER,Perth Airport,4
+PHL,Philadelphia International Airport,3
+PHX,Phoenix Sky Harbor International Airport,3
+PQC,Phu Quoc International Airport,3
+HKT,Phuket International Airport,3
+PIT,Pittsburgh International Airport,3
+ROV,"Platov International Airport, Rostov",5
+PTP,Pointe-à-Pitre International Airport,3
+PLZ,Port Elizabeth Airport,3
+POM,Port Moresby Jacksons International Airport,3
+VLI,Port Vila Bauerfield Airport,2
+PDX,Portland International Airport,4
+OPO,Porto Airport,4
+PRG,Prague Václav Havel Airport,3
+PNQ,Pune Airport,3
+PUJ,Punta Cana International Airport,3
+TAO,Qingdao Liuting International Airport,3
+JJN,Quanzhou Jinjiang International Airport,2
+ZQN,Queenstown Airport,3
+UIO,Quito Mariscal Sucre International Airport,5
+RDU,Raleigh-Durham International Airport,3
+RUN,Réunion Roland Garros Airport,3
+RHO,Rhodes Airport Diagoras,3
+RIX,Riga International Airport,3
+GIG,Rio de Janeiro Galeão International Airport,3
+RUH,Riyadh King Khalid International Airport,4
+FCO,Rome Fiumicino Airport,5
+SMF,Sacramento International Airport,3
+LED,Saint Petersburg Pulkovo Airport,3
+SLC,Salt Lake City Airport,3
+SAT,San Antonio International Airport,3
+SAN,San Diego International Airport,3
+SFO,San Francisco International Airport,3
+SJC,San José International Airport,3
+SJO,San José Juan Santamaría International Airport,3
+SJU,San Juan Luis Muñoz Marín International Airport,3
+SCL,Santiago International Airport,3
+SYX,Sanya Phoenix International Airport,4
+CGH,Sao Paulo Congonhas Airport,3
+GRU,São Paulo-Guarulhos International Airport,3
+SEA,Seattle-Tacoma International Airport,4
+GMP,Seoul Gimpo International Airport,4
+ICN,Seoul Incheon International Airport,5
+SVQ,Seville Airport,3
+SEZ,Seychelles International Airport,3
+SHA,Shanghai Hongqiao International Airport,5
+PVG,Shanghai Pudong Airport,3
+SHE,Shenyang Taoxian International Airport,3
+SZX,Shenzhen Bao’an International Airport,5
+SJW,Shijiazhuang Zhengding International Airport,2
+SYS,Shiyan Wudangshan Airport,3
+SIN,Singapore Changi Airport,5
+AER,Sochi International Airport,4
+SOF,Sofia Airport,3
+STL,St. Louis Lambert International Airport,3
+ARN,Stockholm Arlanda Airport,3
+STR,Stuttgart Airport,4
+WUX,Sunan Shuofang International Airport,3
+SUB,Surabaya Juanda International Airport,3
+SYD,Sydney Airport,4
+TPE,Taiwan Taoyuan International Airport,4
+HYN,Taizhou Luqiao Airport,2
+TLL,Tallinn Airport,3
+TPA,Tampa International Airport,3
+TAS,Tashkent International Airport,2
+TBS,Tbilisi International Airport,4
+IKA,Tehran Imam Khomeini International Airport,3
+TLV,Tel Aviv Ben-Gurion International Airport,3
+TFS,Tenerife South Airport,3
+TCZ,Tengchong Tuofeng Airport,3
+TSN,Tianjin Binhai International Airport,3
+HND,Tokyo Haneda International Airport,5
+NRT,Tokyo Narita International Airport,5
+TOF,Tomsk Bogashevo Airport,3
+TGO,Tongliao Airport,2
+TEN,Tongren Fenghuang Airport,2
+YYZ,Toronto Pearson International Airport,4
+TLS,Toulouse-Blagnac Airport,3
+TSF,Treviso Airport,3
+TUN,Tunis-Carthage International Airport,2
+UFA,Ufa International Airport,4
+URC,Ürümqi Diwopu International Airport,3
+VLC,Valencia Airport,3
+YVR,Vancouver International Airport,4
+VCE,Venice Marco Polo Airport,3
+VIE,Vienna Airport,4
+VNO,Vilnius Airport,3
+VVO,Vladivostok International Airport,3
+WAW,Warsaw Chopin Airport,3
+IAD,Washington Dulles International Airport,3
+DCA,Washington Reagan National Airport,3
+WEH,Weihai International Airport,2
+WNZ,Wenzhou Yongqiang International Airport,3
+WDH,Windhoek Hosea Kutako International Airport,3
+YWG,Winnipeg Richardson International Airport,4
+WUH,Wuhan Tianhe International Airport,3
+XIY,Xi’an Xianyang International Airport,4
+XMN,Xiamen Gaoqi International Airport,3
+XFN,Xiangyang Liuji Airport,2
+ACX,Xingyi Wanfenglin Airport,3
+XNN,Xining Caojiabao Airport,2
+JHG,Xishuangbanna Gasa International Airport,2
+XUZ,Xuzhou Guanyin International Airport,3
+YNZ,Yancheng Nanyang Airport,3
+RGN,Yangon International Airport,3
+YTY,Yangzhou Taizhou Airport,3
+YNJ,Yanji Chaoyangchuan Airport,2
+YNT,Yantai International Airport,3
+YBP,Yibin Wuliangye Airport,3
+YIH,Yichang Sanxia Airport,4
+INC,Yinchuan Hedong International Airport,3
+YIN,Yining Airport,2
+YIW,Yiwu Airport,3
+UYN,Yulin Yuyang Airport,2
+YCU,Yuncheng Airport,3
+UUS,Yuzhno-Sakhalinsk Airport,2
+ZAG,Zagreb Airport Franjo Tudman,3
+DYG,Zhangjiajie Hehua International Airport,4
+ZHA,Zhanjiang Airport,2
+CGO,Zhengzhou Xinzheng International Airport,3
+HSN,Zhoushan Putuoshan Airport,3
+ZUH,Zhuhai Jinwan Airport,3
+WMT,Zunyi Maotai Airport,3
+ZYI,Zunyi Xinzhou Airport,2
+ZRH,Zurich Airport,4

@@ -1,0 +1,2167 @@
+[
+    {
+      "IATA_Code": "AUH",
+      "Airport_Name": "Abu Dhabi International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "ABV",
+      "Airport_Name": "Abuja Nnamdi Azikwe International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "ACC",
+      "Airport_Name": "Accra Kotoka International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ADD",
+      "Airport_Name": "Addis Ababa Bole International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "AMD",
+      "Airport_Name": "Ahmedabad International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "AKU",
+      "Airport_Name": "Aksu Wensu Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "ALG",
+      "Airport_Name": "Algiers Houari Boumediene Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ALA",
+      "Airport_Name": "Almaty International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "AMM",
+      "Airport_Name": "Amman Queen Alia International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "AMS",
+      "Airport_Name": "Amsterdam Schiphol Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "ESB",
+      "Airport_Name": "Ankara Esenboga Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "AYT",
+      "Airport_Name": "Antalya Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TNR",
+      "Airport_Name": "Antananarivo Ivato International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "ATH",
+      "Airport_Name": "Athens Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ATL",
+      "Airport_Name": "Atlanta Hartsfield International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "AKL",
+      "Airport_Name": "Auckland International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "AUS",
+      "Airport_Name": "Austin-Bergstrom International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BAH",
+      "Airport_Name": "Bahrain International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "AEB",
+      "Airport_Name": "Baise Bama Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "GYD",
+      "Airport_Name": "Baku International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "BWI",
+      "Airport_Name": "Baltimore/Washington International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BLR",
+      "Airport_Name": "Bangalore Kempegowda International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "DMK",
+      "Airport_Name": "Bangkok Don Mueang International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BKK",
+      "Airport_Name": "Bangkok Suvarnabhumi Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BSD",
+      "Airport_Name": "Baoshan Yunrui Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "BAV",
+      "Airport_Name": "Baotou Donghe Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BCN",
+      "Airport_Name": "Barcelona-El Prat Josep Tarradellas Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "BHY",
+      "Airport_Name": "Beihai Fucheng Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PEK",
+      "Airport_Name": "Beijing Capital International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PKX",
+      "Airport_Name": "Beijing Daxing International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "NAY",
+      "Airport_Name": "Beijing Nanyuan Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "BEY",
+      "Airport_Name": "Beirut Rafic Hariri International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BFS",
+      "Airport_Name": "Belfast International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CNF",
+      "Airport_Name": "Belo Horizonte International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BEG",
+      "Airport_Name": "Belgrade Nikola Tesla Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BER",
+      "Airport_Name": "Berlin Brandenburg Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "BFJ",
+      "Airport_Name": "Bijie Feixiong Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BIO",
+      "Airport_Name": "Bilbao Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "YTZ",
+      "Airport_Name": "Billy Bishop Toronto City Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "BLL",
+      "Airport_Name": "Billund Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "BHX",
+      "Airport_Name": "Birmingham Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "FRU",
+      "Airport_Name": "Bishkek Manas International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "BAR",
+      "Airport_Name": "Boao Qionghai Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BOG",
+      "Airport_Name": "Bogota El Dorado International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "BLQ",
+      "Airport_Name": "Bologna Guglielmo Marconi Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BOD",
+      "Airport_Name": "Bordeaux-Merignac Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BOS",
+      "Airport_Name": "Boston Logan Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BSB",
+      "Airport_Name": "Brasilia International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BRE",
+      "Airport_Name": "Bremen Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "BGI",
+      "Airport_Name": "Bridgetown Grantley Adams International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BNE",
+      "Airport_Name": "Brisbane Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "BRS",
+      "Airport_Name": "Bristol Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BWN",
+      "Airport_Name": "Brunei International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BRU",
+      "Airport_Name": "Brussels Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "OTP",
+      "Airport_Name": "Bucharest Henri Coanda International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BUD",
+      "Airport_Name": "Budapest Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "EZE",
+      "Airport_Name": "Buenos Aires Ezeiza Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "AEP",
+      "Airport_Name": "Buenos Aires Jorge Newbery Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PUS",
+      "Airport_Name": "Busan Gimhae International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CNS",
+      "Airport_Name": "Cairns Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CAI",
+      "Airport_Name": "Cairo International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YYC",
+      "Airport_Name": "Calgary International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CLO",
+      "Airport_Name": "Cali Alfonso Bonilla Aragón International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CCJ",
+      "Airport_Name": "Calicut International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CXR",
+      "Airport_Name": "Cam Ranh International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CUN",
+      "Airport_Name": "Cancún International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CPT",
+      "Airport_Name": "Cape Town International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "CCS",
+      "Airport_Name": "Caracas Maiquetia Simon Bolivar International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "CMN",
+      "Airport_Name": "Casablanca Mohammed V International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CTA",
+      "Airport_Name": "Catania International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HPH",
+      "Airport_Name": "Cat Bi International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GCM",
+      "Airport_Name": "Cayman Owen Roberts International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CGQ",
+      "Airport_Name": "Changchun Longjia Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CSX",
+      "Airport_Name": "Changsha Huanghua Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "CZX",
+      "Airport_Name": "Changzhou International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CLT",
+      "Airport_Name": "Charlotte Douglas International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CTU",
+      "Airport_Name": "Chengdu Shuangliu International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "TFU",
+      "Airport_Name": "Chengdu Tianfu International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "MAA",
+      "Airport_Name": "Chennai International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "CNX",
+      "Airport_Name": "Chiang Mai International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MDW",
+      "Airport_Name": "Chicago Midway International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ORD",
+      "Airport_Name": "Chicago O’Hare Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CIF",
+      "Airport_Name": "Chifeng Yulong Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "UBN",
+      "Airport_Name": "Chinggis Khaan International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "KIV",
+      "Airport_Name": "Chisinau International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CGP",
+      "Airport_Name": "Chittagong Shah Amanat International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "JUH",
+      "Airport_Name": "Chizhou Jiuhuashan Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "CHC",
+      "Airport_Name": "Christchurch International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "CKG",
+      "Airport_Name": "Chongqing Jiangbei International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NGO",
+      "Airport_Name": "Chubu Centrair International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "CVG",
+      "Airport_Name": "Cincinnati/Northern Kentucky International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "CLE",
+      "Airport_Name": "Cleveland Hopkins International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "COK",
+      "Airport_Name": "Cochin International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CGN",
+      "Airport_Name": "Cologne Bonn Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "CMB",
+      "Airport_Name": "Colombo Bandaranaike International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CPH",
+      "Airport_Name": "Copenhagen Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "CUZ",
+      "Airport_Name": "Cusco Alejandro Velasco Astete International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "DLU",
+      "Airport_Name": "Dali Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DLC",
+      "Airport_Name": "Dalian Zhoushuizi International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DFW",
+      "Airport_Name": "Dallas/Fort Worth International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DAL",
+      "Airport_Name": "Dallas Love Field Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DMM",
+      "Airport_Name": "Dammam King Fahd International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DAM",
+      "Airport_Name": "Damascus International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "DAD",
+      "Airport_Name": "Da Nang International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DAR",
+      "Airport_Name": "Dar-es-Salaam Julius Nyerere International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DAT",
+      "Airport_Name": "Datong Yungang Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LUM",
+      "Airport_Name": "Dehong Manshi Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DEL",
+      "Airport_Name": "Delhi Indira Gandhi International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DPS",
+      "Airport_Name": "Denpasar Ngurah Rai International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DEN",
+      "Airport_Name": "Denver International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DTW",
+      "Airport_Name": "Detroit Metro Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DAC",
+      "Airport_Name": "Dhaka Hazrat Shahjalal International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "DOH",
+      "Airport_Name": "Doha Hamad International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "DXB",
+      "Airport_Name": "Dubai International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DUB",
+      "Airport_Name": "Dublin Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "DUR",
+      "Airport_Name": "Durban King Shaka International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "DUS",
+      "Airport_Name": "Dusseldorf Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "EDI",
+      "Airport_Name": "Edinburgh Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YEG",
+      "Airport_Name": "Edmonton International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "EIN",
+      "Airport_Name": "Eindhoven Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SAL",
+      "Airport_Name": "El Salvador International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ENH",
+      "Airport_Name": "Enshi Xujiaping Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "EBB",
+      "Airport_Name": "Entebbe International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "EXT",
+      "Airport_Name": "Exeter Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "FAO",
+      "Airport_Name": "Faro Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "FLL",
+      "Airport_Name": "Fort Lauderdale-Hollywood International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "FRA",
+      "Airport_Name": "Frankfurt Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "FUK",
+      "Airport_Name": "Fukuoka Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "FOC",
+      "Airport_Name": "Fuzhou Changle International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GBE",
+      "Airport_Name": "Gaborone Sir Seretse Khama International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KOW",
+      "Airport_Name": "Ganzhou Huangjin Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GVA",
+      "Airport_Name": "Geneva Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GLA",
+      "Airport_Name": "Glasgow Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GOI",
+      "Airport_Name": "Goa Dabolim Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "OOL",
+      "Airport_Name": "Gold Coast Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GOT",
+      "Airport_Name": "Gothenburg Landvetter Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LPA",
+      "Airport_Name": "Gran Canaria Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GDL",
+      "Airport_Name": "Guadalajara International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CAN",
+      "Airport_Name": "Guangzhou Baiyun International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "GUA",
+      "Airport_Name": "Guatemala La Aurora International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GYE",
+      "Airport_Name": "Guayaquil José Joaquín de Olmedo International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "KWL",
+      "Airport_Name": "Guilin Liangjiang International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KWE",
+      "Airport_Name": "Guiyang Longdongbao International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GAU",
+      "Airport_Name": "Guwahati Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HAK",
+      "Airport_Name": "Haikou Meilan International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "YHZ",
+      "Airport_Name": "Halifax Stanfield International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "HAM",
+      "Airport_Name": "Hamburg Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "HGH",
+      "Airport_Name": "Hangzhou Xiaoshan International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HAN",
+      "Airport_Name": "Hanoi Noi Bai International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HRB",
+      "Airport_Name": "Harbin Taiping International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HAV",
+      "Airport_Name": "Havana José Martí International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "HFE",
+      "Airport_Name": "Hefei Xinqiao International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HEL",
+      "Airport_Name": "Helsinki Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "HER",
+      "Airport_Name": "Heraklion International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "SGN",
+      "Airport_Name": "Ho Chi Minh City Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HET",
+      "Airport_Name": "Hohhot Baita International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HKG",
+      "Airport_Name": "Hong Kong International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "HNL",
+      "Airport_Name": "Honolulu Daniel K. Inouye International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "IAH",
+      "Airport_Name": "Houston George Bush Intercontinental Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "HOU",
+      "Airport_Name": "Houston William P. Hobby Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "HIA",
+      "Airport_Name": "Huai'an Lianshui Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "TXN",
+      "Airport_Name": "Huangshan Tunxi International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HUZ",
+      "Airport_Name": "Huizhou Pingtan Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "HLD",
+      "Airport_Name": "Hulunbuir Hailar Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HRG",
+      "Airport_Name": "Hurghada International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HYD",
+      "Airport_Name": "Hyderabad Rajiv Gandhi International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "IBZ",
+      "Airport_Name": "Ibiza Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "IND",
+      "Airport_Name": "Indianapolis International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "INV",
+      "Airport_Name": "Inverness Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ISB",
+      "Airport_Name": "Islamabad International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "IST",
+      "Airport_Name": "Istanbul Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "SAW",
+      "Airport_Name": "Istanbul Sabiha Gokcen Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ADB",
+      "Airport_Name": "Izmir Adnan Menderes Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "JAI",
+      "Airport_Name": "Jaipur International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CGK",
+      "Airport_Name": "Jakarta Soekarno-Hatta International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "JED",
+      "Airport_Name": "Jeddah King Abdulaziz International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "CJU",
+      "Airport_Name": "Jeju International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SWA",
+      "Airport_Name": "Jieyang Chaoshan International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TNA",
+      "Airport_Name": "Jinan Yaoqiang International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "JNG",
+      "Airport_Name": "Jining Qufu Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "JHB",
+      "Airport_Name": "Johor Bahru Senai International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "JNB",
+      "Airport_Name": "Johannesburg OR Tambo International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SNA",
+      "Airport_Name": "John Wayne Airport Orange County",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KIX",
+      "Airport_Name": "Kansai International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MCI",
+      "Airport_Name": "Kansas City International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KHI",
+      "Airport_Name": "Karachi Jinnah International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "KHG",
+      "Airport_Name": "Kashi Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "KTW",
+      "Airport_Name": "Katowice Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KZN",
+      "Airport_Name": "Kazan International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "KEF",
+      "Airport_Name": "Keflavík Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YLW",
+      "Airport_Name": "Kelowna International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KBP",
+      "Airport_Name": "Kiev Boryspil International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KGL",
+      "Airport_Name": "Kigali International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CCU",
+      "Airport_Name": "Kolkata Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SVX",
+      "Airport_Name": "Koltsovo International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "KRL",
+      "Airport_Name": "Korla Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BKI",
+      "Airport_Name": "Kota Kinabalu International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KRK",
+      "Airport_Name": "Kraków Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KUL",
+      "Airport_Name": "Kuala Lumpur International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KNO",
+      "Airport_Name": "Kualanamu Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "KCH",
+      "Airport_Name": "Kuching International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KMG",
+      "Airport_Name": "Kunming Changshui International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KUF",
+      "Airport_Name": "Kurumoch Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "KWI",
+      "Airport_Name": "Kuwait International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LOS",
+      "Airport_Name": "Lagos Murtala Muhammed International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "LHE",
+      "Airport_Name": "Lahore Allama Iqbal International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "LGK",
+      "Airport_Name": "Langkawi International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LHW",
+      "Airport_Name": "Lanzhou Zhongchuan International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LCA",
+      "Airport_Name": "Larnaca International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LAS",
+      "Airport_Name": "Las Vegas McCarran Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LBA",
+      "Airport_Name": "Leeds Bradford Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LXA",
+      "Airport_Name": "Lhasa Gonggar Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "LYG",
+      "Airport_Name": "Lianyungang Baitabu Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "LJG",
+      "Airport_Name": "Lijiang Sanyi Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "LIM",
+      "Airport_Name": "Lima Jorge Chávez International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LYI",
+      "Airport_Name": "Linyi QiYang Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "LIS",
+      "Airport_Name": "Lisbon Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LZH",
+      "Airport_Name": "Liuzhou Bailian Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LCY",
+      "Airport_Name": "London City Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LGW",
+      "Airport_Name": "London Gatwick Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LHR",
+      "Airport_Name": "London Heathrow Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "LTN",
+      "Airport_Name": "London Luton Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "STN",
+      "Airport_Name": "London Stansted Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LAX",
+      "Airport_Name": "Los Angeles International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MSY",
+      "Airport_Name": "Louis Armstrong New Orleans International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LAD",
+      "Airport_Name": "Luanda International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "LKO",
+      "Airport_Name": "Lucknow Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LYA",
+      "Airport_Name": "Luoyang Beijiao Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "LUX",
+      "Airport_Name": "Luxembourg Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "LYS",
+      "Airport_Name": "Lyon-Saint Exupéry Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MFM",
+      "Airport_Name": "Macau International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CEB",
+      "Airport_Name": "Mactan-Cebu International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "FNC",
+      "Airport_Name": "Madeira Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MED",
+      "Airport_Name": "Madinah Prince Mohammad bin Abdulaziz Int'l Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MAD",
+      "Airport_Name": "Madrid-Barajas Adolfo Suárez Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "AGP",
+      "Airport_Name": "Málaga Costa del Sol Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MLE",
+      "Airport_Name": "Malé Velana International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MLA",
+      "Airport_Name": "Malta Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MAN",
+      "Airport_Name": "Manchester Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MDL",
+      "Airport_Name": "Mandalay International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MNL",
+      "Airport_Name": "Manila Ninoy Aquino International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NZH",
+      "Airport_Name": "Manzhouli Xijiao International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "RAK",
+      "Airport_Name": "Marrakech Menara Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MRS",
+      "Airport_Name": "Marseille Provence Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "FDF",
+      "Airport_Name": "Martinique Aimé Césaire International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MRU",
+      "Airport_Name": "Mauritius SSR International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MDE",
+      "Airport_Name": "Medellin José María Córdova International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MEL",
+      "Airport_Name": "Melbourne Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MEX",
+      "Airport_Name": "Mexico City International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MIA",
+      "Airport_Name": "Miami International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MIG",
+      "Airport_Name": "Mianyang Nanjiao Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LIN",
+      "Airport_Name": "Milan Linate Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MXP",
+      "Airport_Name": "Milan Malpensa Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MSP",
+      "Airport_Name": "Minneapolis-Saint Paul International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MSQ",
+      "Airport_Name": "Minsk National Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KMI",
+      "Airport_Name": "Miyazaki Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MBJ",
+      "Airport_Name": "Montego Bay Sangster International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MTY",
+      "Airport_Name": "Monterrey International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YUL",
+      "Airport_Name": "Montréal-Trudeau International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "DME",
+      "Airport_Name": "Moscow Domodedovo Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SVO",
+      "Airport_Name": "Moscow Sheremetyevo International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "VKO",
+      "Airport_Name": "Moscow Vnukovo International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "MDG",
+      "Airport_Name": "Mudanjiang Hailang International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "BOM",
+      "Airport_Name": "Mumbai Chatrapati Shivaji International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MUC",
+      "Airport_Name": "Munich Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "MCT",
+      "Airport_Name": "Muscat International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "NAN",
+      "Airport_Name": "Nadi International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NBO",
+      "Airport_Name": "Nairobi Jomo Kenyatta International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "KHN",
+      "Airport_Name": "Nanchang Changbei International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NAO",
+      "Airport_Name": "Nanchong Gaoping Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NKG",
+      "Airport_Name": "Nanjing Lukou International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NNG",
+      "Airport_Name": "Nanning Wuxu International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NTG",
+      "Airport_Name": "Nantong Xingdong International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NNY",
+      "Airport_Name": "Nanyang Jiangying Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "NAP",
+      "Airport_Name": "Naples International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "BNA",
+      "Airport_Name": "Nashville International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NAS",
+      "Airport_Name": "Nassau Lynden Pindling International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "JFK",
+      "Airport_Name": "New York JFK International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LGA",
+      "Airport_Name": "New York LaGuardia Airport - Terminal B",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "LGA",
+      "Airport_Name": "New York LaGuardia Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "EWR",
+      "Airport_Name": "Newark Liberty International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "EWR",
+      "Airport_Name": "Terminal A, Newark Liberty International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "NCE",
+      "Airport_Name": "Nice Côte d'Azur Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NGB",
+      "Airport_Name": "Ningbo Lishe International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NOU",
+      "Airport_Name": "Nouméa La Tontouta International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ORF",
+      "Airport_Name": "Norfolk International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "OVB",
+      "Airport_Name": "Novosibirsk Tolmachevo Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "NQZ",
+      "Airport_Name": "Nur-Sultan Nazarbayev International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "OAK",
+      "Airport_Name": "Oakland International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "OKA",
+      "Airport_Name": "Okinawa Naha Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "OLB",
+      "Airport_Name": "Olbia Costa Smeralda Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DSN",
+      "Airport_Name": "Ordos Ejin Horo International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "MCO",
+      "Airport_Name": "Orlando International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ITM",
+      "Airport_Name": "Osaka International Itami Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "OSL",
+      "Airport_Name": "Oslo Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "YOW",
+      "Airport_Name": "Ottawa International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "PLM",
+      "Airport_Name": "Palembang Sultan Mahmud Badaruddin II Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "PMO",
+      "Airport_Name": "Palermo Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PMI",
+      "Airport_Name": "Palma de Mallorca Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PTY",
+      "Airport_Name": "Panama Tocumen International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PPT",
+      "Airport_Name": "Papeete Faa'a International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PFO",
+      "Airport_Name": "Paphos International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "CDG",
+      "Airport_Name": "Paris CDG Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "ORY",
+      "Airport_Name": "Paris Orly Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "PAT",
+      "Airport_Name": "Patna Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "PKU",
+      "Airport_Name": "Pekanbaru Sultan Syarif Kasim II Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "PEN",
+      "Airport_Name": "Penang International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PER",
+      "Airport_Name": "Perth Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "PHL",
+      "Airport_Name": "Philadelphia International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PHX",
+      "Airport_Name": "Phoenix Sky Harbor International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PQC",
+      "Airport_Name": "Phu Quoc International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HKT",
+      "Airport_Name": "Phuket International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PIT",
+      "Airport_Name": "Pittsburgh International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ROV",
+      "Airport_Name": "Platov International Airport, Rostov",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "PTP",
+      "Airport_Name": "Pointe-à-Pitre International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PLZ",
+      "Airport_Name": "Port Elizabeth Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "POM",
+      "Airport_Name": "Port Moresby Jacksons International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "VLI",
+      "Airport_Name": "Port Vila Bauerfield Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "PDX",
+      "Airport_Name": "Portland International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "OPO",
+      "Airport_Name": "Porto Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "PRG",
+      "Airport_Name": "Prague Václav Havel Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PNQ",
+      "Airport_Name": "Pune Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "PUJ",
+      "Airport_Name": "Punta Cana International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TAO",
+      "Airport_Name": "Qingdao Liuting International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "JJN",
+      "Airport_Name": "Quanzhou Jinjiang International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "ZQN",
+      "Airport_Name": "Queenstown Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "UIO",
+      "Airport_Name": "Quito Mariscal Sucre International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "RDU",
+      "Airport_Name": "Raleigh-Durham International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "RUN",
+      "Airport_Name": "Réunion Roland Garros Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "RHO",
+      "Airport_Name": "Rhodes Airport Diagoras",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "RIX",
+      "Airport_Name": "Riga International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GIG",
+      "Airport_Name": "Rio de Janeiro Galeão International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "RUH",
+      "Airport_Name": "Riyadh King Khalid International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "FCO",
+      "Airport_Name": "Rome Fiumicino Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "SMF",
+      "Airport_Name": "Sacramento International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "LED",
+      "Airport_Name": "Saint Petersburg Pulkovo Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SLL",
+      "Airport_Name": "Salalah International Airport",
+      "Skytrax_Rating": "N/A"
+    },
+    {
+      "IATA_Code": "SLC",
+      "Airport_Name": "Salt Lake City Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SAT",
+      "Airport_Name": "San Antonio International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SAN",
+      "Airport_Name": "San Diego International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SFO",
+      "Airport_Name": "San Francisco International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SJC",
+      "Airport_Name": "San José International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SJO",
+      "Airport_Name": "San José Juan Santamaría International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SJU",
+      "Airport_Name": "San Juan Luis Muñoz Marín International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SCL",
+      "Airport_Name": "Santiago International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SYX",
+      "Airport_Name": "Sanya Phoenix International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "CGH",
+      "Airport_Name": "Sao Paulo Congonhas Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "GRU",
+      "Airport_Name": "São Paulo-Guarulhos International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SEA",
+      "Airport_Name": "Seattle-Tacoma International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "GMP",
+      "Airport_Name": "Seoul Gimpo International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "ICN",
+      "Airport_Name": "Seoul Incheon International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "SVQ",
+      "Airport_Name": "Seville Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SEZ",
+      "Airport_Name": "Seychelles International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SHA",
+      "Airport_Name": "Shanghai Hongqiao International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "PVG",
+      "Airport_Name": "Shanghai Pudong Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SHE",
+      "Airport_Name": "Shenyang Taoxian International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SZX",
+      "Airport_Name": "Shenzhen Bao’an International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "SJW",
+      "Airport_Name": "Shijiazhuang Zhengding International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "SYS",
+      "Airport_Name": "Shiyan Wudangshan Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SIN",
+      "Airport_Name": "Singapore Changi Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "AER",
+      "Airport_Name": "Sochi International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "SOF",
+      "Airport_Name": "Sofia Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "STL",
+      "Airport_Name": "St. Louis Lambert International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ARN",
+      "Airport_Name": "Stockholm Arlanda Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "STR",
+      "Airport_Name": "Stuttgart Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "WUX",
+      "Airport_Name": "Sunan Shuofang International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SUB",
+      "Airport_Name": "Surabaya Juanda International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "SYD",
+      "Airport_Name": "Sydney Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "TPE",
+      "Airport_Name": "Taiwan Taoyuan International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "HYN",
+      "Airport_Name": "Taizhou Luqiao Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "TLL",
+      "Airport_Name": "Tallinn Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TPA",
+      "Airport_Name": "Tampa International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TAS",
+      "Airport_Name": "Tashkent International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "TBS",
+      "Airport_Name": "Tbilisi International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "IKA",
+      "Airport_Name": "Tehran Imam Khomeini International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TLV",
+      "Airport_Name": "Tel Aviv Ben-Gurion International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TFS",
+      "Airport_Name": "Tenerife South Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TCZ",
+      "Airport_Name": "Tengchong Tuofeng Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TSN",
+      "Airport_Name": "Tianjin Binhai International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HND",
+      "Airport_Name": "Tokyo Haneda International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "NRT",
+      "Airport_Name": "Tokyo Narita International Airport",
+      "Skytrax_Rating": 5
+    },
+    {
+      "IATA_Code": "TOF",
+      "Airport_Name": "Tomsk Bogashevo Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TGO",
+      "Airport_Name": "Tongliao Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "TEN",
+      "Airport_Name": "Tongren Fenghuang Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "YYZ",
+      "Airport_Name": "Toronto Pearson International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "TLS",
+      "Airport_Name": "Toulouse-Blagnac Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TSF",
+      "Airport_Name": "Treviso Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "TUN",
+      "Airport_Name": "Tunis-Carthage International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "UFA",
+      "Airport_Name": "Ufa International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "URC",
+      "Airport_Name": "Ürümqi Diwopu International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "VLC",
+      "Airport_Name": "Valencia Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YVR",
+      "Airport_Name": "Vancouver International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "VCE",
+      "Airport_Name": "Venice Marco Polo Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "VIE",
+      "Airport_Name": "Vienna Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "VNO",
+      "Airport_Name": "Vilnius Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "VVO",
+      "Airport_Name": "Vladivostok International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "WAW",
+      "Airport_Name": "Warsaw Chopin Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "IAD",
+      "Airport_Name": "Washington Dulles International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DCA",
+      "Airport_Name": "Washington Reagan National Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "WEH",
+      "Airport_Name": "Weihai International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "WNZ",
+      "Airport_Name": "Wenzhou Yongqiang International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "WDH",
+      "Airport_Name": "Windhoek Hosea Kutako International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YWG",
+      "Airport_Name": "Winnipeg Richardson International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "WUH",
+      "Airport_Name": "Wuhan Tianhe International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "XIY",
+      "Airport_Name": "Xi’an Xianyang International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "XMN",
+      "Airport_Name": "Xiamen Gaoqi International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "XFN",
+      "Airport_Name": "Xiangyang Liuji Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "ACX",
+      "Airport_Name": "Xingyi Wanfenglin Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "XNN",
+      "Airport_Name": "Xining Caojiabao Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "JHG",
+      "Airport_Name": "Xishuangbanna Gasa International Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "XUZ",
+      "Airport_Name": "Xuzhou Guanyin International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YNZ",
+      "Airport_Name": "Yancheng Nanyang Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "RGN",
+      "Airport_Name": "Yangon International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YTY",
+      "Airport_Name": "Yangzhou Taizhou Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YNJ",
+      "Airport_Name": "Yanji Chaoyangchuan Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "YNT",
+      "Airport_Name": "Yantai International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YBP",
+      "Airport_Name": "Yibin Wuliangye Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YIH",
+      "Airport_Name": "Yichang Sanxia Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "INC",
+      "Airport_Name": "Yinchuan Hedong International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "YIN",
+      "Airport_Name": "Yining Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "YIW",
+      "Airport_Name": "Yiwu Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "UYN",
+      "Airport_Name": "Yulin Yuyang Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "YCU",
+      "Airport_Name": "Yuncheng Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "UUS",
+      "Airport_Name": "Yuzhno-Sakhalinsk Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "ZAG",
+      "Airport_Name": "Zagreb Airport Franjo Tudman",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "DYG",
+      "Airport_Name": "Zhangjiajie Hehua International Airport",
+      "Skytrax_Rating": 4
+    },
+    {
+      "IATA_Code": "ZHA",
+      "Airport_Name": "Zhanjiang Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "CGO",
+      "Airport_Name": "Zhengzhou Xinzheng International Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "HSN",
+      "Airport_Name": "Zhoushan Putuoshan Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ZUH",
+      "Airport_Name": "Zhuhai Jinwan Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "WMT",
+      "Airport_Name": "Zunyi Maotai Airport",
+      "Skytrax_Rating": 3
+    },
+    {
+      "IATA_Code": "ZYI",
+      "Airport_Name": "Zunyi Xinzhou Airport",
+      "Skytrax_Rating": 2
+    },
+    {
+      "IATA_Code": "ZRH",
+      "Airport_Name": "Zurich Airport",
+      "Skytrax_Rating": 4
+    }
+  ]

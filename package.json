@@ -5,9 +5,16 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "db:migrate": "supabase db push",
+    "db:seed": "npm run db:seed:airlines && npm run db:seed:airports",
+    "db:seed:airlines": "psql \"$SUPABASE_DB_URL\" -c \"\\copy airlines from 'supabase/seeds/airlines.csv' csv header\"",
+    "db:seed:airports": "psql \"$SUPABASE_DB_URL\" -c \"\\copy airports from 'supabase/seeds/airports.csv' csv header\"",
+    "db:reset": "supabase db reset --password $DB_PASS",
+    "db:all": "npm run db:migrate && npm run db:seed"
   },
   "dependencies": {
+    "@lottiefiles/dotlottie-react": "^0.17.1",
     "@supabase/supabase-js": "^2.46.2",
     "amadeus": "^3.3.0",
     "lucide-react": "^0.544.0",
@@ -21,10 +28,11 @@
   "devDependencies": {
     "@types/node": "^20.11.30",
     "@types/react": "19.1.13",
-    "typescript": "^5.4.5",
-    "tailwindcss": "^3.4.10",
-    "postcss": "^8.4.47",
     "autoprefixer": "^10.4.20",
-    "eslint-plugin-tailwindcss": "^3.17.5"
+    "eslint-plugin-tailwindcss": "^3.17.5",
+    "postcss": "^8.4.47",
+    "supabase": "^2.40.7",
+    "tailwindcss": "^3.4.10",
+    "typescript": "^5.4.5"
   }
 }
