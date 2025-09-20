@@ -17,4 +17,37 @@ body { margin: 0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI
 
 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border-width: 0; }
 
+/* Detail page layout responsiveness */
+@media (max-width: 768px) {
+  .detail-layout {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-lg) !important;
+  }
+}
+
+/* Homepage responsive design */
+@media (max-width: 768px) {
+  .filter-bar-responsive .rowBottom {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-lg) !important;
+  }
+  
+  .filter-bar-responsive .rowTop {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: var(--space-md) !important;
+  }
+  
+  .filter-bar-responsive .combo {
+    grid-template-columns: 1fr !important;
+    gap: var(--space-sm) !important;
+  }
+  
+  .filter-bar-responsive .searchButtonContainer {
+    position: static !important;
+    margin-top: var(--space-lg) !important;
+    transform: none !important;
+  }
+}
+
 

@@ -12,7 +12,7 @@ export default function List<T extends object>({ items, ItemComponent, empty, lo
   if (loading) return <div>{skeleton || 'Loading...'}</div>;
   if (!items || items.length === 0) return <div>{empty || 'No items'}</div>;
   return (
-    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 12 }}>
+    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gap: 'var(--space-lg)' }}>
       {items.map((item, index) => (
         <li key={(item as any).id || index}>
           {/* eslint-disable-next-line react/jsx-props-no-spreading */}

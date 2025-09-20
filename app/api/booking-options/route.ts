@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { toHttpResponse, ValidationError } from '../../../src/domain/errors';
+import { getRedis } from '../../../src/lib/redis';
 
 export async function GET(req: NextRequest): Promise<NextResponse> {
     try {
@@ -17,6 +18,26 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
         }
         const apiKey = (process.env.SERPAPI_API_KEY || '').trim();
         if (!apiKey) throw new ValidationError('Missing SERPAPI_API_KEY');
+
+        // Build cache key – primary by booking_token, else by route/date
+        const cacheKeyParts = ['bookingOpts'];
+        if (bookingToken) cacheKeyParts.push(`token:${bookingToken}`);
+        if (depId && arrId && outboundDate) cacheKeyParts.push(`route:${depId}-${arrId}-${outboundDate}`);
+        cacheKeyParts.push(`cur:${currency}`);
+        const cacheKey = cacheKeyParts.join('|');
+
+        // Attempt to read from Redis cache first
+        try {
+            const redis = await getRedis();
+            const cached = await redis.get(cacheKey);
+            if (cached) {
+                const parsed = JSON.parse(cached);
+                return NextResponse.json(parsed, { status: 200 });
+            }
+        } catch (err) {
+            // Log and continue without failing request
+            console.error('Booking options cache read failed', err);
+        }
 
         const qp = new URLSearchParams();
         // SerpApi docs: use google_flights engine with search_type=booking_options
@@ -56,14 +77,25 @@ export async function GET(req: NextRequest): Promise<NextResponse> {
             ? buildGetUrl(best.booking_request.url, best.booking_request.post_data)
             : null;
 
-        return NextResponse.json({
+        const responseBody = {
             provider: 'serpapi',
             bookingOptions: options,
             bestOption: best || undefined,
             deeplinkUrl: deeplink || undefined,
             baggagePrices: json?.baggage_prices || undefined,
             searchMetadata: json?.search_metadata || undefined
-        }, { status: 200 });
+        };
+
+        // Store in cache (TTL 30 min configurable)
+        try {
+            const redis = await getRedis();
+            const ttl = Number(process.env.BOOKING_OPTIONS_CACHE_TTL || '1800'); // seconds
+            await redis.set(cacheKey, JSON.stringify(responseBody), { EX: ttl });
+        } catch (err) {
+            console.error('Booking options cache write failed', err);
+        }
+
+        return NextResponse.json(responseBody, { status: 200 });
     } catch (err) {
         const { status, body } = toHttpResponse(err);
         return NextResponse.json(body, { status });

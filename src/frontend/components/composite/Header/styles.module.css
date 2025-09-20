@@ -1,7 +1,63 @@
-.header { position: sticky; top: 0; z-index: 20; background: linear-gradient(180deg, #0ea5e9 0%, #38bdf8 100%); color: white; box-shadow: 0 2px 12px rgba(0,0,0,0.08); }
-.brand { font-weight: 800; color: white; text-decoration: none; font-size: 18px; }
-.nav { display: flex; gap: 16px; }
-.link { color: white; opacity: 0.95; text-decoration: none; font-weight: 600; }
-.link:hover { opacity: 1; text-decoration: underline; }
+.header { 
+  position: sticky; 
+  top: 0; 
+  z-index: 20; 
+  background: var(--color-header); 
+  color: white; 
+  box-shadow: var(--shadow-md);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.brandCenter {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+}
+
+.brand { 
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  font-weight: 700; 
+  color: white; 
+  text-decoration: none; 
+  font-size: 20px; 
+  letter-spacing: -0.025em;
+  transition: all 0.2s ease;
+}
+
+.brand:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}
+
+.logo {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) contrast(1.2) brightness(1.1);
+  stroke-width: 2;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: var(--space-sm);
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  transition: all 0.2s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.backButton:hover {
+  color: white;
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateX(-2px);
+}
 
 

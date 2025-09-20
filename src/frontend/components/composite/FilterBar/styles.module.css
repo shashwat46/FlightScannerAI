@@ -1,19 +1,236 @@
-.panel { background: #dff6ff; border: 1px solid rgba(15,23,42,0.08); border-radius: 12px; padding: 12px; box-shadow: 0 8px 20px rgba(2,6,23,0.06); }
-.rowTop { display: flex; gap: 8px; align-items: center; margin-bottom: 10px; }
-.rowBottom { display: grid; grid-template-columns: 1.2fr 1.2fr 0.9fr 1.2fr auto; gap: 16px; align-items: end; }
-.combo { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
-.action { display: flex; align-items: flex-end; }
-.filter-bar__input { padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(15,23,42,0.15); background: white; }
+.panel { 
+  background: rgba(255, 255, 255, 0.95); 
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-xl); 
+  padding: var(--space-2xl); 
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  margin-top: var(--space-lg);
+  position: relative;
+}
 
-.filter-bar__select { padding: 10px 12px; border-radius: 10px; border: 1px solid rgba(15,23,42,0.15); background: white; }
+.rowTop { 
+  display: flex; 
+  gap: var(--space-lg); 
+  align-items: center; 
+  justify-content: flex-start;
+  margin-bottom: var(--space-lg); 
+}
 
-.pill { display: inline-flex; gap: 6px; align-items: center; background: transparent; border: none; padding: 4px 6px; }
-.pill select { border: none; background: transparent; outline: none; font-weight: 700; }
-.filter-bar__select--bare { border: none; background: transparent; outline: none; }
+.rowBottom { 
+  display: grid; 
+  grid-template-columns: 1.2fr 1.2fr 1fr 1.3fr; 
+  gap: var(--space-lg); 
+  align-items: end;
+}
 
-.field { display: grid; gap: 6px; }
-.label { font-size: 12px; color: #64748b; font-weight: 700; }
-.inputPill { display: flex; align-items: center; gap: 8px; background: white; border: 1px solid rgba(15,23,42,0.12); border-radius: 12px; padding: 10px 12px; }
-.filter-bar__input--bare { border: none; outline: none; background: transparent; }
+.combo { 
+  display: grid; 
+  grid-template-columns: 80px 1fr; 
+  gap: var(--space-sm); 
+  align-items: end;
+}
+
+.searchButtonContainer {
+  position: absolute;
+  right: -160px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+}
+
+.action { 
+  display: flex; 
+  align-items: center; 
+  justify-content: center;
+}
+
+.filter-bar__input { 
+  padding: 12px 16px; 
+  border-radius: var(--radius-md); 
+  border: 1px solid var(--color-border); 
+  background: white;
+  font-weight: 500;
+}
+
+.filter-bar__select { 
+  padding: 16px 18px; 
+  border-radius: var(--radius-lg); 
+  border: 2px solid var(--color-border); 
+  background: white;
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--color-text);
+  min-height: 56px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+}
+
+.filter-bar__select:focus {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12), var(--shadow-md);
+  outline: none;
+  transform: translateY(-1px);
+}
+
+.pill { 
+  display: inline-flex; 
+  gap: var(--space-sm); 
+  align-items: center; 
+  background: #1e3a8a; 
+  border: 2px solid #1e3a8a;
+  border-radius: var(--radius-lg);
+  padding: var(--space-md) var(--space-lg);
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  box-shadow: var(--shadow-md);
+  transition: all 0.2s ease;
+}
+
+.pill:hover {
+  background: #1e40af;
+  border-color: #1e40af;
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-1px);
+}
+
+.pill select { 
+  border: none; 
+  background: transparent; 
+  outline: none; 
+  font-weight: 700;
+  color: white;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.filter-bar__select--bare { 
+  border: none; 
+  background: transparent; 
+  outline: none;
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.field { 
+  display: grid; 
+  gap: var(--space-sm); 
+}
+
+.label { 
+  font-size: 14px; 
+  color: #6b7280; 
+  font-weight: 700;
+  margin-bottom: var(--space-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.inputPill { 
+  display: flex; 
+  align-items: center; 
+  gap: var(--space-sm); 
+  background: white; 
+  border: 2px solid var(--color-border); 
+  border-radius: var(--radius-lg); 
+  padding: 16px 18px;
+  transition: all 0.2s ease;
+  box-shadow: var(--shadow-sm);
+  min-height: 56px;
+  position: relative;
+}
+
+.inputPill:focus-within {
+  border-color: var(--color-accent);
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.12), var(--shadow-md);
+  transform: translateY(-1px);
+}
+
+.filter-bar__input--bare { 
+  border: none; 
+  outline: none; 
+  background: transparent;
+  font-weight: 500;
+  flex: 1;
+  font-size: 14px;
+  color: var(--color-text);
+}
+
+.filter-bar__input--bare::placeholder {
+  color: var(--color-text-light);
+  font-weight: 400;
+}
+
+/* Date input specific styling */
+.inputPill input[type="date"] {
+  width: 100%;
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-appearance: none !important;
+  -moz-appearance: textfield !important;
+  appearance: none !important;
+  background: transparent !important;
+}
+
+/* Additional date input overrides */
+.inputPill input[type="date"]::-ms-clear {
+  display: none !important;
+}
+
+.inputPill input[type="date"]::-ms-reveal {
+  display: none !important;
+}
+
+.inputPill input[type="date"]::-webkit-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  width: 0 !important;
+  height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.inputPill input[type="date"]::-webkit-inner-spin-button,
+.inputPill input[type="date"]::-webkit-outer-spin-button {
+  -webkit-appearance: none !important;
+  margin: 0 !important;
+  display: none !important;
+  visibility: hidden !important;
+}
+
+.inputPill input[type="date"]::-moz-calendar-picker-indicator {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+}
+
+.inputPill input[type="date"] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+}
+
+/* Ensure the entire input pill is clickable for date */
+.inputPill:has(input[type="date"]) {
+  cursor: pointer;
+}
+
+.inputPill:has(input[type="date"]) * {
+  pointer-events: none;
+}
+
+.inputPill:has(input[type="date"]) input[type="date"] {
+  pointer-events: all;
+}
+
+/* Number input styling */
+.inputPill input[type="number"] {
+  text-align: center;
+  font-weight: 600;
+}
 
 

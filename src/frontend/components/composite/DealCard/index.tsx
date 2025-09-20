@@ -65,7 +65,7 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
     return () => { cancelled = true; };
   }, [isExpanded, extras, pricing?.currency, viewContext]);
   return (
-    <article className={`u-card ${styles['deal-card']} u-card-tw`}>
+    <article className={styles['deal-card']} data-context={viewContext}>
       <header className={`${styles['deal-card__header']} ${styles['deal-card__topRow']}`}>
         <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
           <CarrierBadge code={(flight as any)?.airline?.carrierCode || '??'} name={(flight as any)?.airline?.name} />
@@ -86,23 +86,35 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
               <div className={styles['deal-card__price']}>{formatCurrency(pricing.dealPrice, pricing.currency)}</div>
             </div>
             <div className={styles['deal-card__timeline']}>
-              <div>
-                <div style={{ textAlign: 'center', fontWeight: 800 }}>{dates?.depart ? new Date(dates.depart).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''}</div>
-                <span className={styles['deal-card__timelineCode']}>{route.from.iata}</span>
+              <div className={styles['deal-card__timelineStation']}>
+                <div className={styles['deal-card__timelineTime']}>
+                  {dates?.depart ? new Date(dates.depart).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '--:--'}
+                </div>
+                <div className={styles['deal-card__timelineCode']}>{route.from.iata}</div>
               </div>
               <div className={styles['deal-card__timelineColCenter']}>
-                <span className={styles['deal-card__timelineMetaTop']}>{extras?.durationMinutes ? Math.round((extras.durationMinutes as any) / 60) + 'h ' + ((extras.durationMinutes as any) % 60) : ''}</span>
-                <div className={styles['deal-card__timelineLine']}>
-                  <span className={styles['deal-card__plane']}><Plane size={14} color="#64748b" /></span>
+                <div className={styles['deal-card__timelineMetaTop']}>
+                  {extras?.durationMinutes ? 
+                    `${Math.floor((extras.durationMinutes as any) / 60)}h ${(extras.durationMinutes as any) % 60 > 0 ? (extras.durationMinutes as any) % 60 : ''}`.trim() : 
+                    ''}
                 </div>
-                <span className={styles['deal-card__timelineMetaBottom']}>{(flight?.stops || 0) === 0 ? 'Direct' : `${flight?.stops} stop${(flight?.stops || 0) > 1 ? 's' : ''}`}</span>
+                <div className={styles['deal-card__timelineLine']}>
+                  <span className={styles['deal-card__plane']}>
+                    <Plane size={16} color="var(--color-accent)" />
+                  </span>
+                </div>
+                <div className={styles['deal-card__timelineMetaBottom']}>
+                  {(flight?.stops || 0) === 0 ? 'Direct' : `${flight?.stops} stop${(flight?.stops || 0) > 1 ? 's' : ''}`}
+                </div>
               </div>
-              <div>
-                <div style={{ textAlign: 'center', fontWeight: 800 }}>{extras?.arrivalTimeUtc ? new Date(extras.arrivalTimeUtc).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : ''}</div>
-                <span className={styles['deal-card__timelineCode']}>{route.to.iata}</span>
+              <div className={styles['deal-card__timelineStation']}>
+                <div className={styles['deal-card__timelineTime']}>
+                  {extras?.arrivalTimeUtc ? new Date(extras.arrivalTimeUtc).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : '--:--'}
+                </div>
+                <div className={styles['deal-card__timelineCode']}>{route.to.iata}</div>
               </div>
             </div>
-            {typeof aiDealScore === 'number' && (
+            {typeof aiDealScore === 'number' && aiDealScore > 0 && (
               <div className={styles['deal-card__priceScore']}>
                 <RingScore value={aiDealScore} size={44} />
               </div>
@@ -155,16 +167,46 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
               </div>
             </div>
 
-            <div style={{ marginTop: 12 }}>
+            <div style={{ marginTop: 'var(--space-lg)' }}>
               <div className={styles['deal-card__section-title']}>Booking options</div>
-              {!extras?.bookingToken && <div className={styles['deal-card__muted']}>Booking options unavailable for this result.</div>}
+              {!extras?.bookingToken && (
+                <div style={{ 
+                  background: 'var(--color-secondary)', 
+                  padding: 'var(--space-lg)', 
+                  borderRadius: 'var(--radius-md)', 
+                  border: '1px solid var(--color-border)',
+                  textAlign: 'center'
+                }}>
+                  <div className={styles['deal-card__muted']}>Booking options unavailable for this result.</div>
+                </div>
+              )}
               {extras?.bookingToken && (
                 <div>
-                  {bookingLoading && <div className={styles['deal-card__muted']}>Fetching booking options…</div>}
-                  {bookingError && <div className={styles['deal-card__muted']} style={{ color: '#b91c1c' }}>{bookingError}</div>}
+                  {bookingLoading && (
+                    <div style={{ 
+                      background: 'var(--color-secondary)', 
+                      padding: 'var(--space-lg)', 
+                      borderRadius: 'var(--radius-md)', 
+                      border: '1px solid var(--color-border)',
+                      textAlign: 'center'
+                    }}>
+                      <div className={styles['deal-card__muted']}>Loading booking options...</div>
+                    </div>
+                  )}
+                  {bookingError && (
+                    <div style={{ 
+                      background: '#fef2f2', 
+                      padding: 'var(--space-lg)', 
+                      borderRadius: 'var(--radius-md)', 
+                      border: '1px solid #fecaca',
+                      textAlign: 'center'
+                    }}>
+                      <div style={{ color: 'var(--color-danger)' }}>{bookingError}</div>
+                    </div>
+                  )}
                   {!bookingLoading && bookingData && Array.isArray(bookingData.bookingOptions) && bookingData.bookingOptions.length > 0 && (
-                    <div style={{ display: 'grid', gap: 8 }}>
-                      {bookingData.bookingOptions.map((opt: any, idx: number) => {
+                    <div style={{ display: 'grid', gap: 'var(--space-md)' }}>
+                      {bookingData.bookingOptions.slice(0, 3).map((opt: any, idx: number) => {
                         const together = opt?.together || opt?.departing || opt?.returning;
                         if (!together) return null;
                         const toNumber = (v: any): number | undefined => {
@@ -181,18 +223,33 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
                         const currency = together?.local_prices?.[0]?.currency || together?.currency || pricing.currency || 'USD';
                         const url = together?.booking_request?.url ? buildGetUrl(together.booking_request.url, together.booking_request.post_data) : null;
                         return (
-                          <div key={idx} className={styles['deal-card__included']} style={{ justifyContent: 'space-between', alignItems: 'center' }}>
-                            <div style={{ display: 'flex', gap: 8, alignItems: 'center' }}>
-                              <span className={styles['badge']}>{together?.book_with || 'Seller'}</span>
-                              {Array.isArray(together?.airline_logos) && together.airline_logos[0] && (
-                                <img src={together.airline_logos[0]} alt="logo" width={20} height={20} style={{ borderRadius: 4 }} />
-                              )}
-                              <span className={styles['deal-card__muted']}>{currency} {price != null && !isNaN(price) ? price : '—'}</span>
+                          <div key={idx} style={{ 
+                            display: 'flex', 
+                            justifyContent: 'space-between', 
+                            alignItems: 'center',
+                            padding: 'var(--space-lg)',
+                            background: 'var(--color-card)',
+                            border: '1px solid var(--color-border)',
+                            borderRadius: 'var(--radius-md)',
+                            boxShadow: 'var(--shadow-sm)'
+                          }}>
+                            <div style={{ display: 'flex', gap: 'var(--space-md)', alignItems: 'center' }}>
+                              <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-sm)' }}>
+                                {Array.isArray(together?.airline_logos) && together.airline_logos[0] && (
+                                  <img src={together.airline_logos[0]} alt="logo" width={24} height={24} style={{ borderRadius: 4 }} />
+                                )}
+                                <span style={{ fontWeight: 600, color: 'var(--color-text)' }}>{together?.book_with || 'Provider'}</span>
+                              </div>
+                              <span style={{ color: 'var(--color-text-light)', fontWeight: 500 }}>
+                                {currency} {price != null && !isNaN(price) ? price : '—'}
+                              </span>
                             </div>
                             {url ? (
-                              <a href={url} target="_blank" rel="noopener noreferrer"><Button label={`Book with ${together?.book_with || 'Seller'}`} /></a>
+                              <a href={url} target="_blank" rel="noopener noreferrer">
+                                <Button label="Select" variant="primary" />
+                              </a>
                             ) : (
-                              <span className={styles['deal-card__muted']}>No redirect</span>
+                              <span className={styles['deal-card__muted']}>Unavailable</span>
                             )}
                           </div>
                         );
@@ -207,28 +264,26 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
       </div>
 
 
-      <footer className={styles['deal-card__footerSection']}>
-        <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
-          {viewContext === 'list' ? (
+      {viewContext === 'details' && bookingData?.bestOption?.together?.booking_request?.url && (
+        <footer className={styles['deal-card__footerSection']} style={{ justifyContent: 'center', paddingTop: 'var(--space-md)' }}>
+          <a href={buildGetUrl(bookingData.bestOption.together.booking_request.url, bookingData.bestOption.together.booking_request.post_data)} target="_blank" rel="noopener noreferrer">
+            <Button label={`Book with ${bookingData.bestOption?.together?.book_with || 'Best option'}`} />
+          </a>
+        </footer>
+      )}
+      
+      {viewContext === 'list' && (
+        <footer className={styles['deal-card__footerSection']}>
+          <div style={{ flex: 1, display: 'flex', justifyContent: 'flex-start' }}>
             <div className={styles['deal-card__sliders']}>
               <PriceInsights from={route.from.iata} to={route.to.iata} depart={dates?.depart} currency={pricing.currency} currentPrice={pricing.dealPrice} oneWay={route.tripType === 'one_way'} priceHistory={priceHistory} />
             </div>
-          ) : (
-            <Button label={isExpanded ? 'Hide details' : 'View insights'} variant="secondary" onClick={() => setIsExpanded((v) => !v)} />
-          )}
-        </div>
-        <div>
-          {viewContext === 'list' ? (
-            <Link href={dealHref}><Button label="See offers" /></Link>
-          ) : (
-            bookingData?.bestOption?.together?.booking_request?.url ? (
-              <a href={buildGetUrl(bookingData.bestOption.together.booking_request.url, bookingData.bestOption.together.booking_request.post_data)} target="_blank" rel="noopener noreferrer"><Button label={`Book with ${bookingData.bestOption?.together?.book_with || 'Best option'}`} /></a>
-            ) : (
-              <Button label={isExpanded ? 'Hide details' : 'View details'} variant="secondary" onClick={() => setIsExpanded((v) => !v)} />
-            )
-          )}
-        </div>
-      </footer>
+          </div>
+          <div>
+            <Link href={dealHref}><Button label="Select flight" /></Link>
+          </div>
+        </footer>
+      )}
     </article>
   );
 }
@@ -236,9 +291,23 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
 function CarrierBadge({ code, name }: { code: string; name?: string }) {
   const label = (code || '').toUpperCase().slice(0, 2);
   return (
-    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 8 }}>
-      <span style={{ display: 'inline-flex', width: 28, height: 28, alignItems: 'center', justifyContent: 'center', background: '#e2e8f0', color: '#0f172a', borderRadius: 6, fontWeight: 800, fontSize: 12 }}>{label}</span>
-      {name && <span style={{ fontWeight: 700 }}>{name}</span>}
+    <span style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-md)' }}>
+      <span style={{ 
+        display: 'inline-flex', 
+        width: 32, 
+        height: 32, 
+        alignItems: 'center', 
+        justifyContent: 'center', 
+        background: 'var(--color-primary)', 
+        color: 'white', 
+        borderRadius: 'var(--radius-md)', 
+        fontWeight: 700, 
+        fontSize: 12,
+        boxShadow: 'var(--shadow-sm)'
+      }}>
+        {label}
+      </span>
+      {name && <span style={{ fontWeight: 600, color: 'var(--color-text)' }}>{name}</span>}
     </span>
   );
 }

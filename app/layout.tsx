@@ -1,15 +1,16 @@
 import '../src/frontend/styles/globals.css';
-import Header from '../src/frontend/components/composite/Header';
+import ConditionalHeader from '../src/frontend/components/composite/ConditionalHeader';
+
 export const metadata = {
-	title: 'FlightScannerAI',
-	description: 'Flight search and scoring demo'
+	title: 'Wingman AI',
+	description: 'AI-powered flight search and deal scoring'
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang="en">
 			<body>
-				<Header />
+				<ConditionalHeader />
 				{children}
 			</body>
 		</html>
