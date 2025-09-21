@@ -1,10 +1,11 @@
 import { getJson } from 'src/frontend/lib/api';
 import { headers } from 'next/headers';
+import ResultsHeader from 'src/frontend/components/composite/ResultsHeader';
 import SectionHeader from 'src/frontend/components/composite/SectionHeader';
-import FilterBar from 'src/frontend/components/composite/FilterBar';
 import DealRow from 'src/frontend/components/composite/DealRow';
 import List from 'src/frontend/components/ui/List';
 import LoadingHandler from './LoadingHandler';
+import ScrollRestorer from 'src/frontend/components/ui/ScrollRestorer';
 
 interface InspirationResponse { items: Array<{ origin: string; destination: string; departureDate?: string; priceTotal: number }>; currency?: string }
 
@@ -21,12 +22,20 @@ export default async function AnywherePage({ params, searchParams }: { params: {
   const hasData = rows.length > 0;
   
   return (
-    <main className="container page-bg">
+    <div style={{ minHeight: '100vh' }}>
+      <ScrollRestorer id={`anywhere-${origin}`} />
       <LoadingHandler hasData={hasData} />
-      <FilterBar />
-      <SectionHeader title="Results" subtitle="Sorted by AI Deal Score" />
-      <List items={rows as any} ItemComponent={DealRow as any} />
-    </main>
+      <ResultsHeader />
+      
+      <main className="container" style={{ 
+        paddingTop: 'var(--space-2xl)', 
+        paddingBottom: 'var(--space-2xl)',
+        background: 'var(--color-bg)'
+      }}>
+        <SectionHeader title="Results" subtitle="Sorted by AI Deal Score" />
+        <List items={rows as any} ItemComponent={DealRow as any} />
+      </main>
+    </div>
   );
 }
 

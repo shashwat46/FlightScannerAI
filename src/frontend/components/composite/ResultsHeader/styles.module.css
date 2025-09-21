@@ -1,0 +1,53 @@
+.heroSection {
+  background: var(--color-header);
+  color: white;
+  padding: var(--space-2xl) 0;
+  min-height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.brandSection {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.logo {
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 3px 8px rgba(0, 0, 0, 0.4)) contrast(1.2) brightness(1.1);
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: -0.025em;
+}
+
+.filterSection {
+  max-width: 1000px;
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: var(--space-xl) 0;
+    min-height: 160px;
+  }
+  
+  .brandSection {
+    margin-bottom: var(--space-xl);
+  }
+  
+  .logo {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .title {
+    font-size: 24px;
+  }
+}

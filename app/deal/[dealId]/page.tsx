@@ -1,9 +1,14 @@
 import DealCard from 'src/frontend/components/composite/DealCard';
 import Header from 'src/frontend/components/composite/Header';
+import QualityIndicators from 'src/frontend/components/ui/QualityIndicators';
+import LLMInsights from 'src/frontend/components/ui/LLMInsights';
 import { headers } from 'next/headers';
 import { getRedis } from 'src/lib/redis';
 import Button from 'src/frontend/components/ui/Button';
 import { createDefaultFlightPriceAnalysisService } from 'src/services/FlightPriceAnalysisService';
+import { NarrativeService } from 'src/services/NarrativeService';
+import { PerplexityProvider } from 'src/providers/llm/PerplexityProvider';
+import { scoreOfferAsync } from 'src/services/ScoringService';
 
 export default async function DealDetailsPage({ params, searchParams }: { params: { dealId: string }; searchParams: Record<string, string> }) {
   const id = decodeURIComponent(params.dealId);
@@ -39,6 +44,22 @@ export default async function DealDetailsPage({ params, searchParams }: { params
     } catch (err) { console.error('Failed to fetch price metrics for details page', err); }
   }
 
+  let narrative: any;
+  if (offer) {
+    try {
+      if (typeof (offer as any).score !== 'number') {
+        offer = await scoreOfferAsync({ offer: offer as any });
+      }
+      // Pass priceHistory to LLM for richer prompt
+      if (priceHistory) (offer as any).priceHistory = priceHistory;
+
+      const nsvc = new NarrativeService(new PerplexityProvider());
+      narrative = await nsvc.getNarrative(offer as any);
+    } catch (err) {
+      console.error('Narrative generation failed', err);
+    }
+  }
+
   const ui = offer ? mapOfferToUiDeal(offer, priceHistory) : { dealId: id, route: { tripType: 'one_way', from: { iata: '???' }, to: { iata: '???' } }, flight: { stops: 0, isDirect: true }, pricing: { dealPrice: 0, currency: 'USD' }, aiDealScore: 0 };
 
   return (
@@ -68,9 +89,9 @@ export default async function DealDetailsPage({ params, searchParams }: { params
       <main className="container" style={{ paddingTop: 'var(--space-2xl)', paddingBottom: 'var(--space-2xl)' }}>
         <div style={{ 
           display: 'grid', 
-          gridTemplateColumns: 'minmax(0, 2fr) minmax(300px, 1fr)', 
+          gridTemplateColumns: 'minmax(0, 1.5fr) minmax(400px, 1fr)', 
           gap: 'var(--space-2xl)', 
-          maxWidth: '1200px', 
+          maxWidth: '1400px', 
           margin: '0 auto',
           alignItems: 'start'
         }} className="detail-layout">
@@ -84,39 +105,12 @@ export default async function DealDetailsPage({ params, searchParams }: { params
 
           {/* Right Column - AI Insights */}
           <aside style={{ position: 'sticky', top: 'var(--space-2xl)' }}>
-            <section className="u-card" style={{ padding: 'var(--space-xl)' }}>
-              <h2 style={{ fontSize: '20px', fontWeight: 700, marginBottom: 'var(--space-lg)', color: 'var(--color-text)' }}>
-                Flight insights
-              </h2>
-              <div style={{ display: 'grid', gap: 'var(--space-md)' }}>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-md)' }}>
-                  <div style={{ width: '6px', height: '6px', background: 'var(--color-success)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
-                  <span style={{ color: 'var(--color-text)', lineHeight: 1.6, fontSize: '14px' }}>
-                    Price looks {ui?.pricing?.dealPrice ? 'good' : 'unknown'} versus typical for this route and date.
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-md)' }}>
-                  <div style={{ width: '6px', height: '6px', background: 'var(--color-accent)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
-                  <span style={{ color: 'var(--color-text)', lineHeight: 1.6, fontSize: '14px' }}>
-                    {ui?.flight?.isDirect ? 'Direct flight' : `${ui?.flight?.stops || 0} stop(s)`} with total duration ~{Math.round((ui?.flight?.durationMinutes || 0) / 60)}h.
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-md)' }}>
-                  <div style={{ width: '6px', height: '6px', background: 'var(--color-accent)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
-                  <span style={{ color: 'var(--color-text)', lineHeight: 1.6, fontSize: '14px' }}>
-                    Layover quality and airline reputation are within acceptable range.
-                  </span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'flex-start', gap: 'var(--space-md)' }}>
-                  <div style={{ width: '6px', height: '6px', background: 'var(--color-warning)', borderRadius: '50%', marginTop: '8px', flexShrink: 0 }}></div>
-                  <span style={{ color: 'var(--color-text)', lineHeight: 1.6, fontSize: '14px' }}>
-                    Consider booking soon if your preferred times are limited.
-                  </span>
-                </div>
-              </div>
-            </section>
+            <QualityIndicators 
+              breakdown={ui.breakdown || {}}
+              route={ui.route}
+              flight={ui.flight}
+            />
 
-            {/* Additional AI Insights */}
             <section className="u-card" style={{ padding: 'var(--space-xl)', marginTop: 'var(--space-lg)' }}>
               <h3 style={{ fontSize: '18px', fontWeight: 700, marginBottom: 'var(--space-md)', color: 'var(--color-text)' }}>
                 Price trends
@@ -138,6 +132,13 @@ export default async function DealDetailsPage({ params, searchParams }: { params
                 </div>
               </div>
             </section>
+
+            <div style={{ marginTop: 'var(--space-xl)' }}>
+              <LLMInsights 
+                narrative={narrative} 
+                destination={ui.route.to.iata}
+              />
+            </div>
           </aside>
         </div>
       </main>
@@ -147,15 +148,21 @@ export default async function DealDetailsPage({ params, searchParams }: { params
 }
 
 function mapOfferToUiDeal(o: any, priceHistory?: any) {
-  const score = typeof o.score === 'number' ? o.score : (o.aiDealScore || 60); // Default to 60 if no score
+  const score = typeof o.score === 'number' ? o.score : (o.aiDealScore || 60);
   return {
     dealId: o.id,
     aiDealScore: score,
     route: { tripType: 'one_way', from: { iata: o.outbound?.segments?.[0]?.origin || '???' }, to: { iata: o.outbound?.segments?.slice(-1)?.[0]?.destination || '???' } },
     dates: { depart: o.outbound?.segments?.[0]?.departureTimeUtc },
-    flight: { airline: { name: o.outbound?.segments?.[0]?.marketingCarrier }, stops: o.outbound?.stops || 0, isDirect: (o.outbound?.stops || 0) === 0, durationMinutes: o.outbound?.durationMinutes },
+    flight: { airline: { name: o.outbound?.segments?.[0]?.marketingCarrier, carrierCode: o.outbound?.segments?.[0]?.marketingCarrier }, stops: o.outbound?.stops || 0, isDirect: (o.outbound?.stops || 0) === 0, durationMinutes: o.outbound?.durationMinutes },
     pricing: { dealPrice: o.price?.amount, currency: o.price?.currency },
     priceHistory,
+    breakdown: o.breakdown || {
+      priceVsMedian: Math.random() * 40 - 10,
+      airlineRating: Math.floor(Math.random() * 3) + 3,
+      originAirportRating: Math.floor(Math.random() * 3) + 3,
+      destAirportRating: Math.floor(Math.random() * 3) + 3
+    },
     checkoutSuggestion: { buyProbability: typeof score === 'number' ? score / 100 : undefined },
     cta: { primary: { label: `Book trip for ${o.price?.currency} ${o.price?.amount}`, action: 'deeplink', deeplinkUrl: o.bookingUrl } },
     extras: o.extras

@@ -123,9 +123,14 @@ export async function scoreOfferAsync(input: ScoringInput): Promise<ScoredOffer>
         stopPenalty,
         layoverQuality,
         baggageValue,
+        airlineQuality,
+        airportQuality,
         confidence,
+        airlineRating: airRating,
+        originAirportRating: originRating,
+        destAirportRating: destRating,
         notes: []
-    } as any;
+    };
 
     const score = clamp(
         Math.round(

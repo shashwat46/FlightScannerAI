@@ -74,7 +74,7 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
           <strong>{route.from.iata}</strong> → <strong>{route.to.iata || 'ANY'}</strong>
         </div>
         <div className={styles['deal-card__topRight']}>
-          {dates?.depart && <span className={styles['deal-card__date']}>{new Date(dates.depart).toLocaleDateString()} | {extras?.departureTimeUtc ? new Date(extras.departureTimeUtc).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }) : null}</span>}
+          {dates?.depart && <span className={styles['deal-card__date']}>{new Date(dates.depart).toLocaleDateString()}</span>}
         </div>
       </header>
 
@@ -116,7 +116,13 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
             </div>
             {typeof aiDealScore === 'number' && aiDealScore > 0 && (
               <div className={styles['deal-card__priceScore']}>
-                <RingScore value={aiDealScore} size={44} />
+                <RingScore 
+                  value={aiDealScore} 
+                  size={44}
+                  breakdown={breakdown}
+                  dealHref={dealHref}
+                  interactive={true}
+                />
               </div>
             )}
           </div>
@@ -289,23 +295,55 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
 }
 
 function CarrierBadge({ code, name }: { code: string; name?: string }) {
-  const label = (code || '').toUpperCase().slice(0, 2);
+  const airlineCode = (code || '').toUpperCase();
+  const logoUrl = `http://img.wway.io/pics/root/${airlineCode}@png?exar=1&rs=fit:48:48`;
+  
   return (
     <span style={{ display: 'inline-flex', alignItems: 'center', gap: 'var(--space-md)' }}>
       <span style={{ 
         display: 'inline-flex', 
-        width: 32, 
-        height: 32, 
+        width: 40, 
+        height: 40, 
         alignItems: 'center', 
         justifyContent: 'center', 
-        background: 'var(--color-primary)', 
-        color: 'white', 
-        borderRadius: 'var(--radius-md)', 
-        fontWeight: 700, 
-        fontSize: 12,
-        boxShadow: 'var(--shadow-sm)'
+        background: 'white', 
+        border: '2px solid var(--color-border)',
+        borderRadius: 'var(--radius-lg)', 
+        boxShadow: 'var(--shadow-md)',
+        overflow: 'hidden'
       }}>
-        {label}
+        <img 
+          src={logoUrl}
+          alt={`${airlineCode} logo`}
+          style={{ 
+            width: '32px', 
+            height: '32px', 
+            objectFit: 'contain'
+          }}
+          onError={(e) => {
+            const target = e.target as HTMLImageElement;
+            target.style.display = 'none';
+            const fallback = target.parentElement?.querySelector('.fallback') as HTMLElement;
+            if (fallback) {
+              fallback.style.display = 'flex';
+            }
+          }}
+        />
+        <span 
+          className="fallback"
+          style={{ 
+            display: 'none',
+            fontWeight: 700, 
+            fontSize: 12,
+            color: 'var(--color-primary)',
+            alignItems: 'center',
+            justifyContent: 'center',
+            width: '100%',
+            height: '100%'
+          }}
+        >
+          {airlineCode.slice(0, 2)}
+        </span>
       </span>
       {name && <span style={{ fontWeight: 600, color: 'var(--color-text)' }}>{name}</span>}
     </span>

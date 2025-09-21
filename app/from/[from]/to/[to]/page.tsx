@@ -1,6 +1,6 @@
 import { getJson } from 'src/frontend/lib/api';
 import { headers } from 'next/headers';
-import FilterBar from 'src/frontend/components/composite/FilterBar';
+import ResultsHeader from 'src/frontend/components/composite/ResultsHeader';
 import DealCard from 'src/frontend/components/composite/DealCard';
 import SectionHeader from 'src/frontend/components/composite/SectionHeader';
 import Pagination from 'src/frontend/components/ui/Pagination';
@@ -74,18 +74,25 @@ export default async function DestinationPage({ params, searchParams }: { params
   const hasData = offers.length > 0;
   
   return (
-    <main className="container page-bg">
+    <div style={{ minHeight: '100vh' }}>
       <LoadingHandler hasData={hasData} />
-      <FilterBar />
-      <SectionHeader title="Deals to Destination" subtitle={`Page ${page} of ${totalPages}`} />
-      {uiTop && <DealCard {...uiTop} expanded />}
-      <div style={{ display: 'grid', gap: 12, marginTop: 12 }}>
-        {rest.map((d) => (
-          <DealCard key={d.dealId} {...d} />
-        ))}
-      </div>
-      <Pagination page={page} totalPages={totalPages} makeHref={(p) => buildHref(params.from, params.to, departDate, p)} />
-    </main>
+      <ResultsHeader />
+      
+      <main className="container" style={{ 
+        paddingTop: 'var(--space-2xl)', 
+        paddingBottom: 'var(--space-2xl)',
+        background: 'var(--color-bg)'
+      }}>
+        <SectionHeader title="Deals to Destination" subtitle={`Page ${page} of ${totalPages}`} />
+        {uiTop && <DealCard {...uiTop} expanded />}
+        <div style={{ display: 'grid', gap: 12, marginTop: 12 }}>
+          {rest.map((d) => (
+            <DealCard key={d.dealId} {...d} />
+          ))}
+        </div>
+        <Pagination page={page} totalPages={totalPages} makeHref={(p) => buildHref(params.from, params.to, departDate, p)} />
+      </main>
+    </div>
   );
 }
 

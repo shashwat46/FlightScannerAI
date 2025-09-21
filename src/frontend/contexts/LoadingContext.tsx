@@ -12,9 +12,25 @@ const LoadingContext = createContext<LoadingContextType | undefined>(undefined);
 
 export function LoadingProvider({ children }: { children: React.ReactNode }) {
   const [isLoading, setIsLoading] = useState(false);
+  const [startTs, setStartTs] = useState<number | null>(null);
 
-  const startLoading = () => setIsLoading(true);
-  const stopLoading = () => setIsLoading(false);
+  const MIN_SPINNER_MS = 400; // ensures loader is visible long enough for smoothness
+
+  const startLoading = () => {
+    setStartTs(Date.now());
+    setIsLoading(true);
+  };
+
+  const stopLoading = () => {
+    if (!isLoading) return;
+    const elapsed = startTs ? Date.now() - startTs : MIN_SPINNER_MS;
+    const wait = elapsed < MIN_SPINNER_MS ? MIN_SPINNER_MS - elapsed : 0;
+    if (wait === 0) {
+      setIsLoading(false);
+    } else {
+      setTimeout(() => setIsLoading(false), wait);
+    }
+  };
 
   return (
     <LoadingContext.Provider value={{

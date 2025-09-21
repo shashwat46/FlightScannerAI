@@ -96,7 +96,12 @@ export interface ScoreBreakdown {
 	stopPenalty: number; // 0..100
 	layoverQuality: number; // 0..100
 	baggageValue: number; // 0..100
+	airlineQuality: number; // 0..100
+	airportQuality: number; // 0..100
 	confidence: number; // 0..1
+	airlineRating?: number; // 1-5
+	originAirportRating?: number; // 1-5
+	destAirportRating?: number; // 1-5
 	notes?: string[];
 }
 

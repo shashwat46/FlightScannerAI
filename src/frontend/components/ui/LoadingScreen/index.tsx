@@ -38,19 +38,19 @@ export default function LoadingScreen({ isVisible }: LoadingScreenProps) {
 
   return (
     <div className={styles.overlay}>
-      <div className={styles.container}>
-        <div className={styles.animation}>
+      <div className={styles.skyBackground}>
+        <div className={styles.container}>
           <DotLottieReact
             src="https://lottie.host/b3b40beb-6fda-44f6-a847-b77bf49c82b1/8RpGNgETOZ.lottie"
             loop
             autoplay
-            style={{ width: '100vw', height: '100vh' }}
+            style={{ width: '320px', height: '320px' }}
           />
-        </div>
-        <div 
-          className={`${styles.text} ${isTextVisible ? styles.textVisible : styles.textHidden}`}
-        >
-          {loadingTexts[currentTextIndex]}
+          <div 
+            className={`${styles.text} ${isTextVisible ? styles.textVisible : styles.textHidden}`}
+          >
+            {loadingTexts[currentTextIndex]}
+          </div>
         </div>
       </div>
     </div>
