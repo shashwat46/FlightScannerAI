@@ -9,6 +9,7 @@ import { createDefaultFlightPriceAnalysisService } from 'src/services/FlightPric
 import { NarrativeService } from 'src/services/NarrativeService';
 import { PerplexityProvider } from 'src/providers/llm/PerplexityProvider';
 import { scoreOfferAsync } from 'src/services/ScoringService';
+import { UiDeal } from 'src/frontend/schemas/viewModels';
 
 export default async function DealDetailsPage({ params, searchParams }: { params: { dealId: string }; searchParams: Record<string, string> }) {
   const id = decodeURIComponent(params.dealId);
@@ -60,7 +61,7 @@ export default async function DealDetailsPage({ params, searchParams }: { params
     }
   }
 
-  const ui = offer ? mapOfferToUiDeal(offer, priceHistory) : { dealId: id, route: { tripType: 'one_way', from: { iata: '???' }, to: { iata: '???' } }, flight: { stops: 0, isDirect: true }, pricing: { dealPrice: 0, currency: 'USD' }, aiDealScore: 0 };
+  const ui = offer ? mapOfferToUiDeal(offer, priceHistory) : { dealId: id, route: { tripType: 'one_way' as const, from: { iata: '???' }, to: { iata: '???' } }, flight: { stops: 0, isDirect: true }, pricing: { dealPrice: 0, currency: 'USD' }, aiDealScore: 0 };
 
   return (
     <div style={{ minHeight: '100vh' }}>
@@ -147,7 +148,7 @@ export default async function DealDetailsPage({ params, searchParams }: { params
   );
 }
 
-function mapOfferToUiDeal(o: any, priceHistory?: any) {
+function mapOfferToUiDeal(o: any, priceHistory?: any): UiDeal {
   const score = typeof o.score === 'number' ? o.score : (o.aiDealScore || 60);
   return {
     dealId: o.id,

@@ -6,6 +6,7 @@ import SectionHeader from 'src/frontend/components/composite/SectionHeader';
 import Pagination from 'src/frontend/components/ui/Pagination';
 import LoadingHandler from './LoadingHandler';
 import { createDefaultFlightPriceAnalysisService } from '../../../../../src/services/FlightPriceAnalysisService';
+import { UiDeal } from 'src/frontend/schemas/viewModels';
 
 interface SearchResponse { offers: Array<any>; }
 
@@ -96,7 +97,7 @@ export default async function DestinationPage({ params, searchParams }: { params
   );
 }
 
-function mapOfferToUiDeal(o: any, priceHistory?: any) {
+function mapOfferToUiDeal(o: any, priceHistory?: any): UiDeal {
   const code = o.outbound?.segments?.[0]?.marketingCarrier || '';
   return {
     dealId: o.id,
