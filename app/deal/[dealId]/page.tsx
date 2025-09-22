@@ -61,7 +61,7 @@ export default async function DealDetailsPage({ params, searchParams }: { params
     }
   }
 
-  const ui = offer ? mapOfferToUiDeal(offer, priceHistory) : { dealId: id, route: { tripType: 'one_way' as const, from: { iata: '???' }, to: { iata: '???' } }, flight: { stops: 0, isDirect: true }, pricing: { dealPrice: 0, currency: 'USD' }, aiDealScore: 0 };
+  const ui = offer ? mapOfferToUiDeal(offer, priceHistory) : { dealId: id, route: { tripType: 'one_way' as const, from: { iata: '???' }, to: { iata: '???' } }, dates: { depart: undefined, arrive: undefined, return: undefined }, flight: { stops: 0, isDirect: true }, pricing: { dealPrice: 0, currency: 'USD' }, aiDealScore: 0 };
 
   return (
     <div style={{ minHeight: '100vh' }}>
