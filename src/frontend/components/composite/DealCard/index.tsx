@@ -1,6 +1,8 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
+import { useSession } from '@/src/frontend/hooks/useSession';
+import { useAuthModal } from '@/src/frontend/contexts/AuthModalContext';
 import { UiDeal } from '../../../schemas/viewModels';
 import Button from '../../ui/Button';
 import { formatCurrency } from '../../ui/currency';
@@ -25,6 +27,9 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
     const base = `/deal/${encodeURIComponent(String(id))}`;
     return provider ? `${base}?provider=${encodeURIComponent(provider)}` : base;
   }, [extras, route, pricing]);
+
+  const { session } = useSession();
+  const { openModal } = useAuthModal();
 
   React.useEffect(() => {
     let cancelled = false;
@@ -64,6 +69,14 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
     fetchOptions();
     return () => { cancelled = true; };
   }, [isExpanded, extras, pricing?.currency, viewContext]);
+
+  const handleSelectClick = (e: React.MouseEvent) => {
+    if (!session) {
+      e.preventDefault();
+      openModal();
+    }
+  };
+
   return (
     <article className={styles['deal-card']} data-context={viewContext}>
       <header className={`${styles['deal-card__header']} ${styles['deal-card__topRow']}`}>
@@ -286,7 +299,9 @@ export default function DealCard({ aiDealScore, route, dates, flight, pricing, p
             </div>
           </div>
           <div>
-            <Link href={dealHref}><Button label="Select flight" /></Link>
+            <Link href={dealHref} onClick={handleSelectClick} prefetch={false}>
+              <Button label="Select flight" />
+            </Link>
           </div>
         </footer>
       )}
