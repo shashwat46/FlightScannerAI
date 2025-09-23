@@ -27,7 +27,7 @@ export default function AuthButton() {
   }
 
   if (user) {
-    return <ProfileDropdown user={user} onLogout={handleSignOut} />;
+    return <ProfileDropdown user={user} onSignOut={handleSignOut} />;
   }
 
   return (
