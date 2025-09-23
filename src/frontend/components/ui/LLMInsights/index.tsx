@@ -81,7 +81,7 @@ export default function LLMInsights({ narrative, destination }: LLMInsightsProps
               <span>Highlights</span>
             </div>
             <p className={styles.prosConsText}>
-              {hasDestinationBlurb ? narrativeData.destination_blurb.pros : mockDestinationData?.pros}
+              {hasDestinationBlurb ? narrativeData!.destination_blurb!.pros : mockDestinationData?.pros}
             </p>
           </div>
           
@@ -91,7 +91,7 @@ export default function LLMInsights({ narrative, destination }: LLMInsightsProps
               <span>Considerations</span>
             </div>
             <p className={styles.prosConsText}>
-              {hasDestinationBlurb ? narrativeData.destination_blurb.cons : mockDestinationData?.cons}
+              {hasDestinationBlurb ? narrativeData!.destination_blurb!.cons : mockDestinationData?.cons}
             </p>
           </div>
         </div>
