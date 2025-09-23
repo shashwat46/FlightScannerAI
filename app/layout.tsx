@@ -1,5 +1,4 @@
 import '../src/frontend/styles/globals.css';
-import ConditionalHeader from '../src/frontend/components/composite/ConditionalHeader';
 import { LoadingProvider } from '../src/frontend/contexts/LoadingContext';
 import { AuthModalProvider } from '../src/frontend/contexts/AuthModalContext';
 import GlobalLoadingScreen from '../src/frontend/components/ui/GlobalLoadingScreen';
@@ -16,7 +15,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
 			<body>
 				<AuthModalProvider>
 					<LoadingProvider>
-						<ConditionalHeader />
 						<GlobalLoadingScreen />
 						<GlobalAuthModal />
 						{children}
