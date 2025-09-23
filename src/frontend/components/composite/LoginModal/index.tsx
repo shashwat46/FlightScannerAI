@@ -9,14 +9,12 @@ import styles from './styles.module.css';
 export default function LoginModal() {
   const { closeModal } = useAuthModal();
   const supabase = getSupabaseBrowserClient();
-  const router = require('next/navigation').useRouter?.() ?? null;
 
   useEffect(() => {
     // Listen for successful authentication
     const { data: { subscription } } = supabase.auth.onAuthStateChange((event) => {
       if (event === 'SIGNED_IN') {
         closeModal();
-        if (router) router.refresh();
       }
     });
 

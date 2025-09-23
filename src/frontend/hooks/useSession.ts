@@ -6,26 +6,29 @@ import { getSupabaseBrowserClient } from '@/src/lib/supabase/client';
 interface SessionState {
   session: Session | null;
   user: User | null;
-  isLoading: boolean;
+  loaded: boolean;
 }
 
 export function useSession() {
   const [sessionState, setSessionState] = useState<SessionState>({
     session: null,
     user: null,
-    isLoading: true
+    loaded: false
   });
 
   useEffect(() => {
     const supabase = getSupabaseBrowserClient();
 
+    const fetchInitial = async () => {
+      const { data: { session } } = await supabase.auth.getSession();
+      setSessionState({ session, user: session?.user ?? null, loaded: true });
+    };
+
+    fetchInitial();
+
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
       (_event, session) => {
-        setSessionState({
-          session,
-          user: session?.user ?? null,
-          isLoading: false
-        });
+        setSessionState({ session, user: session?.user ?? null, loaded: true });
       }
     );
 

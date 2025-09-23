@@ -4,15 +4,18 @@ import { getSupabaseBrowserClient } from '@/src/lib/supabase/client';
 import { useSession } from '@/src/frontend/hooks/useSession';
 import { useAuthModal } from '@/src/frontend/contexts/AuthModalContext';
 import ProfileDropdown from '../ProfileDropdown';
+import { useRouter } from 'next/navigation';
 import styles from './styles.module.css';
 
 export default function AuthButton() {
   const { user, isLoading } = useSession();
   const { openModal } = useAuthModal();
   const supabase = getSupabaseBrowserClient();
+  const router = useRouter();
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
+    router.refresh();
   };
 
   if (isLoading) {
@@ -24,16 +27,7 @@ export default function AuthButton() {
   }
 
   if (user) {
-    return (
-      <div className={styles.userContainer}>
-        <div className={styles.userInfo}>
-          <span className={styles.userEmail}>{user.email || 'User'}</span>
-        </div>
-        <button onClick={handleSignOut} className={styles.logoutButton} type="button">
-          Sign Out
-        </button>
-      </div>
-    );
+    return <ProfileDropdown user={user} onLogout={handleSignOut} />;
   }
 
   return (
