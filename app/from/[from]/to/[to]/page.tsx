@@ -65,7 +65,7 @@ export default async function DestinationPage({ params, searchParams }: { params
 
   const page = Number(searchParams.page || '1');
   const pageSize = 10;
-  const offers = data.offers || [];
+  const offers = (data.offers || []).slice().sort((a, b) => (b.score || 0) - (a.score || 0));
   const start = (page - 1) * pageSize;
   const end = start + pageSize;
   const slice = offers.slice(start, end);
