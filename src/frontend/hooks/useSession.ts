@@ -19,26 +19,8 @@ export function useSession() {
   useEffect(() => {
     const supabase = getSupabaseBrowserClient();
 
-    // Get initial session
-    const getInitialSession = async () => {
-      try {
-        const { data: { session } } = await supabase.auth.getSession();
-        setSessionState({
-          session,
-          user: session?.user ?? null,
-          isLoading: false
-        });
-      } catch (error) {
-        console.error('Supabase getSession failed', error);
-        setSessionState({ session: null, user: null, isLoading: false });
-      }
-    };
-
-    getInitialSession();
-
-    // Listen for auth changes
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (event, session) => {
+      (_event, session) => {
         setSessionState({
           session,
           user: session?.user ?? null,
