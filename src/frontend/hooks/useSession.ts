@@ -35,5 +35,5 @@ export function useSession() {
     return () => subscription.unsubscribe();
   }, []);
 
-  return sessionState;
+  return { ...sessionState, isLoading: !sessionState.loaded };
 }

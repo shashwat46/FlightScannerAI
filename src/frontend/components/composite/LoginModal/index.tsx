@@ -77,7 +77,7 @@ export default function LoginModal() {
           }}
           providers={['google', 'github']}
           socialLayout="horizontal"
-          redirectTo={`${window.location.origin}/auth/callback`}
+          redirectTo={`${window.location.origin}/auth/callback/browser`}
           onlyThirdPartyProviders={false}
         />
       </div>
