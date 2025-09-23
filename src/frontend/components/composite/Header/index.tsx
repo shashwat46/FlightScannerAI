@@ -25,10 +25,10 @@ export default function Header({ showBackButton = false, backUrl = "/" }: Header
         {/* Left side - Back button or spacer */}
         <div style={{ width: '120px' }}>
           {showBackButton && (
-            <a href={backUrl} onClick={handleBack} className={styles.backButton} prefetch="false">
+            <Link href={backUrl} onClick={handleBack} className={styles.backButton} prefetch={false}>
               <ArrowLeft size={20} strokeWidth={2.5} />
               <span>Back to results</span>
-            </a>
+            </Link>
           )}
         </div>
 
