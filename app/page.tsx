@@ -2,6 +2,7 @@ import SectionHeader from '../src/frontend/components/composite/SectionHeader';
 import FilterBar from '../src/frontend/components/composite/FilterBar';
 import DealRow from '../src/frontend/components/composite/DealRow';
 import List from '../src/frontend/components/ui/List';
+import AuthButton from '../src/frontend/components/composite/AuthButton';
 
 const MOCK_TOP_PICKS = [
     { destination: 'Tokyo, Japan', aiDealScore: 94, month: 'September, 2025', pricing: { dealPrice: 275, regularPrice: 820, priceDiff: -545, discountPct: 0.66, currency: 'USD' } },
@@ -21,8 +22,19 @@ export default function HomePage() {
                 flexDirection: 'column',
                 justifyContent: 'center',
                 paddingTop: 'var(--space-2xl)',
-                paddingBottom: 'var(--space-2xl)'
+                paddingBottom: 'var(--space-2xl)',
+                position: 'relative'
             }}>
+                {/* Auth Button - positioned absolutely in top-right */}
+                <div style={{
+                    position: 'absolute',
+                    top: 'var(--space-xl)',
+                    right: 'var(--space-xl)',
+                    zIndex: 10
+                }}>
+                    <AuthButton />
+                </div>
+                
                 <div className="container">
                     {/* Logo and Tagline */}
                     <div style={{ 

@@ -1,0 +1,82 @@
+.modalContent {
+  background: var(--color-card);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  border: 1px solid var(--color-border);
+}
+
+.modalHeader {
+  padding: var(--space-2xl);
+  padding-bottom: var(--space-lg);
+  text-align: center;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.modalTitle {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0 0 var(--space-sm) 0;
+  line-height: 1.2;
+}
+
+.modalSubtitle {
+  font-size: 14px;
+  color: var(--color-text-light);
+  margin: 0;
+  line-height: 1.4;
+  max-width: 360px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.authContainer {
+  padding: var(--space-2xl);
+  padding-top: var(--space-xl);
+}
+
+/* Override Auth UI styles for better spacing and premium feel */
+.authContainer :global(.supabase-auth-ui_ui-container) {
+  gap: var(--space-lg);
+}
+
+.authContainer :global(.supabase-auth-ui_ui-button) {
+  height: 48px;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.authContainer :global(.supabase-auth-ui_ui-button:hover) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.authContainer :global(.supabase-auth-ui_ui-input) {
+  height: 48px;
+  transition: all 0.2s ease;
+}
+
+.authContainer :global(.supabase-auth-ui_ui-input:focus) {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.authContainer :global(.supabase-auth-ui_ui-divider) {
+  margin: var(--space-xl) 0;
+}
+
+.authContainer :global(.supabase-auth-ui_ui-label) {
+  font-weight: 500;
+  margin-bottom: var(--space-sm);
+}
+
+.authContainer :global(.supabase-auth-ui_ui-message) {
+  padding: var(--space-md);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-md);
+}

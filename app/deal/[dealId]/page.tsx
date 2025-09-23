@@ -108,8 +108,14 @@ export default async function DealDetailsPage({ params, searchParams }: { params
           <aside style={{ position: 'sticky', top: 'var(--space-2xl)' }}>
             <QualityIndicators 
               breakdown={ui.breakdown || {}}
-              route={ui.route}
-              flight={ui.flight}
+              route={{
+                from: { iata: ui.route.from.iata || '' },
+                to: { iata: ui.route.to.iata || '' }
+              }}
+              flight={{
+                stops: ui.flight.stops,
+                durationMinutes: ui.flight.durationMinutes || 0
+              }}
             />
 
             <section className="u-card" style={{ padding: 'var(--space-xl)', marginTop: 'var(--space-lg)' }}>
@@ -167,7 +173,7 @@ function mapOfferToUiDeal(o: any, priceHistory?: any): UiDeal {
     checkoutSuggestion: { buyProbability: typeof score === 'number' ? score / 100 : undefined },
     cta: { primary: { label: `Book trip for ${o.price?.currency} ${o.price?.amount}`, action: 'deeplink', deeplinkUrl: o.bookingUrl } },
     extras: o.extras
-  };
+  }; 
 }
 
 

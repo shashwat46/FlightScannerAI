@@ -1,21 +1,18 @@
-import { createClient, SupabaseClient } from '@supabase/supabase-js';
+import { createBrowserClient, SupabaseClient } from '@supabase/ssr';
 import { ConfigError } from '../../domain/errors';
 
 let browserClient: SupabaseClient | null = null;
 
-function getPublicEnv(name: 'NEXT_PUBLIC_SUPABASE_URL' | 'NEXT_PUBLIC_SUPABASE_ANON_KEY'): string {
-	const value = process.env[name];
-	if (!value || value.trim().length === 0) {
-		throw new ConfigError(`Missing ${name}`);
-	}
-	return value.trim();
-}
-
 export function getSupabaseBrowserClient(): SupabaseClient {
 	if (browserClient) return browserClient;
-	const url = getPublicEnv('NEXT_PUBLIC_SUPABASE_URL');
-	const anonKey = getPublicEnv('NEXT_PUBLIC_SUPABASE_ANON_KEY');
-	browserClient = createClient(url, anonKey);
+	const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+	const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+	if (!url || !anonKey) {
+		throw new ConfigError('NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY must be set');
+	}
+
+	browserClient = createBrowserClient(url, anonKey);
 	return browserClient;
 }
 
