@@ -3,14 +3,9 @@ import { usePathname } from 'next/navigation';
 import Header from '../Header';
 
 export default function ConditionalHeader() {
+  'use client';
   const pathname = usePathname();
-  const isDetailPage = pathname?.includes('/deal/');
-  const isHomePage = pathname === '/';
-  
-  // Don't render header on detail pages (they render their own) or homepage
-  if (isDetailPage || isHomePage) {
-    return null;
-  }
-  
+  const isDetailPage = pathname?.startsWith('/deal/');
+  if (!isDetailPage) return null;
   return <Header />;
 }

@@ -15,6 +15,9 @@ export default function AuthButton() {
 
   const handleSignOut = async () => {
     await supabase.auth.signOut();
+    // clear httpOnly cookies for SSR consistency
+    await fetch('/api/auth/cookies', { method: 'DELETE' });
+    router.push('/');
     router.refresh();
   };
 
@@ -27,7 +30,7 @@ export default function AuthButton() {
   }
 
   if (user) {
-    return <ProfileDropdown user={user} onLogout={handleSignOut} />;
+    return <ProfileDropdown user={user} onSignOut={handleSignOut} />;
   }
 
   return (

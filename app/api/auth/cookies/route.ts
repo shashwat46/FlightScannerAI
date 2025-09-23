@@ -28,3 +28,11 @@ export async function POST(request: NextRequest) {
 
   return response
 }
+
+export async function DELETE() {
+  const response = NextResponse.json({ ok: true })
+  const isProd = process.env.NODE_ENV === 'production'
+  response.cookies.set({ name: 'sb-access-token', value: '', httpOnly: true, secure: isProd, sameSite: 'lax', path: '/' })
+  response.cookies.set({ name: 'sb-refresh-token', value: '', httpOnly: true, secure: isProd, sameSite: 'lax', path: '/' })
+  return response
+}
