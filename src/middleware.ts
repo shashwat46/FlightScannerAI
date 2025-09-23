@@ -32,6 +32,9 @@ export async function middleware(request: NextRequest) {
   // refresh session if necessary
   await supabase.auth.getUser()
 
+  // retrieve current session for access checks
+  const { data: { session } } = await supabase.auth.getSession()
+
   const { pathname } = request.nextUrl
 
   const isPublicPage = PUBLIC_PAGES.some(p => pathname === p || pathname.startsWith(p + '/'))
