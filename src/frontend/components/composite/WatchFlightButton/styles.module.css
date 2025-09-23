@@ -1,0 +1,19 @@
+.watchButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background-color: var(--color-primary-accent);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary);
+  border-radius: var(--border-radius-md);
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease;
+}
+
+.watchButton:hover {
+  background-color: var(--color-primary-dark);
+  color: white;
+  border-color: var(--color-primary-dark);
+}

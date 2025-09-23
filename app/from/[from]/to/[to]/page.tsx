@@ -5,6 +5,7 @@ import DealCard from 'src/frontend/components/composite/DealCard';
 import SectionHeader from 'src/frontend/components/composite/SectionHeader';
 import Pagination from 'src/frontend/components/ui/Pagination';
 import LoadingHandler from './LoadingHandler';
+import WatchFlightButton from 'src/frontend/components/composite/WatchFlightButton';
 import { createDefaultFlightPriceAnalysisService } from '../../../../../src/services/FlightPriceAnalysisService';
 import { UiDeal } from 'src/frontend/schemas/viewModels';
 
@@ -84,7 +85,9 @@ export default async function DestinationPage({ params, searchParams }: { params
         paddingBottom: 'var(--space-2xl)',
         background: 'var(--color-bg)'
       }}>
-        <SectionHeader title="Deals to Destination" subtitle={`Page ${page} of ${totalPages}`} />
+        <SectionHeader title="Deals to Destination" subtitle={`Page ${page} of ${totalPages}`}>
+          <WatchFlightButton origin={origin} destination={destination} />
+        </SectionHeader>
         {uiTop && <DealCard {...uiTop} expanded />}
         <div style={{ display: 'grid', gap: 12, marginTop: 12 }}>
           {rest.map((d) => (
