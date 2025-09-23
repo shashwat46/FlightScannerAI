@@ -4,6 +4,8 @@ import DealRow from '../src/frontend/components/composite/DealRow';
 import List from '../src/frontend/components/ui/List';
 import AuthButton from '../src/frontend/components/composite/AuthButton';
 
+export const dynamic = 'force-dynamic';
+
 const MOCK_TOP_PICKS = [
     { destination: 'Tokyo, Japan', aiDealScore: 94, month: 'September, 2025', pricing: { dealPrice: 275, regularPrice: 820, priceDiff: -545, discountPct: 0.66, currency: 'USD' } },
     { destination: 'Lisbon, Portugal', aiDealScore: 92, month: 'October, 2025', pricing: { dealPrice: 256, regularPrice: 820, priceDiff: -564, discountPct: 0.69, currency: 'USD' } },

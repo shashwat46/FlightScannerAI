@@ -66,6 +66,8 @@ export function scoreOffer(input: ScoringInput): ScoredOffer {
 	const stopPenalty = computeStopPenalty(stops);
 	const layoverQuality = computeLayoverQuality(stops);
 	const baggageValue = computeBaggageValue(hasChecked);
+	const airlineQuality = 100;
+	const airportQuality = 100;
 	const confidence = computeConfidence(baseline);
 
 	const breakdown: ScoreBreakdown = {
@@ -74,6 +76,8 @@ export function scoreOffer(input: ScoringInput): ScoredOffer {
 		stopPenalty,
 		layoverQuality,
 		baggageValue,
+		airlineQuality,
+		airportQuality,
 		confidence,
 		notes: []
 	};
@@ -85,6 +89,8 @@ export function scoreOffer(input: ScoringInput): ScoredOffer {
 			stopPenalty * weights.stopPenalty +
 			layoverQuality * weights.layoverQuality +
 			baggageValue * weights.baggageValue +
+			airlineQuality * weights.airlineQuality +
+			airportQuality * weights.airportQuality +
 			confidence * 100 * weights.confidence
 		),
 		0,

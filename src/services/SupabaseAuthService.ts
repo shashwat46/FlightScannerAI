@@ -12,7 +12,7 @@ export class SupabaseAuthService implements AuthService {
 
     return {
       userId: user.id,
-      email: user.email
+      email: user.email ?? null
     }
   }
 

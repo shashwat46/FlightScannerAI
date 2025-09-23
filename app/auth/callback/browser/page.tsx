@@ -1,15 +1,15 @@
 'use client'
+export const dynamic = 'force-dynamic'
 import { useEffect } from 'react'
-import { useRouter, useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/navigation'
 import { getSupabaseBrowserClient } from '@/src/lib/supabase/client'
 
 export default function AuthBrowserCallback() {
   const router = useRouter()
-  const searchParams = useSearchParams()
 
   useEffect(() => {
     const supabase = getSupabaseBrowserClient()
-    const code = searchParams.get('code')
+    const code = new URLSearchParams(window.location.search).get('code')
     if (!code) {
       router.replace('/')
       return
@@ -32,7 +32,7 @@ export default function AuthBrowserCallback() {
       })
       router.replace('/')
     })()
-  }, [router, searchParams])
+  }, [router])
 
   return null
 }

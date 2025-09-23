@@ -87,6 +87,10 @@ export interface Offer {
 		inboundLayoverMinutes?: number;
 		departureTimeUtc?: string;
 		arrivalTimeUtc?: string;
+		bookingToken?: string;
+		departureToken?: string;
+		id?: string;
+		provider?: string;
 	};
 }
 
